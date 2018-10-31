@@ -14,9 +14,8 @@ if(isset($_SESSION["userid"])) {
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Skyluster Technology Inc.</title>
-    <link rel="stylesheet" type="text/css" href="login.css">
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../design/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../../public/css/login.css">
+    <link href="../../public/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body style="height: -webkit-fill-available;">
     <div class="container">
