@@ -2,7 +2,16 @@
         margin:0;
         padding:0;
 }
-
+body
+{
+        /* height:24.9vh; */
+        height: -webkit-fill-available;
+        background-image: url(../icons/background1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        overflow-y: auto;
+}
 .Absolute-Center 
 {
         margin: auto;

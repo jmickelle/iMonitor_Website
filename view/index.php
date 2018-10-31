@@ -14,11 +14,11 @@ if(isset($_SESSION["userid"])) {
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Skyluster Technology Inc.</title>
-    <!-- <link rel="stylesheet" type="text/css" href="../../public/css/login.css"> -->
-    <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/login.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../public/css/style.css"> -->
     <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<style type="text/css">
+<!-- <style type="text/css">
     body
     {
             /* height:24.9vh; */
@@ -29,7 +29,7 @@ if(isset($_SESSION["userid"])) {
             background-position: center;
             overflow-y: auto;
     }
-</style>
+</style> -->
 <body style="height: -webkit-fill-available;">
     <div class="container">
         <div class="row">
