@@ -24,10 +24,11 @@ document.location.href = "../php/connection/logout.php";
 </script>
 
 <?php 
-error_reporting(0);
+// error_reporting(0);
 
 session_start();
-require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+// require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+require "../../controller/connection/db_connection.php";
 $ID=$_GET['id'];
 	if(!isset($_SESSION["userid"])) {
     	header("Location: index.php");
@@ -249,7 +250,7 @@ $ID=$_GET['id'];
 												<td><?php echo $row['role']; ?></td>
 												<td><?php echo $row['status']; ?></td>
 												<td><a href="#edit_<?php echo $row['id']; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
-												<?php include('edit_modal.php'); ?>
+												<?php include('../../controller/edit_modal.php'); ?>
 											</tr>
 										<?php } ?>
                                     </tbody>
