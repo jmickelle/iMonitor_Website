@@ -123,7 +123,7 @@
 
         </div>
 
-        <!-- <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
+        <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
             <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
                 <li>
                     <p id="demo" hidden>
@@ -131,14 +131,14 @@
                     </p>
                 </li>
 
-				<<li class="dropdown">
+				<li class="dropdown">
                     <a href="#" style="padding-right: 30px; margin-top: 5px;">
                         <span class="glyphicon glyphicon-envelope"></span>
                     </a>
-                </li>  -->
+                </li> 
 
                 <!-- Notification Dropdwon -->
-				<!-- <li class="dropdown">
+				<li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
                         <span class="glyphicon glyphicon-bell"></span>
                         <span class="label label-pill label-warning count" style="border-radius: 10px;">
@@ -151,11 +151,11 @@
                             <a href="admin_notification.php"><small>Show all notifications</small></a>
                         </li>
                     </ul>
-                </li> -->
+                </li>
                 <!-- End of Notification Dropdown -->
 
                 <!-- User Dropdown -->
-	            <!-- <li class="dropdown" style="padding-left: 5px;">
+	            <li class="dropdown" style="padding-left: 5px;"> 
 	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="padding-right: 30px;"><i class="glyphicon glyphicon-user"></i>
                     
 	                </a>
@@ -167,8 +167,8 @@
 	            	</ul>
                 </li> -->
                 <!-- End of User Dropdown -->
-			<!-- </ul>
-		</div> -->
+			 </ul>
+		</div>
 	</nav>
 	<!-- End of Top Navigation-->
 

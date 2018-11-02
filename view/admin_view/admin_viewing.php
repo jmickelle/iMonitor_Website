@@ -43,12 +43,6 @@
                     </p>
                 </li>
 
-				<!-- <li class="dropdown">
-                    <a href="#" style="padding-right: 30px; margin-top: 5px;">
-                        <span class="glyphicon glyphicon-envelope"></span>
-                    </a>
-                </li>  -->
-
                 <!-- Notification Dropdwon -->
 				<li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
@@ -80,6 +74,7 @@
                 </li>
                 <!-- End of User Dropdown -->
             </ul>
+        </div>
 	</nav>
 	<!-- End of Top Navigation-->
 
