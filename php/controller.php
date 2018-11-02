@@ -130,6 +130,22 @@
     //ADMIN USER
     function displayUser()
     {
-        
+        require 'connection/db_connection.php';
+        $userDisplay = mysqli_query($con,"SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role <> 'SUPER ADMIN'");
+        foreach($userDisplay as $row)
+        {
+            echo '
+            <tr>
+            <td>'.$row['id'].'</td>
+            <td>'.$row['userid'].'</td>
+            <td>'.$row['name'].'</td>
+            <td>'.$row['department'].'</td>
+            <td>'.$row['position'].'</td>
+            <td>'.$row['role'].'</td>
+            <td>'.$row['status'].'</td>
+            <td><a  data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
+            </tr>';
+            // <!-- 'include(edit_modal.php')' -->
+        }
     }
 ?>
