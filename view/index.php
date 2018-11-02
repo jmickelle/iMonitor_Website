@@ -48,11 +48,11 @@ if(isset($_SESSION["userid"])) {
                         }
                     ?>
                     <?php
-                            include '../controller/controller.php';
-                            Login();
+                            // include '../controller/controller.php';
+                            // Login();
                     ?>
                     <!-- action="../controller/connection/login_submit.php" -->
-                    <form  action="Login()" method="POST">
+                    <form  action="../controller/connection/login_submit.php" method="POST">
                         <div class="form-group input-group" style="margin-left: -90px; padding: 30px 30px; margin-bottom: 0px;">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                             <input class="form-control" id="userid" placeholder="User ID" name="userid" type="text" autofocus="autofocus" style="width: 150%;"required>
