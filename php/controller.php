@@ -209,4 +209,14 @@
             }
         }
     }
+
+    function displayComp()
+    {
+        require 'connection/db_connection.php';
+        if(isset($_POST['btnUpdate']))
+        {
+            $compSql = mysqli_query($con,"SELECT * FROM tbl_computer_details WHERE compID = '{$_SESSION['compID']}'");
+           
+        }
+    }
 ?>

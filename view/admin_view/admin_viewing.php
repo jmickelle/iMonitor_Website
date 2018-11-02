@@ -246,7 +246,7 @@
                 <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         <!-- <button type="button" class="btn btn-success" data-dismiss="modal">Update</button> -->
-                        <input type="submit" class="btn btn-success" data-dismiss="modal" value="Update">
+                        <input type="submit" name="btnUpdate" class="btn btn-success" data-dismiss="modal" value="Update">
                 </div>
             </form>
             </div>   
