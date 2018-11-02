@@ -29,20 +29,20 @@
 <body class="sticky-footer fixed-nav bg-light" id="page-top" onload="mirrorFunction();">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top col-lg-12 col-md-12 col-sm-12">
 		<img class="nav-logo" src="../../public/images/icons/sky_luster.png">
-		<label class="navbar-brand">Monitoring</label>
+		<a class="navbar-brand">Monitoring</a>
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       		<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarResponsive">
-      		<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-				<!-- Dashboard -->
+		<!-- <div class="collapse navbar-collapse" id="navbarResponsive">
+      		<ul class="navbar-nav navbar-sidenav">
+				Dashboard
 			  	<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
 					<a class="nav-link" href="../../view/admin_view/admin_dashboard.php" id="a-home">
 						<i class="glyphicon glyphicon-th-large"></i>
 						<span class="nav-link-text">Dashboard</span>
 					</a>
 				</li>
-				<!-- Branch Settings -->
+				Branch Settings
 				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch Settings">
 					<a class="nav-link" href="../../view/admin_view/admin_dashboard.php" id="a-home">
 						<i class="glyphicon glyphicon-home"></i>
@@ -50,7 +50,7 @@
 					</a>
 				</li>
 			</ul>
-        </div>
+        </div> -->
 
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
             <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
