@@ -1,12 +1,3 @@
-<?php
-    include '../../php/controller.php';
-    Login();
-    if(!isset($_SESSION["user"])) {
-        header("Location: ../../index.php");
-    }
-    Logout();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <?php
