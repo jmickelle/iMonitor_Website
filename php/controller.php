@@ -142,8 +142,10 @@
             <td>'.$row['position'].'</td>
             <td>'.$row['role'].'</td>
             <td>'.$row['status'].'</td>
-            <td><a href="'.$_SESSION['userid'] = $row['userid'].'"data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
+            <td></td>
             </tr>';
+            // <td><a href="'.$_SESSION['userid'] = $row['userid'].'"data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
+            userEdit();
             // <!-- 'include('edit_modal.php')' -->
         }
     }
