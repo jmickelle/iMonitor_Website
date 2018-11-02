@@ -39,11 +39,12 @@
                     </p>
                 </li>
 
-				<li class="dropdown">
+                <!-- Message Dropdown -->
+				<!-- <li class="dropdown">
                     <a href="#" style="padding-right: 30px; margin-top: 5px;">
                         <span class="glyphicon glyphicon-envelope"></span>
                     </a>
-                </li> 
+                </li>  -->
 
                 <!-- Notification Dropdwon -->
 				<li class="dropdown">

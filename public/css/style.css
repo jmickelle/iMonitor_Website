@@ -38,10 +38,24 @@
 }
 /* END OF LOGIN STYLE */
 
-body {
-    font-family: 'Poppins', sans-serif;
+/* BODY */
+html 
+{
+    position: relative;
+    min-height: 100%; 
+} 
+body 
+{
+    
+    overflow-x: hidden; 
     background: #fafafa;
 }
+body.fixed-nav 
+{
+    padding-top: 56px; 
+}
+/* END OF BODY */
+
 
 /* Dashboard Style */
 p 
