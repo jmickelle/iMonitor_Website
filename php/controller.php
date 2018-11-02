@@ -102,7 +102,7 @@
     function Logout()
     {
         require 'connection/db_connection.php';
-        if(isset($_POST['btnLogount'])
+        if(isset($_POST['btnLogount']))
         {
             
         }
