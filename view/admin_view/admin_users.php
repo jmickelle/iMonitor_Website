@@ -29,28 +29,43 @@
 <body class="sticky-footer fixed-nav bg-light" id="page-top" onload="mirrorFunction();">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top col-lg-12 col-md-12 col-sm-12">
 		<img class="nav-logo" src="../../public/images/icons/sky_luster.png">
-		<a class="navbar-brand">Monitoring</a>
+		<a class="navbar-label">Monitoring</a>
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       		<span class="navbar-toggler-icon"></span>
 		</button>
-		<!-- <div class="collapse navbar-collapse" id="navbarResponsive">
-      		<ul class="navbar-nav navbar-sidenav">
-				Dashboard
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+      		<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+				<!-- Dashboard -->
 			  	<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
 					<a class="nav-link" href="../../view/admin_view/admin_dashboard.php" id="a-home">
 						<i class="glyphicon glyphicon-th-large"></i>
 						<span class="nav-link-text">Dashboard</span>
 					</a>
 				</li>
-				Branch Settings
+				<!-- Branch Settings -->
 				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch Settings">
-					<a class="nav-link" href="../../view/admin_view/admin_dashboard.php" id="a-home">
+					<a class="nav-link" href="../../view/admin_view/admin_dashboard.php" id="a-branch">
 						<i class="glyphicon glyphicon-home"></i>
 						<span class="nav-link-text">Branch Settings</span>
 					</a>
 				</li>
+
+				 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Computer List ">
+				 	<a class="nav-link" href="../../view/admin_view/admin_viewing.php" id="a-list">
+						<i class="glyphicon glyphicon-home"></i>
+						<span class="nav-link-text">Computer List</span>
+					</a>
+				</li>
+
+				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="User Accounts ">
+				 	<a class="nav-link" href="../../view/admin_view/admin_viewing.php" id="a-user">
+						<i class="glyphicon glyphicon-edit"></i>
+						<span class="nav-link-text">User Accounts</span>
+					</a>
+				</li>
+				
 			</ul>
-        </div> -->
+        </div>
 
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
             <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">

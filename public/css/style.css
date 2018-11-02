@@ -60,7 +60,14 @@ body.fixed-nav
 .navbar
 {
     background-color: #fffafa;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 3px rgba(2, 2, 2, 1);
+}
+.navbar-nav
+{
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
 }
 .navbar-brand 
 {
@@ -78,6 +85,14 @@ body.fixed-nav
     overflow: auto;
     max-height: 75vh; 
 }
+.navbar-light .navbar-collapse .navbar-sidenav > .nav-item > .nav-link 
+{
+    color: rgba(0, 0, 0, 0.5);
+}
+.navbar-collapse .navbar-nav .nav-item .nav-link 
+{
+    cursor: pointer;
+}
 .fixed-top 
 {
     position: fixed;
@@ -86,52 +101,39 @@ body.fixed-nav
     left: 0;
     z-index: 1030;
 }
-.navbar-collapse .navbar-nav .nav-item .nav-link 
-{
-    cursor: pointer; 
-}
-.navbar-collapse .navbar-sidenav .nav-link-collapse:after 
-{
-    float: right;
-    content: '\f107';
-    font-family: 'FontAwesome'; 
-}
-.navbar-collapse .navbar-sidenav .nav-link-collapse.collapsed:after 
-{
-    content: '\f105'; 
-}
-.navbar-collapse .sidenav-toggler 
-{
-    display: none; 
-}
-.navbar-collapse .navbar-nav > .nav-item.dropdown > .nav-link
-{
-    position: relative;
-    min-width: 45px;
-}
-.navbar-collapse .navbar-nav > .nav-item.dropdown > .nav-link:after 
-{
-    float: right;
-    width: auto;
-    content: '\f105';
-    border: none;
-    font-family: 'FontAwesome'; 
-}
-.navbar-collapse .navbar-nav > .nav-item.dropdown.show > .nav-link:after 
-{
-    content: '\f107'; 
-}
-.navbar-collapse .navbar-nav > .nav-item.dropdown .dropdown-menu > .dropdown-item > .dropdown-message 
-{
-    overflow: hidden;
-    max-width: none;
-    text-overflow: ellipsis; 
-}
 @media (min-width: 992px)
 {
     .navbar-brand 
     {
         width: 250px;
+    }
+    .navbar-collapse 
+    {
+        overflow: visible;
+        max-height: none;
+    }
+    .navbar-light .navbar-collapse .navbar-sidenav 
+    {
+        background: #f8f9fa;
+    }
+    .fixed-top .navbar-sidenav 
+    {
+        height: calc(100vh - 112px);
+    }
+    .navbar-collapse .navbar-sidenav 
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        flex-direction: column;
+        margin-top: 70px;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.18);
+    }
+    .navbar-collapse .navbar-sidenav > .nav-item > .nav-link 
+    {
+        padding: 1em;
     }
 }
 
