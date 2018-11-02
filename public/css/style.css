@@ -151,6 +151,12 @@ a, a:hover, a:focus {
     padding-right: 10px; 
     font-size: 25px;
 }
+.well
+{
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+}
 
 /* ---------------------------------------------------
     SIDEBAR STYLE

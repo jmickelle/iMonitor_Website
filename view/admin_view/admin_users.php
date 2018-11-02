@@ -39,7 +39,7 @@
 	<!-- Top navigation -->
 	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
 		<div class="navbar-header">
-			<img class="nav-logo" src="icons/sky_luster.png">
+			<img class="nav-logo" src="../../Public/images/icons/sky_luster.png">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
@@ -56,11 +56,12 @@
                     </p>
                 </li>
 
-				<li class="dropdown">
+				<!-- Message Dropdown -->
+				<!-- <li class="dropdown">
                     <a href="#" style="padding-right: 30px; margin-top: 5px;">
                         <span class="glyphicon glyphicon-envelope"></span>
                     </a>
-                </li> 
+                </li>  -->
 
                 <!-- Notification Dropdwon -->
 				<li class="dropdown">
@@ -190,7 +191,7 @@
 	   		</ul>
         </nav>
         <div class="container" style="width:100%;">
-            <div class="well" style="padding: 10px;">User Accounts</div>
+            <div class="well">User Accounts</div>
             <div class="col-lg-12">
 				<div class="panel with-nav-tabs pane-default" style="margin-left: -30px;">
 					<div class="panel panel-heading">
@@ -214,26 +215,6 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-										<?php
-											$sql = "SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'";
-											foreach ($db->query($sql) as $row) {
-												//$stmt = $db->query("SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role<>'SUPER ADMIN'");
-												//$stmt->execute();
-												//for($i=0; $row = $stmt->fetch(); $i++){
-												$id=$row['id'];			
-											?>
-											<tr>
-												<td><?php echo $row['id']; ?></td>
-												<td><?php echo $row['userid']; ?></td>
-												<td><?php echo $row['name']; ?></td>
-												<td><?php echo $row['department']; ?></td>
-												<td><?php echo $row['position']; ?></td>
-												<td><?php echo $row['role']; ?></td>
-												<td><?php echo $row['status']; ?></td>
-												<td><a href="#edit_<?php echo $row['id']; ?>" data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
-												<?php include('edit_modal.php'); ?>
-											</tr>
-										<?php } ?>
                                     </tbody>
                                 </table>
                             </div>
