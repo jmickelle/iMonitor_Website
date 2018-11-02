@@ -156,4 +156,28 @@
     {
         //echo '<script>window.alert('.$_SESSION['userid'].')</script>';
     }
+
+    //ADMIN VIEWING
+    function listDepartment()
+    {
+        require 'connection/db_connection.php';
+        $listDept = mysqli_query($con,"SELECT DISTINCT branch_name FROM tbl_department ORDER BY branch_name ASC");
+        while($row = mysqli_fetch_assoc($listDept))
+		{
+            echo '<option value="'.$row['branch_name'].'">'.$row['branch_name'].'</option>'; 
+        }
+    }
+
+    function displayDept()
+    {
+        require 'connection/db_connection.php';
+        if(isset($_POST['dept_viewing']))
+        {
+            $dept = $_POST['dept_viewing'];
+            foreach($dept as $ket => $value)
+            {
+                echo '<script>window.alert('.$value.')</script>';
+            }
+        }
+    }
 ?>
