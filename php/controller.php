@@ -136,16 +136,20 @@
         {
             echo '
             <tr>
-            <td>'.$row['id'].'</td>
             <td>'.$row['userid'].'</td>
             <td>'.$row['name'].'</td>
             <td>'.$row['department'].'</td>
             <td>'.$row['position'].'</td>
             <td>'.$row['role'].'</td>
             <td>'.$row['status'].'</td>
-            <td><a  data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
+            <td><a href="'.$_SESSION['userid'] = $row['userid'].'"data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
             </tr>';
             // <!-- 'include('edit_modal.php')' -->
         }
+    }
+
+    function userEdit()
+    {
+        echo '<script>window.alert('.$_SESSION['userid'].')</script>';
     }
 ?>

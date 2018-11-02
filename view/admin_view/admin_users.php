@@ -150,7 +150,6 @@
                                 <table class="table table-bordered" style="background: #ffffff;">
                                     <thead>
                                     	<tr>
-											<th style="padding-bottom:15px;">No.</th>
 											<th style="padding-bottom:15px;">ID Number</th>
 											<th style="padding-bottom:15px;">Name</th>
 											<th style="padding-bottom:15px;">Department</th>
