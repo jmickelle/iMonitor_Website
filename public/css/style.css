@@ -233,6 +233,15 @@ body.fixed-nav
     color: #fff;
     background-color: #007bff;
 }
+.navbar-toggler 
+{
+    padding: .25rem .75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background: 0 0;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
 /* END OF NAVBAR */
 
 
