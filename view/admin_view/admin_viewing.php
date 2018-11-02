@@ -316,8 +316,8 @@
                                         <th style="padding-bottom:15px;">MAC Address</th>
                                         <th style="padding-bottom:15px;">Motherboard Manufacturer</th>
                                         <th style="padding-bottom:15px;">Motherboard Product</th>
-                                        <th style="padding-bottom:15px;">Remarks</th>
                                         <th style="padding-bottom:15px;">Agent Version</th>
+                                        <th style="padding-bottom:15px;">Remarks</th>
                                         </tr>
                                     </thead>
                                     <tbody>
