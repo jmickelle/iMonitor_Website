@@ -88,24 +88,42 @@
 			</ul>
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
-                        <span class="glyphicon glyphicon-bell"></span>
-                        <span class="label label-pill label-warning count" style="border-radius: 10px;">
-                        <?php notifCount(); ?>
-                        </span>
-                    </a>
-					<ul class="dropdown-menu">
-						<?php notifDisplay(); ?>
+					<a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="glyphicon glyphicon-bell"></i>
+						<span class="d-lg-none">Messages
+							<span class="badge badge-pill badge-warning"><?php notifCount(); ?></span>
+						</span>
+						<span class="indicator text-primary d-none d-lg-block">
+							<span class="badge badge-pill badge-primary"><?php notifCount(); ?></span>
+						</span>
+					</a>
+					<div class="dropdown-menu" id="notifDropdown" aria-labelledby="alertsDropdown">
+						<h6 class="dropdown-header">New Alerts:</h6>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">
+							<span class="text-success">
+								<strong><i class="fa fa-long-arrow-up fa-fw"></i>Sample</strong>
+							</span>
+							<span class="small float-right text-muted">11:21 AM</span>
+							<div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
+						</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item small" href="#">View all alerts</a>
+          			</div>
+					  
+
+					<!-- <ul class="dropdown-menu">
+						 notifDisplay();
 						<li>
 							<a href="admin_notification.php"><small>Show all notifications</small></a>
 						</li>
-					</ul>
+					</ul> -->
 				</li>
 			</ul>
 
         </div>
 
-        <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
+        <!-- <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
             <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
                 <li>
                     <p id="demo" hidden>
@@ -113,33 +131,33 @@
                     </p>
                 </li>
 
-				<!-- <li class="dropdown">
+				<<li class="dropdown">
                     <a href="#" style="padding-right: 30px; margin-top: 5px;">
                         <span class="glyphicon glyphicon-envelope"></span>
                     </a>
                 </li>  -->
 
                 <!-- Notification Dropdwon -->
-				<li class="dropdown">
+				<!-- <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
                         <span class="glyphicon glyphicon-bell"></span>
                         <span class="label label-pill label-warning count" style="border-radius: 10px;">
-                        <?php notifCount(); ?>
+                       
                         </span>
                     </a>
                     <ul class="dropdown-menu">
-					<?php notifDisplay(); ?>
+					
                         <li>
                             <a href="admin_notification.php"><small>Show all notifications</small></a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                 <!-- End of Notification Dropdown -->
 
                 <!-- User Dropdown -->
-	            <li class="dropdown" style="padding-left: 5px;">
+	            <!-- <li class="dropdown" style="padding-left: 5px;">
 	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="padding-right: 30px;"><i class="glyphicon glyphicon-user"></i>
-                    <?php displayName(); ?>
+                    
 	                </a>
 	            	<ul class="dropdown-menu" role="menu">
 	            		<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
@@ -147,10 +165,10 @@
 	            		<li class="divider"></li>
 	            		<li style="font-size:18px; font-weight:200px;"><a href="#logout" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
 	            	</ul>
-                </li>
+                </li> -->
                 <!-- End of User Dropdown -->
-			</ul>
-		</div>
+			<!-- </ul>
+		</div> -->
 	</nav>
 	<!-- End of Top Navigation-->
 
