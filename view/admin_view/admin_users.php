@@ -1,38 +1,10 @@
-<script type="text/javascript">
-var IDLE_TIMEOUT = 600; //seconds
-var _idleSecondsCounter = 0;
-document.onclick = function() {
-_idleSecondsCounter = 0;
-};
-document.onmousemove = function() {
-_idleSecondsCounter = 0;
-};
-document.onkeypress = function() {
-_idleSecondsCounter = 0;
-};
-window.setInterval(CheckIdleTime, 1000);
-function CheckIdleTime() {
-_idleSecondsCounter++;
-var oPanel = document.getElementById("SecondsUntilExpire");
-if (oPanel)
-oPanel.innerHTML = (IDLE_TIMEOUT - _idleSecondsCounter) + "";
-if (_idleSecondsCounter >= IDLE_TIMEOUT) {
-//alert("Time expired!");
-document.location.href = "../php/connection/logout.php";
-}
-}
-</script>
-
-<?php 
-error_reporting(0);
-
-session_start();
-require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-$ID=$_GET['id'];
-	if(!isset($_SESSION["userid"])) {
-    	header("Location: index.php");
-  	exit();
-  	}
+<?php
+    include '../../php/controller.php';
+    Login();
+    if(!isset($_SESSION["user"])) {
+        header("Location: ../../index.php");
+    }
+    Logout();
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +23,7 @@ $ID=$_GET['id'];
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!-- Our Custom CSS -->
-	<link rel="stylesheet" href="../../Public/css/style.css">
+	<link rel="stylesheet" href="../../public/css/style.css">
     <link rel="stylesheet" href="users.css">
 
 </head>
