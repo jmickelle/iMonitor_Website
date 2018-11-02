@@ -139,10 +139,10 @@
                     <div class="panel panel-body"> 
                         <div class="tab-pane fade in active" id="tab1default">
                             <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
-                                <div class="col-md-6" style="padding-top:0px;">
+                                <div class="col-md-6" style="padding-top:0px; margin-right: -260px;">
                                     <?php displayDept(); ?>
                                     <form method="POST">
-                                    <select name="dept_viewing[]" id="dept_viewing" class="form-control">
+                                    <select name="dept_viewing[]" id="dept_viewing" class="form-control" style ="width:50%;">
                                         <option value="All" selected>--All Department--</option>
                                          <?php listDepartment(); ?>
                                     </select> 
