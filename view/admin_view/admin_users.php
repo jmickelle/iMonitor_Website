@@ -27,23 +27,29 @@
 
 </head>
 <body class="sticky-footer fixed-nav bg-light" id="page-top" onload="mirrorFunction();">
-	<!-- Top navigation -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
-		<div class="navbar-header">
-			<img class="nav-logo" src="../../public/images/icons/sky_luster.png">
-<<<<<<< HEAD
-			<label class="nav-label">Monitoring</label>
-            <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-=======
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
->>>>>>> d4c4940a4d189c23f0be45356062db0df263a91c
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button> -->
-			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      			<span class="navbar-toggler-icon"></span>
-    		</button>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top col-lg-12 col-md-12 col-sm-12">
+		<img class="nav-logo" src="../../public/images/icons/sky_luster.png">
+		<label class="navbar-brand">Monitoring</label>
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      		<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+      		<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+				<!-- Dashboard -->
+			  	<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+					<a class="nav-link" href="../../view/admin_view/admin_dashboard.php" id="a-home">
+						<i class="glyphicon glyphicon-th-large"></i>
+						<span class="nav-link-text">Dashboard</span>
+					</a>
+				</li>
+				<!-- Branch Settings -->
+				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch Settings">
+					<a class="nav-link" href="../../view/admin_view/admin_dashboard.php" id="a-home">
+						<i class="glyphicon glyphicon-home"></i>
+						<span class="nav-link-text">Branch Settings</span>
+					</a>
+				</li>
+			</ul>
         </div>
 
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
