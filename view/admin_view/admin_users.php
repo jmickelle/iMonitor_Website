@@ -1,3 +1,12 @@
+<?php
+    include '../../php/controller.php';
+    Login();
+    if(!isset($_SESSION["user"])) {
+        header("Location: ../../index.php");
+    }
+    Logout();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -22,7 +31,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!-- Our Custom CSS -->
-	<link rel="stylesheet" href="../../Public/css/style.css">
+	<link rel="stylesheet" href="../../public/css/style.css">
     <link rel="stylesheet" href="users.css">
 
 </head>
