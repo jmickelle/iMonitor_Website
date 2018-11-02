@@ -210,7 +210,7 @@
             <form method="POST">
                 <div class="modal-header" style="background-color:#f5f5f5;">
                     <button type ="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 style="font-size:2em;">Computer Details</h4>
+                    <h4 style="font-size:2em; color:black;">Computer Details | ITOMAU033022</h4>
                 </div>
                 <div class="modal-body" style="margin-left:-180px; width:97%; ">
                     <div class="panel panel-default" style="margin-left:200px; padding-right:-30px; width:100%">
@@ -237,7 +237,7 @@
                                             <td style="padding-top:15px;">Windows PC</td>
                                             <td style="padding-top:15px;">Online</td>
                                             <td style="padding-top:15px;">
-                                                <input type="text" class="form-control"> 
+                                                <input type="text" class="form-control" style="display: -webkit-inline-box;"> 
                                             </td>
                                             <td class="input-Remarks "style="padding-top:15px;">
                                                 <select name="remarks" id="">
@@ -253,6 +253,7 @@
                                 </table>
                             </div>
                         </div>
+                        <div class="panel-footer"></div>
                     </div>
                 </div>
                 <div class="modal-footer">
