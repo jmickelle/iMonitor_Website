@@ -102,8 +102,9 @@
     function Logout()
     {
         require 'connection/db_connection.php';
-        if(isset($_POST['btnLogount']))
+        if(isset($_POST['btnLogout']))
         {
+            echo '<script>window.alert("LOGOUT")</script>';
             unset($_SESSION['user']);
             if (!isset($_SESSION['user']))
             {
