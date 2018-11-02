@@ -198,6 +198,7 @@
                     <td><a href="viewing.php"><input type="button" value="View" class="btn btn-primary"></a></td>
                     </tr>
                     ';
+                $_SESSION['compID'] = $row['compID'];
             }
         }
     }
