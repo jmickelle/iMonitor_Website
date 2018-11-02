@@ -43,11 +43,11 @@
                     </p>
                 </li>
 
-				<li class="dropdown">
+				<!-- <li class="dropdown">
                     <a href="#" style="padding-right: 30px; margin-top: 5px;">
                         <span class="glyphicon glyphicon-envelope"></span>
                     </a>
-                </li> 
+                </li>  -->
 
                 <!-- Notification Dropdwon -->
 				<li class="dropdown">
@@ -214,7 +214,16 @@
                 </div>
                 <div class="modal-body" style="margin-left:-180px; width:97%; ">
                     <div class="panel panel-default" style="margin-left:200px; padding-right:-30px; width:100%">
-                        <div class="panel-heading" style="padding:20px; font-size:18px;"></div>
+                        <div class="panel-heading" style="padding:20px; font-size:18px;">
+                            <h4><strong>Remarks</strong></h4>
+                            <select name="remarks" id="">
+                                <option value="leave">Active</option>
+                                <option value="leave">On leave</option>
+                                <option value="resigned">Resigned</option>
+                                <option value="transferred">Transferred</option>
+                                <option value="renamed">Old PC name</option>
+                            </select>
+                        </div>
                         <div class="panel-body" style="padding:10px; margin-left:-200px; width:100%">
                             <div class="modal-container" style="margin: 10px; padding-left: 120px; margin-right: -80px;">
                                 <table class="table table-bordered" style="margin-left:90px;">
@@ -225,8 +234,6 @@
                                         <th style="padding-bottom:15px;">MAC Address</th>
                                         <th style="padding-bottom:15px;">Motherboard Manufacturer</th>
                                         <th style="padding-bottom:15px;">Motherboard Product</th>
-                                        <th style="padding-bottom:15px;">Agent Version</th>
-                                        <th style="padding-bottom:15px;">Remarks</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -236,7 +243,7 @@
                                             <td style="padding-top:15px;">172.16.33.22</td>
                                             <td style="padding-top:15px;">Windows PC</td>
                                             <td style="padding-top:15px;">Online</td>
-                                            <td style="padding-top:15px;">
+                                            <!-- <td style="padding-top:15px;">
                                                 <input type="text" class="form-control" style="display: -webkit-inline-box;"> 
                                             </td>
                                             <td class="input-Remarks "style="padding-top:15px;">
@@ -247,7 +254,7 @@
                                                     <option value="transferred">Transferred</option>
                                                     <option value="renamed">Old PC name</option>
                                                 </select>
-                                            </td>
+                                            </td> -->
                                         </tr>
                                     </tbody>
                                 </table>
