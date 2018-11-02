@@ -31,45 +31,6 @@
                 </tr>
             </table>
         </div>
-        <div class="panel panel-default" style="width:100%;">
-            <div class="panel-heading">
-                <h4 style="font-size:20px;">Computer logs</h4>
-            </div>
-            <div class="panel-body" style="margin-left: -90px; padding-right: 115px;">
-            <table class="table table-bordered" style="margin-left:90px;">
-                <thead>
-                    <tr style="padding:50px;">
-                        <th style="padding-bottom:15px;">Domain</th>
-                        <th style="padding-bottom:15px;">IP Address</th>
-                        <th style="padding-bottom:15px;">IP Address Modified</th>
-                        <th style="padding-bottom:15px;">Old IP Address</th>
-                        <th style="padding-bottom:15px;">Old IP Address Modified</th>
-                        <th style="padding-bottom:15px;">iMonitor Status</th>
-                        <th style="padding-bottom:15px;">Services Not Found</th>
-                        <th style="padding-bottom:15px;">SysSetting File</th>
-                        <th style="padding-bottom:15px;">Connection Status</th>
-                        <th style="padding-bottom:15px;">Branch</th>
-                        <th style="padding-bottom:15px;">Scan Time</th>
-                    </tr>
-                </thead>
-                <tbody id="viewingTable">
-                    <tr>
-                        <td style="padding-top:15px;">NN</td>
-                        <td style="padding-top:15px;">172.16.33.22</td>
-                        <td style="padding-top:15px;">Aug-08-2018 02:00</td>
-                        <td style="padding-top:15px;"></td>
-                        <td style="padding-top:15px;"></td>
-                        <td style="padding-top:15px;">Running</td>
-                        <td style="padding-top:15px;">Msysys.exe<br>Mskes.exe</td>
-                        <td style="padding-top:15px;">Found</td>
-                        <td style="padding-top:15px;">Established</td>
-                        <td style="padding-top:15px;">Marvin(IT)</td>
-                        <td style="padding-top:15px;">Aug-08-2018 02:00</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
     </div>
     <div class="container">
         <div class="panel panel-default">
