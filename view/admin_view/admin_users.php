@@ -28,16 +28,19 @@
 </head>
 <body class="sticky-footer fixed-nav bg-light" id="page-top" onload="mirrorFunction();">
 	<!-- Top navigation -->
-	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
 		<div class="navbar-header">
-			<img class="nav-logo" src="../../Public/images/icons/sky_luster.png">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<img class="nav-logo" src="../../public/images/icons/sky_luster.png">
+			<label class="nav-label">Monitoring</label>
+            <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </button>
+            </button> -->
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+    		</button>
         </div>
-        <label class="nav-label">iMonitoring</label>
 
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
             <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">

@@ -56,6 +56,35 @@ body.fixed-nav
 }
 /* END OF BODY */
 
+/* NAVBAR */
+.navbar
+{
+    background-color: #fffafa;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.navbar-collapse 
+{
+    overflow: auto;
+    max-height: 75vh; 
+}
+.navbar-collapse .navbar-nav .nav-item .nav-link 
+{
+    cursor: pointer; 
+}
+@media (min-width: 992px) 
+{
+    .navbar-brand 
+    {
+      width: 250px; 
+    }
+    .navbar-collapse 
+    {
+      overflow: visible;
+      max-height: none; 
+    }
+
+/* END OF NAVBAR */
+
 
 /* Dashboard Style */
 p 
