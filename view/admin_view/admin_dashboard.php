@@ -67,7 +67,6 @@
                 <!-- User Dropdown -->
 	            <li class="dropdown" style="padding-left: 5px;">
 	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="padding-right: 30px;"><i class="glyphicon glyphicon-user"></i>
-                    
                     <?php displayName(); ?>
 	                </a>
 	            	<ul class="dropdown-menu" role="menu">
