@@ -58,6 +58,7 @@
         }
     }
 
+    // GENERAL FUNCTION
     function displayName()
     {
         require 'connection/db_connection.php';
@@ -122,5 +123,13 @@
                 exit();
             }
         }
+    }
+
+    //END
+
+    //ADMIN USER
+    function displayUser()
+    {
+        
     }
 ?>
