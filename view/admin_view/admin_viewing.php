@@ -301,7 +301,7 @@
             <div class="modal-content" style="border:2px solid #3c7dcf; box-shadow:none;">
                 <div class="modal-header" style="background-color:#f5f5f5;">
                     <button type ="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 style="font-size:2em;">Update Information</h4>
+                    <h4 style="font-size:2em;">Computer Details</h4>
                 </div>
                 <div class="modal-body" style="margin-left:-180px; width:97%; ">
                     <div class="panel panel-default" style="margin-left:200px; padding-right:-30px; width:100%">
@@ -311,12 +311,13 @@
                                 <table class="table table-bordered" style="margin-left:90px;">
                                     <thead>
                                         <tr style="padding:50px;">
-                                            <th style="padding-bottom:15px;">No.</th>
-                                            <th style="padding-bottom:15px;">Computer Name</th>
-                                            <th style="padding-bottom:15px;">IP Address</th>
-                                            <th style="padding-bottom:15px;">Platform</th>
-                                            <th style="padding-bottom:15px;">Status</th>
-                                            <th style="padding-bottom:15px;">Remarks</th>
+                                        <th style="padding-bottom:15px;">Processor</th>
+                                        <th style="padding-bottom:15px;">HDD Serial</th>
+                                        <th style="padding-bottom:15px;">MAC Address</th>
+                                        <th style="padding-bottom:15px;">Motherboard Manufacturer</th>
+                                        <th style="padding-bottom:15px;">Motherboard Product</th>
+                                        <th style="padding-bottom:15px;">Remarks</th>
+                                        <th style="padding-bottom:15px;">Agent Version</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -325,15 +326,18 @@
                                             <td style="padding-top:15px;">ITOMAU033022</td>
                                             <td style="padding-top:15px;">172.16.33.22</td>
                                             <td style="padding-top:15px;">Windows PC</td>
-                                            <td class="input-Status" style="padding-top:8px;">Online</td>
-                                            <td class="input-Remarks "style="padding-top:8px;">
-                                            <select name="remarks" id="">
-                                                <option value="leave">Active</option>
-                                                <option value="leave">On leave</option>
-                                                <option value="resigned">Resigned</option>
-                                                <option value="transferred">Transferred</option>
-                                                <option value="renamed">Old PC name</option>
-                                            </select>
+                                            <td style="padding-top:15px;">Online</td>
+                                            <td style="padding-top:15px;">
+                                                <input type="text" class="form-control"> 
+                                            </td>
+                                            <td class="input-Remarks "style="padding-top:15px;">
+                                                <select name="remarks" id="">
+                                                    <option value="leave">Active</option>
+                                                    <option value="leave">On leave</option>
+                                                    <option value="resigned">Resigned</option>
+                                                    <option value="transferred">Transferred</option>
+                                                    <option value="renamed">Old PC name</option>
+                                                </select>
                                             </td>
                                         </tr>
                                     </tbody>
