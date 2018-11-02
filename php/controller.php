@@ -85,7 +85,7 @@
     {
         require 'connection/db_connection.php';
         $notifSql = mysqli_query($con,"SELECT user,hostname,iMonitor_Status,connection_status FROM tbl_log WHERE 
-        (iMonitor_Status = 'End Task' OR connection_status = 'UNESTABLISHED') AND user != 'Administrator' ");
+        (iMonitor_Status = 'End Task' OR connection_status = 'UNESTABLISHED') AND user != 'Administrator' LIMIT 5");
         while($notifRow = mysqli_fetch_array($notifSql))
         {
             echo '
@@ -96,6 +96,16 @@
                 </li>
                 <li class="divider"></li>
                 ';
+        }
+    }
+
+    function sidebarComputerList()
+    {
+        require 'connection/db_connection.php';
+        $listSql = mysqli_query($con,"select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC");
+        while($row = mysqli_fetch_assoc($listSql))
+		{
+            echo '<li><a href="admin_viewing.php">'.$row['branch_name'].'</a></li>';
         }
     }
 
