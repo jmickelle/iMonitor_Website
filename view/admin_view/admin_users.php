@@ -31,12 +31,8 @@
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
 		<div class="navbar-header">
 			<img class="nav-logo" src="../../public/images/icons/sky_luster.png">
-<<<<<<< HEAD
 			<label class="nav-label">Monitoring</label>
             <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-=======
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
->>>>>>> d4c4940a4d189c23f0be45356062db0df263a91c
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
