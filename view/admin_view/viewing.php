@@ -66,7 +66,7 @@
             </div>
         </div>
         <div>
-            <a href="../..view/admin_view/admin_viewing.php" class="btn btn-default" style="float:right; width:130px;">Back</a>
+            <a href="admin_viewing.php" class="btn btn-default" style="float:right; width:130px;">Back</a>
             <input type="submit" class="btn btn-success" value= "Update" style="float:right; width:130px; margin-right:15px;">
         </div>
     </form>
