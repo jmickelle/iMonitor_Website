@@ -139,13 +139,12 @@
                         <div class="tab-pane fade in active" id="tab1default">
                             <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
                                 <div class="col-md-6" style="padding-top:0px; margin-right: -260px;">
-                                    <?php displayDept(); ?>
+                                    
                                     <form method="POST">
-                                    <select name="dept_viewing[]" id="dept_viewing" class="form-control" style ="width:50%;">
+                                    <select name="dept_viewing" id="dept_viewing" class="form-control" style ="width:50%;">
                                         <option value="All" selected>--All Department--</option>
                                          <?php listDepartment(); ?>
                                     </select> 
-                                    </form>
                                 </div>
                                 <div class="col-md-6" style="padding-top:0px;">
                                     <select name="dub_dept" id="sub_dept_viewing" class="form-control">
@@ -165,11 +164,12 @@
                                     </select>
                                 </div> -->
                                 <div class="col-md-4" style="padding-top:0px; margin-top:15px;">
-                                   <input type="text" class="form-control" name="search" value="Search ...">
+                                   <input type="text" class="form-control" name="search" placeholder="Search ...">
                                 </div>
                                 <div class="col-md-4" style="padding-top:15px;">
-                                    <input type="button" id="search" name="search" value="Search" class="btn btn-primary">
+                                    <input type="submit" id="search" name="bntSearch" value="Search" class="btn btn-primary">
                                     <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
+                                    </form>
                                     <!-- <input type="button" name="btnExport" id="btnExport" value="Export as Excel" class="btn btn-success" onclick="fnExcelReport();">
                                     <input type="button" name="btn_print" id="btn_print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" /> -->
                                 </div>
@@ -189,26 +189,8 @@
                                                 <th>Options</th>
                                             </tr>
                                         </thead>
-                                        <tbody id = "load_data>
-                                            <?php
-                                                $query = $db->prepare("SELECT compID, hostname, ip, status, remarks, agent_Version FROM tbl_computer_details");
-                                                $query->execute();
-                                                $query->setFetchMode(PDO::FETCH_ASSOC);
-                                                while ($row = $query->fetch()) 
-                                                {
-                                                    echo '
-                                                        <tr>
-                                                            <td> '.$row['compID'].'</td>
-                                                            <td> '.$row['hostname'].'</td>
-                                                            <td>'.$row['ip'].'</td>
-                                                            <td>'.$row['status'].'</td>
-                                                            <td>'.$row['remarks'].'</td>
-                                                            <td>'.$row['agent_Version'].'</td>
-                                                            <td><a href="viewing.php"><input type="button" value="View" class="btn btn-primary"></a></td>
-                                                        </tr>
-                                                        ';
-                                                }
-                                            ?>
+                                        <tbody id = "load_data">
+                                        <?php displayDept(); ?>
                                         </tbody>
                                     </table>
                                 </div>

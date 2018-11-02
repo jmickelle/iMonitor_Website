@@ -171,12 +171,33 @@
     function displayDept()
     {
         require 'connection/db_connection.php';
-        if(isset($_POST['dept_viewing']))
+        if(isset($_POST['bntSearch']))
         {
-            $dept = $_POST['dept_viewing'];
-            foreach($dept as $ket => $value)
+            $selectDepartment = $_POST['dept_viewing'];
+            $selectSubDepartment = $_POST['dub_dept'];
+            $getSearch = $_POST['search'];
+            if($selectDepartment == "All")
             {
-                echo '<script>window.alert('.$value.')</script>';
+                $deptSql = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details");
+            }
+            else
+            {
+                $deptSql = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details
+                WHERE branch = '$selectDepartment' OR hostname = '$getSearch' ");
+            }
+            while($row = mysqli_fetch_array($deptSql))
+            {
+                echo '
+                    <tr>
+                    <td> '.$row['compID'].'</td>
+                    <td> '.$row['hostname'].'</td>
+                    <td>'.$row['ip'].'</td>
+                    <td>'.$row['status'].'</td>
+                    <td>'.$row['remarks'].'</td>
+                    <td>'.$row['agent_Version'].'</td>
+                    <td><a href="viewing.php"><input type="button" value="View" class="btn btn-primary"></a></td>
+                    </tr>
+                    ';
             }
         }
     }
