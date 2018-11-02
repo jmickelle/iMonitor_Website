@@ -104,13 +104,14 @@
         require 'connection/db_connection.php';
         if(isset($_POST['btnLogout']))
         {
-            echo '<script>window.alert("LOGOUT")</script>';
             unset($_SESSION['user']);
+            session_destroy();
             if (!isset($_SESSION['user']))
             {
-            header("Location: ../../index.php");
-            exit();
+                header("Refresh:1; URL =  ../../index.php");
+                exit();
             }
+            header("Refresh:1; URL =  ../../index.php");
         }
     }
 ?>

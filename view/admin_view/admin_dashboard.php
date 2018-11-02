@@ -96,7 +96,7 @@
                     <?php Logout(); ?>
                     <form method="POST">
 					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size: 12px;;">Cancel</button>
-                    <button type="button" class="btn btn-warning" name="btnLogout" style="font-size: 12px;;">Logout</button>
+                    <input type="submit" class="btn btn-warning" name="btnLogout" style="font-size: 12px;" value="Logout">
 					<!-- <a class="btn btn-warning" href="../php/connection/logout.php" style="font-size:12px;"> Logout</i></a> -->
                     </form>
 				</div>
