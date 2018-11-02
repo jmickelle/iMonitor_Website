@@ -63,6 +63,20 @@
 						<span class="nav-link-text">User Accounts</span>
 					</a>
 				</li>
+
+				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reports ">
+				 	<a class="nav-link" href="../../view/admin_view/admin_viewing.php" id="a-reports">
+						<i class="glyphicon glyphicon-duplicate"></i>
+						<span class="nav-link-text">Reports</span>
+					</a>
+				</li>
+
+				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Links ">
+				 	<a class="nav-link" href="../../view/admin_view/admin_viewing.php" id="a-link">
+						<i class="glyphicon glyphicon-link"></i>
+						<span class="nav-link-text">Links</span>
+					</a>
+				</li>
 				
 			</ul>
         </div>
