@@ -85,7 +85,24 @@
 						<span class="nav-link-text">About</span>
 					</a>
 				</li>
-      		</ul>
+			</ul>
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-bell"></span>
+                        <span class="label label-pill label-warning count" style="border-radius: 10px;">
+                        <?php notifCount(); ?>
+                        </span>
+                    </a>
+					<ul class="dropdown-menu">
+						<?php notifDisplay(); ?>
+						<li>
+							<a href="admin_notification.php"><small>Show all notifications</small></a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+
         </div>
 
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
