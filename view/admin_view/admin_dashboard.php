@@ -57,18 +57,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <?php 
-                            // $query = $db->prepare("SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' LIMIT 5 ");
-                            // $query->execute();
-                            // $query->setFetchMode(PDO::FETCH_ASSOC);
-                            // while ($row = $query->fetch()) {
-                            //     echo '
-                            //     <li>
-                            //         <a href="#"><strong>'.$row['hostname'].'</strong><br>
-                            //         <small><em>'.$row['iMonitor_Status'].'</em></small></a>
-                            //     </li>
-                            //     <li class="divider"></li>
-                            //     ';
-                            // }
+                            notifDisplay();
                         ?>
                         <li>
                             <a href="admin_notification.php"><small>Show all notifications</small></a>

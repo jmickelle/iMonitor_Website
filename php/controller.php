@@ -71,8 +71,8 @@
     function notifCount()
     {
         require 'connection/db_connection.php';
-        $notifSql = mysqli_query($con,"SELECT userid,hostname,iMonitor_Status,connection_status FROM tbl_log WHERE 
-        (iMonitor_Status = 'End Task' OR connection_status = 'UNESTABLISHED') AND userid != 'Administrator' ");
+        $notifSql = mysqli_query($con,"SELECT user,hostname,iMonitor_Status,connection_status FROM tbl_log WHERE 
+        (iMonitor_Status = 'End Task' OR connection_status = 'UNESTABLISHED') AND user != 'Administrator' ");
         $notifCount = 0;
         while($notifRow = mysqli_fetch_array($notifSql))
         {
@@ -84,8 +84,8 @@
     function notifDisplay()
     {
         require 'connection/db_connection.php';
-        $notifSql = mysqli_query($con,"SELECT userid,hostname,iMonitor_Status,connection_status FROM tbl_log WHERE 
-        (iMonitor_Status = 'End Task' OR connection_status = 'UNESTABLISHED') AND userid != 'Administrator' ");
+        $notifSql = mysqli_query($con,"SELECT user,hostname,iMonitor_Status,connection_status FROM tbl_log WHERE 
+        (iMonitor_Status = 'End Task' OR connection_status = 'UNESTABLISHED') AND user != 'Administrator' ");
         while($notifRow = mysqli_fetch_array($notifSql))
         {
             echo '
