@@ -149,9 +149,6 @@
                                     </form>
                                 </div>
                                 <div class="col-md-4" style="padding-top:0px;">
-                                    
-                                </div>
-                                <div class="col-md-4" style="padding-top:0px;">
                                     <select name="dub_dept" id="sub_dept_viewing" class="form-control">
                                         <option value="" selected>--All Sub-Department--</option>
                                          <!-- FOR SUB DEPARTMENT -->
@@ -164,15 +161,18 @@
 
                                     </select>
                                 </div>
+                                <div class="col-md-4" style="padding-top:0px;">
+                                    
+                                </div>
                                 <div class="col-md-4" style="padding-top:0px; margin-top:15px;">
                                    <input type="text" class="form-control" name="search" value="Search ...">
                                 </div>
-                                <div class="col-md-4" style="padding-top:0px; margin-top:15px;"> </div>
                                 <div class="col-md-4" style="padding-top:15px;">
                                     <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                                     <input type="button" name="btnExport" id="btnExport" value="Export as Excel" class="btn btn-success" onclick="fnExcelReport();">
                                     <input type="button" name="btn_print" id="btn_print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" />
                                 </div>
+                                <div class="col-md-4" style="padding-top:0px; margin-top:15px;"> </div>
                                 <div style="clear:both"></div>
                                 <br>
                                 <div class="table-responsive" style="overflow-x:auto; padding-right:5px;" id="tb_div">
