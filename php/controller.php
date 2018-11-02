@@ -145,7 +145,7 @@
             <td>'.$row['status'].'</td>
             <td><a  data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
             </tr>';
-            // <!-- 'include(edit_modal.php')' -->
+            // <!-- 'include('edit_modal.php')' -->
         }
     }
 ?>

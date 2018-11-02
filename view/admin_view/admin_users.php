@@ -161,7 +161,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-										<?php displayUser(); ?>
+										<?php  displayUser(); ?>
                                     </tbody>
                                 </table>
                             </div>
