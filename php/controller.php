@@ -134,6 +134,7 @@
         $userDisplay = mysqli_query($con,"SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role <> 'SUPER ADMIN'");
         foreach($userDisplay as $row)
         {
+            $_SESSION['userid'] = $row['userid'];
             echo '
             <tr>
             <td>'.$row['userid'].'</td>
@@ -142,7 +143,7 @@
             <td>'.$row['position'].'</td>
             <td>'.$row['role'].'</td>
             <td>'.$row['status'].'</td>
-            <td></td>
+            <td><input type="submit" name="btnEditRecord" class="btn btn-primary" value="'.$_SESSION['userid'].'"></td>
             </tr>';
             // <td><a href="'.$_SESSION['userid'] = $row['userid'].'"data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
             userEdit();
@@ -152,6 +153,6 @@
 
     function userEdit()
     {
-        echo '<script>window.alert('.$_SESSION['userid'].')</script>';
+        //echo '<script>window.alert('.$_SESSION['userid'].')</script>';
     }
 ?>
