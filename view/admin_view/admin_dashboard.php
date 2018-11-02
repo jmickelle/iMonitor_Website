@@ -50,15 +50,11 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
                         <span class="glyphicon glyphicon-bell"></span>
                         <span class="label label-pill label-warning count" style="border-radius: 10px;">
-                        <?php
-                            notifCount();
-                        ?>
+                        <?php notifCount(); ?>
                         </span>
                     </a>
                     <ul class="dropdown-menu">
-                        <?php 
-                            notifDisplay();
-                        ?>
+                        <?php notifDisplay(); ?>
                         <li>
                             <a href="admin_notification.php"><small>Show all notifications</small></a>
                         </li>
@@ -70,9 +66,7 @@
 	            <li class="dropdown" style="padding-left: 5px;">
 	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="padding-right: 30px;"><i class="glyphicon glyphicon-user"></i>
                     
-                    <?php
-                        displayName();
-                    ?>
+                    <?php displayName(); ?>
 	                </a>
 	            	<ul class="dropdown-menu" role="menu">
 	            		<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
@@ -99,6 +93,7 @@
 					</form>
 				</div>
 				<div class="modal-footer">
+                    <?php Logout(); ?>
                     <form method="POST">
 					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size: 12px;;">Cancel</button>
                     <button type="button" class="btn btn-warning" name="btnLogout" style="font-size: 12px;;">Logout</button>

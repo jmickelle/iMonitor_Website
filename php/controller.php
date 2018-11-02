@@ -104,7 +104,12 @@
         require 'connection/db_connection.php';
         if(isset($_POST['btnLogount']))
         {
-            
+            unset($_SESSION['user']);
+            if (!isset($_SESSION['user']))
+            {
+            header("Location: ../../index.php");
+            exit();
+            }
         }
     }
 ?>
