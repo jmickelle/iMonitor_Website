@@ -20,6 +20,10 @@
                 <table class="tbl-view">
                     <tr>
                         <td><h1 style="margin-bottom:30px; margin-right:1130px;">ITOMAU033022 | Camille</h1></td>
+                        <td><h4 style="margin-right:20px;"><strong>Agent Version:</strong></h4></td>
+                        <td>
+                            <input type="text" id="agent">
+                        </td>
                         <td><h4 style="margin-right:20px;"><strong>Remarks:</strong></h4></td>
                         <td>
                             <select name="status" id="stats">
@@ -62,7 +66,7 @@
             </div>
         </div>
         <div>
-            <a href="admin_viewing.php"><button class="btn btn-default" style="float:right; width:130px;">Back</button></a>
+            <a href="../..view/admin_view/admin_viewing.php"><button class="btn btn-default" style="float:right; width:130px;">Back</button></a>
             <input type="submit" class="btn btn-success" value= "Update" style="float:right; width:130px; margin-right:15px;">
         </div>
     </form>
