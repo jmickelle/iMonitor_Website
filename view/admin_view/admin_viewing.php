@@ -207,7 +207,7 @@
                                 <option value="renamed">Old PC name</option>
                             </select>
                             <h4><strong>Agent Version</strong></h4>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" style="width: 10%; height: 30px;">
                         </div>
                         <div class="panel-body" style="padding:10px; margin-left:-200px; width:100%">
                             <div class="modal-container" style="margin: 10px; padding-left: 120px; margin-right: -80px;">
