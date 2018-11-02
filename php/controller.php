@@ -9,9 +9,9 @@
             $userid = mysqli_real_escape_string($con,$_POST['userid']);
             $password = mysqli_real_escape_string($con,$_POST['password']);
             $encPassword = md5(sha1($password));
-            $loginQuery = mysqli_query($con,"SELECT * FROM tbl_user WHERE userid = '{$userid}' 
-            AND password = '{$encPassword}'");
-            if($loginRow = mysqli_fetch_assoc($loginQuery))
+            $loginQuery = mysqli_query($con,"SELECT * FROM tbl_user WHERE userid = '{$userid}' ");
+            $loginRow = mysqli_fetch_assoc($loginQuery);
+            if(password_verify($password, $loginRow['password']))
             {
                 $id = $loginRow['id'];
                 if($loginRow['status'] == "Active")
@@ -22,15 +22,15 @@
                     <p style="text-align:center">You are logged in. Please wait.</p>
                     </div>
                     ';
-                    if($loginRow['role'] == "Administrator")
+                    if($loginRow['role'] == "ADMINISTRATOR")
                     {
-                        header("Refresh:1; URL = View/admin_view/admin_dashboard.php");
+                        header("Refresh:2; URL = View/admin_view/admin_dashboard.php");
                     }
                     else 
                     {
                         echo '
                         <div class="notification-success">
-                        <p style="text-align:center">USER</p>
+                        <p style="text-align:center">STAFF</p>
                         </div>
                         ';
                     }

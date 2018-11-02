@@ -1,43 +1,12 @@
-<script type="text/javascript">
-var IDLE_TIMEOUT = 600; //seconds
-var _idleSecondsCounter = 0;
-document.onclick = function() {
-_idleSecondsCounter = 0;
-};
-document.onmousemove = function() {
-_idleSecondsCounter = 0;
-};
-document.onkeypress = function() {
-_idleSecondsCounter = 0;
-};
-window.setInterval(CheckIdleTime, 1000);
-function CheckIdleTime() {
-_idleSecondsCounter++;
-var oPanel = document.getElementById("SecondsUntilExpire");
-if (oPanel)
-oPanel.innerHTML = (IDLE_TIMEOUT - _idleSecondsCounter) + "";
-if (_idleSecondsCounter >= IDLE_TIMEOUT) {
-//alert("Time expired!");
-document.location.href = "../php/connection/logout.php";
-}
-}
-</script>
-
-<?php
-// error_reporting(0);
-session_start();
-
-// require "{$_SERVER['DOCUMENT_ROOT']}/controller/connection/db_connection.php";
-require "../../controller/connection/db_connection.php";
-
-if(!isset($_SESSION["userid"])) {
-  header("Location: index.php");
-exit();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+<?php
+    include '../../php/controller.php';
+    Login();
+    if(!isset($_SESSION["user"])) {
+        header("Location: ../../index.php");
+    }
+?>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,13 +16,13 @@ exit();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="../../public/css/general.css">
+    <link rel="stylesheet" href="../../Public/css/Style.css">
 </head>
 <body>
     <!-- Top Navigation -->
 	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
 		<div class="navbar-header">
-			<img class="nav-logo" src="icons/sky_luster.png">
+			<img class="nav-logo" src="../../Public/images/icons/sky_luster.png">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
@@ -82,31 +51,24 @@ exit();
                         <span class="glyphicon glyphicon-bell"></span>
                         <span class="label label-pill label-warning count" style="border-radius: 10px;">
                         <?php
-                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
-                            $query->execute();
-                            $query->setFetchMode(PDO::FETCH_ASSOC);
-                            $countdown = 0;
-                            while ($row = $query->fetch()) {
-                                $countdown++;
-                            }
-                            echo  $countdown;
+                            notifCount();
                         ?>
                         </span>
                     </a>
                     <ul class="dropdown-menu">
                         <?php 
-                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' LIMIT 5 ");
-                            $query->execute();
-                            $query->setFetchMode(PDO::FETCH_ASSOC);
-                            while ($row = $query->fetch()) {
-                                echo '
-                                <li>
-                                    <a href="#"><strong>'.$row['hostname'].'</strong><br>
-                                    <small><em>'.$row['iMonitor_Status'].'</em></small></a>
-                                </li>
-                                <li class="divider"></li>
-                                ';
-                            }
+                            // $query = $db->prepare("SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' LIMIT 5 ");
+                            // $query->execute();
+                            // $query->setFetchMode(PDO::FETCH_ASSOC);
+                            // while ($row = $query->fetch()) {
+                            //     echo '
+                            //     <li>
+                            //         <a href="#"><strong>'.$row['hostname'].'</strong><br>
+                            //         <small><em>'.$row['iMonitor_Status'].'</em></small></a>
+                            //     </li>
+                            //     <li class="divider"></li>
+                            //     ';
+                            // }
                         ?>
                         <li>
                             <a href="admin_notification.php"><small>Show all notifications</small></a>
@@ -120,14 +82,14 @@ exit();
 	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="padding-right: 30px;"><i class="glyphicon glyphicon-user"></i>
                     
                     <?php
-                        $query = $db->prepare("SELECT name FROM tbl_user WHERE userid=:userid");
-                        $query->bindValue(':userid', $_SESSION['userid'], PDO::PARAM_STR);
-                        $query->execute();
-                        $query->setFetchMode(PDO::FETCH_ASSOC);
+                        // $query = $db->prepare("SELECT name FROM tbl_user WHERE userid=:userid");
+                        // $query->bindValue(':userid', $_SESSION['userid'], PDO::PARAM_STR);
+                        // $query->execute();
+                        // $query->setFetchMode(PDO::FETCH_ASSOC);
          
-                        while ($row = $query->fetch()) {
-                        echo 'Welcome: ' . $row['name'];
-                        }
+                        // while ($row = $query->fetch()) {
+                        // echo 'Welcome: ' . $row['name'];
+                        // }
                     ?>
 	                </a>
 	            	<ul class="dropdown-menu" role="menu">
@@ -179,14 +141,14 @@ exit();
 		            <ul class="collapse list-unstyled" id="homeSubmenu">
 		                <li id="branch">
                             <?php     
-              				    $sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
-              				    $stmt = $db->prepare($sql);
-              				    $stmt->execute();
+              				    // $sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
+              				    // $stmt = $db->prepare($sql);
+              				    // $stmt->execute();
 
-							    while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-							        {
-                					echo '<li><a href="admin_viewing.php">'.$row['branch_name'].'</a></li>';
-              				        }
+							    // while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+							    //     {
+                				// 	echo '<li><a href="admin_viewing.php">'.$row['branch_name'].'</a></li>';
+              				    //     }
             				?>
                         </li>
 		            </ul>
