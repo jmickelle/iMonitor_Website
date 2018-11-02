@@ -63,7 +63,7 @@
         </div>
         <div>
             <a href="admin_viewing.php"><button class="btn btn-default" style="float:right; width:130px;">Back</button></a>
-            <input type="btn btn-success" style="float:right; width:130px; margin-right:15px;">Update</button></a>
+            <input type="submit" class="btn btn-success" value= "Update" style="float:right; width:130px; margin-right:15px;">
         </div>
     </form>
 </body>
