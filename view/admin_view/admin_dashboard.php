@@ -6,6 +6,7 @@
     if(!isset($_SESSION["user"])) {
         header("Location: ../../index.php");
     }
+    Logout();
 ?>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -94,7 +95,6 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-                    <?php Logout(); ?>
                     <form method="POST">
 					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size: 12px;;">Cancel</button>
                     <input type="submit" class="btn btn-warning" name="btnLogout" style="font-size: 12px;" value="Logout">
@@ -121,16 +121,7 @@
 		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
 		            <ul class="collapse list-unstyled" id="homeSubmenu">
 		                <li id="branch">
-                            <?php     
-              				    // $sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
-              				    // $stmt = $db->prepare($sql);
-              				    // $stmt->execute();
-
-							    // while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-							    //     {
-                				// 	echo '<li><a href="admin_viewing.php">'.$row['branch_name'].'</a></li>';
-              				    //     }
-            				?>
+                            <?php sidebarComputerList(); ?>
                         </li>
 		            </ul>
 		        </li>
