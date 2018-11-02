@@ -146,23 +146,6 @@
                                          <?php listDepartment(); ?>
                                     </select> 
                                 </div>
-                                <div class="col-md-6" style="padding-top:0px;">
-                                    <select name="dub_dept" id="sub_dept_viewing" class="form-control">
-                                        <option value="" selected>--All Sub-Department--</option>
-                                         <!-- FOR SUB DEPARTMENT -->
-								            <script type="text/javascript">
-									            $("#dept_viewing").change(function() {
-  									            $("#sub_dept_viewing").load("get_sub_department.php?branch_name=" + $("#dept_viewing").val());
-									            });
-								            </script>
-								        <!-- END -->                                    
-                                    </select>
-                                </div>
-                                <!-- <div class="col-md-4" style="padding-top:0px;">
-                                    <select name="dub_dept" id="sub_dept_viewing" class="form-control">
-                                        <option value="" selected>--All Sub-Department--</option>                              
-                                    </select>
-                                </div> -->
                                 <div class="col-md-4" style="padding-top:0px; margin-top:15px;">
                                    <input type="text" class="form-control" name="search" placeholder="Search ...">
                                 </div>
@@ -223,6 +206,8 @@
                                 <option value="transferred">Transferred</option>
                                 <option value="renamed">Old PC name</option>
                             </select>
+                            <h4><strong>Agent Version</strong></h4>
+                            <input type="text" class="form-control">
                         </div>
                         <div class="panel-body" style="padding:10px; margin-left:-200px; width:100%">
                             <div class="modal-container" style="margin: 10px; padding-left: 120px; margin-right: -80px;">
