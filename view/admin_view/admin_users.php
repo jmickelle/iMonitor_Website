@@ -58,36 +58,11 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
                         <span class="glyphicon glyphicon-bell"></span>
                         <span class="label label-pill label-warning count" style="border-radius: 10px;">
-                        <?php
-                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status,scan_time FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
-                            $query->execute();
-                            $query->setFetchMode(PDO::FETCH_ASSOC);
-							$countdown = 0;
-                            while ($row = $query->fetch()) {
-                                $countdown++;
-                            }
-                            echo  $countdown;
-                        ?>
+                        <?php notifCount(); ?>
                         </span>
                     </a>
                     <ul class="dropdown-menu">
-						<?php 
-							$d=strtotime("Now");		
-							$dateNow = date("Y-m-d h:i:sa", $d);
-                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status,scan_time FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' LIMIT 5 ");
-                            $query->execute();
-                            $query->setFetchMode(PDO::FETCH_ASSOC);
-                            while ($row = $query->fetch()) {
-                                echo '
-                                <li>
-                                    <a href="#"><strong>'.$row['hostname'].'</strong><br>
-									<small><em>'.$row['iMonitor_Status'].'</em></small></a>
-									<small><em>'.$row['scan_time'].'</em></small></a>
-                                </li>
-                                <li class="divider"></li>
-                                ';
-                            }
-                        ?>
+					<?php notifDisplay(); ?>
                         <li>
                             <a href="admin_notification.php"><small>Show all notifications</small></a>
                         </li>
@@ -98,17 +73,7 @@
                 <!-- User Dropdown -->
 	            <li class="dropdown" style="padding-left: 5px;">
 	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="padding-right: 30px;"><i class="glyphicon glyphicon-user"></i>
-                    
-                    <?php
-                        $query = $db->prepare("SELECT name FROM tbl_user WHERE userid=:userid");
-                        $query->bindValue(':userid', $_SESSION['userid'], PDO::PARAM_STR);
-                        $query->execute();
-                        $query->setFetchMode(PDO::FETCH_ASSOC);
-         
-                        while ($row = $query->fetch()) {
-                        echo 'Welcome: ' . $row['name'];
-                        }
-                    ?>
+                    <?php displayName(); ?>
 	                </a>
 	            	<ul class="dropdown-menu" role="menu">
 	            		<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
@@ -158,16 +123,7 @@
 		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
 		            <ul class="collapse list-unstyled" id="homeSubmenu">
 		                <li>
-							<?php     
-              				    $sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
-              				    $stmt = $db->prepare($sql);
-              				    $stmt->execute();
-
-							    while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-							        {
-                					echo '<li><a href="admin_viewing.php">'.$row['branch_name'].'</a></li>';
-              				        }
-            				?>
+							<?php sidebarComputerList(); ?>
 						</li>
 		            </ul>
 		        </li>
