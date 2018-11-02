@@ -203,102 +203,11 @@
                                       
 	<!-- End of Sidebar -->
 
-    <!-- Table -->
-    <!-- <div class="container-body">
-        <div class="info">
-            <p><strong>MARVIN 5TH | COMPUTER LIST</strong></p>
-        </div>
-         <div class="container-table">
-            <div class="row">
-                <table class="table-viewing" style="margin-top: 80px; position:relative;">
-                    <tr class="tr-dept">
-                        <td><b>Sub Department:</b></td>
-                        <td><select name="branches">
-                            <option value="ad"></option>
-                            <option value="ad">Admin</option>
-                            <option value="hr">HR</option>
-                            <option value="fn">Finance</option>
-                            <option value="om">IT-OM</option>
-                            <option value="aud">Audit</option>
-                            <option value="devja">Java Developers</option>
-                            <option value="devios">iOS Developers</option>
-                            <option value="devand">Android Developers</option>
-                            <option value="omnet">Networks</option>
-                            <option value="omweb">OM-Web</option>
-                        </td>
-                    </tr>
-                    <tr class="tr-search">
-                        <td><b>Search:</b></td>
-                        <td><input class="form-control" id="inputSearch" type="text" placeholder="Search..."></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="#logout" class="print-pdf"><u><i class="glyphicon glyphicon-print"> Print as PDF</i></u></a>
-                        </td>
-                        <td class="export">
-                            <a href="#"><u><i class="glyphicon glyphicon-export"> Export as Excel File</i></u></a>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-             <div>
-                <ul class="pagination pagination-sm">
-                    <li><a href="">&laquo;</a></li>
-                    <li><a class="active" href="" >1</a></li>
-                    <li><a href="" >2</a></li>
-                    <li><a href="" >3</a></li>
-                    <li><a href="" >4</a></li>
-                    <li><a href="" >5</a></li>
-                    <li><a href="">&raquo;</a></li>
-                </ul>
-            </div>     -->
-            <!-- <div class="container">
-                <table class="table table-bordered" style="position: fixed; margin-left:2px; margin-top: 250px; margin-bottom:0px; width:88%;">
-                    <thead>
-                        <tr>
-                            <th style="padding-bottom:15px;">No.</th>
-                            <th style="padding-bottom:15px;">Computer Name</th>
-                            <th style="padding-bottom:15px;">IP Address</th>
-                            <th style="padding-bottom:15px;">Platform</th>
-                            <th style="padding-bottom:15px;">Status</th>
-                            <th style="padding-bottom:15px;">Remarks</th>
-                            <th style="padding-bottom:15px;">Options</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>ITOMAU03022</td>
-                            <td>172.16.33.22</td>
-                            <td>Windows PC</td>
-                            <td>On-line</td>
-                            <td>Active</td>
-                            <td>
-                                <a href="viewing.html"><button class="btn btn-primary">View</button></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>ITOMAU03022</td>
-                            <td>172.16.33.22</td>
-                            <td>Windows PC</td>
-                            <td>On-line</td>
-                            <td>Active</td>
-                            <td>
-                                <a href="viewing.html"><button class="btn btn-primary">View</button></a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>           
-    </div> -->
-
     <!-- Edit Modal -->
     <div id="myModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"aria-hidden="true" style="width:100%; margin-left:0px; margin-top:50px; position:absolute; overflow:hidden;">
         <div class="modal-dialog modal-md" style="position:fixed; width:100%; height:100%;">
             <div class="modal-content" style="border:2px solid #3c7dcf; box-shadow:none;">
+            <form method="POST">
                 <div class="modal-header" style="background-color:#f5f5f5;">
                     <button type ="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 style="font-size:2em;">Computer Details</h4>
@@ -348,8 +257,10 @@
                 </div>
                 <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success" data-dismiss="modal">Update</button>
+                        <!-- <button type="button" class="btn btn-success" data-dismiss="modal">Update</button> -->
+                        <input type="submit" class="btn btn-success" data-dismiss="modal" value="Update">
                 </div>
+            </form>
             </div>   
         </div>
     </div>
