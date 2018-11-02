@@ -74,12 +74,19 @@
         require 'connection/db_connection.php';
         $notifSql = mysqli_query($con,"SELECT user,hostname,iMonitor_Status,connection_status FROM tbl_log WHERE 
         (iMonitor_Status = 'End Task' OR connection_status = 'UNESTABLISHED') AND user != 'Administrator' ");
+        $notifSql2 = mysqli_query($con,"SELECT hostname,agent_version FROM tbl_computer_details 
+        WHERE agent_version != '9.614' OR agent_version != '9.617'");
         $notifCount = 0;
+        $notifCount2 = 0;
         while($notifRow = mysqli_fetch_array($notifSql))
         {
             $notifCount++;
         }
-        echo $notifCount;
+        while($notifRow2 = mysqli_fetch_array($notifSql2))
+        {
+            $notifCount2++;
+        }
+        echo $notifCount + $notifCount2 ;
     }
 
     function notifDisplay()
