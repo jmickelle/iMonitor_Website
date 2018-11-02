@@ -6,6 +6,7 @@
     if(!isset($_SESSION["user"])) {
         header("Location: ../../index.php");
     }
+    Logout();
 ?>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -93,7 +94,6 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-                    <?php Logout(); ?>
                     <form method="POST">
 					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size: 12px;;">Cancel</button>
                     <input type="submit" class="btn btn-warning" name="btnLogout" style="font-size: 12px;" value="Logout">

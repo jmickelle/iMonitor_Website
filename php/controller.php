@@ -108,10 +108,9 @@
             session_destroy();
             if (!isset($_SESSION['user']))
             {
-                header("Refresh:1; URL =  ../../index.php");
+                header("Refresh:0; URL =  ../../index.php");
                 exit();
             }
-            header("Refresh:1; URL =  ../../index.php");
         }
     }
 ?>
