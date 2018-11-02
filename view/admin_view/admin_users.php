@@ -29,7 +29,7 @@
 <body class="sticky-footer fixed-nav bg-light" id="page-top" onload="mirrorFunction();">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top col-lg-12 col-md-12 col-sm-12">
 		<img class="nav-logo" src="../../public/images/icons/sky_luster.png">
-		<a class="navbar-label">Monitoring</a>
+		<a class="navbar-label" style ="font-size: 1.5em;">Monitoring</a>
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       		<span class="navbar-toggler-icon"></span>
 		</button>
@@ -77,8 +77,15 @@
 						<span class="nav-link-text">Links</span>
 					</a>
 				</li>
-				
 			</ul>
+			<ul class="navbar-nav sidenav-toggler">
+				<li class="nav-item">
+					<a class="nav-link text-center" href="" id="sidenavToggler">
+						<i class="glyphicon glyphicon-info-sign"></i>
+						<span class="nav-link-text">About</span>
+					</a>
+				</li>
+      		</ul>
         </div>
 
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>

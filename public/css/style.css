@@ -135,6 +135,33 @@ body.fixed-nav
     {
         padding: 1em;
     }
+    .fixed-top .sidenav-toggler 
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        overflow-x: hidden;
+        overflow-y: auto;
+        flex-direction: column;
+        margin-top: calc(100vh - 56px);
+    }
+    .fixed-top .sidenav-toggler > .nav-item 
+    {
+        width: 250px;
+        padding: 0;
+    }
+    .fixed-top .sidenav-toggler > .nav-item > .nav-link 
+    {
+        padding: 1em;
+    }
+    .navbar-collapse .navbar-nav .nav-item .nav-link {
+        cursor: pointer;
+    }
+}
+.fixed-top.navbar-light .sidenav-toggler 
+{
+    background-color: #dee2e6;
 }
 
 /* END OF NAVBAR */
