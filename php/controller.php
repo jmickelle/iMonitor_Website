@@ -181,7 +181,7 @@
         if(isset($_POST['bntSearch']))
         {
             $selectDepartment = $_POST['dept_viewing'];
-            $selectSubDepartment = $_POST['dub_dept'];
+            // $selectSubDepartment = $_POST['dub_dept'];
             $getSearch = $_POST['search'];
             if($selectDepartment == "All")
             {

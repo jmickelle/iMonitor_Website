@@ -112,11 +112,11 @@
 		        </li>
 		        <li class="active">
 		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
-		            <ul class="collapse list-unstyled" id="homeSubmenu">
+		            <!-- <ul class="collapse list-unstyled" id="homeSubmenu">
 		                <li>
-                            <?php sidebarComputerList(); ?>
+                           
                        </li> 
-		            </ul>
+		            </ul> -->
 		        </li>
 		        <li>
 		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
@@ -127,7 +127,7 @@
 	   		</ul>
         </nav>
         <div class="container" style="width:100%;">
-            <div class="well" style="padding: 10px;">Computer List</div>
+            <div class="well">Computer List</div>
             <div class="col-lg-12">
                 <div class="panel with-nav-tabs pane-default" style="margin-left: -30px; width: 105%;">
                     <div class="panel panel-body"> 

@@ -118,11 +118,11 @@
 		        </li>
 		        <li >
 		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
-		            <ul class="collapse list-unstyled" id="homeSubmenu">
+		            <!-- <ul class="collapse list-unstyled" id="homeSubmenu">
 		                <li id="branch">
-                            <?php sidebarComputerList(); ?>
+                            
                         </li>
-		            </ul>
+		            </ul> -->
 		        </li>
 		        <li>
 		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>

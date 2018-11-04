@@ -41,14 +41,14 @@
                         Login();
                     ?>
                     <form method="POST">
-                        <div class="thumbnail">
+                        <!-- <div class="thumbnail"> -->
                             <div class="form-group input-group" style="margin-left: -90px; padding: 30px 30px; margin-bottom: 0px;">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                 <input class="form-control" id="userid" placeholder="User ID" name="userid" type="text" autofocus="autofocus" style="width: 150%;"required>
                             </div>
                             <div class="form-group input-group" style="margin-left: -90px; padding: 0px 30px;">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input class="form-control" id="password" placeholder="Password" name="password" type="password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" style="width: 150%;" required>
+                                <input class="form-control" id="password" placeholder="Password" name="password" type="password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                             </div>
                             <div class="form-group">
                                 <button type="submit" name="btnLogin" class="btn btn-primary btn-block" style="width:70%; margin-left:50px; position: inherit;">Login</button></a>
@@ -57,7 +57,7 @@
                                 <!-- <a href="#" style="color:white;">Forgot Password</a> -->
                                 
                             </div>
-                        </div>
+                        <!-- </div> -->
                     </form>
                     <!-- <h1 style="padding-top:110px; font-family: Verdana, Geneva, sans-serif; color: white; text-align:center; font-size: 60px; letter-spacing: 5px;">SKYLUSTER TECHNOLOGY INC.</h1> -->
                 </div>
