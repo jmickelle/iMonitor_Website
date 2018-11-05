@@ -108,7 +108,7 @@
 
 	<!-- Sidebar -->
 	<div class="wrapper">
-		<nav id="sidebar">
+		<nav id="sidebar" style="margin-top: 20px;">
 			<ul class="list-unstyled components">
 		        <p></p>
 		        <li>
@@ -181,7 +181,7 @@
                                         displayDept(); 
                                     ?>
                                 </tbody>
-                                <tfoot>
+                                <tfoot style="text-align: -webkit-center;">
                                     <tr>
                                         <th>No</th>
                                         <th>Computer Name</th>
