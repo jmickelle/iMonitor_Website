@@ -74,6 +74,9 @@
             </table>
         </div>
     </div>
+    <div class="footer">
+            <i class="glyphicon glyphicon-copyright-mark"><p style="padding:5px;">Copyrights 2018</p></i>
+    </div>
     <div>
         <a href="admin_viewing.php"><button class="btn btn-default" style="float:right; width:130px;">Back</button></a>
         <a href=""><button class="btn btn-success" style="float:right; width:130px; margin-right:15px;">Update</button></a>
