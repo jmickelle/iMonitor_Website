@@ -132,48 +132,42 @@
 		        </li>	  
 	   		</ul>
 		</nav>
-        <div class="container" id=content>
-            <div class="col-lg-12">
-                <div class="progress-bar bg-success"></div>
-            </div>    
-        </div>
-	</div>               
+		<div class="container" style="width:100%;">
+			<div class="well">User Accounts</div>
+				<div class="container-fluid">
+					<!-- <div class="panel with-nav-tabs pane-default" style="margin-left: -30px;">
+						<div class="panel panel-heading">
+							<a href="#addUser" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i><u>Add User</u></a>
+						</div>
+						<div class="panel panel-body"> 
+							<div style="clear:both"></div>
+							<br>
+								<div class="table-responsive" style=" margin-top:-50px;">
+									<table class="table table-bordered" style="background: #ffffff;">
+										<thead>
+											<tr>
+												<th style="padding-bottom:15px;">ID Number</th>
+												<th style="padding-bottom:15px;">Name</th>
+												<th style="padding-bottom:15px;">Department</th>
+												<th style="padding-bottom:15px;">Position</th>
+												<th style="padding-bottom:15px;">Role</th>
+												<th style="padding-bottom:15px;">Status</th>
+												<th style="padding-bottom:15px;">Option</th>
+											</tr>
+										</thead>
+										<tbody>
+											 displayUser(); ?>
+										</tbody>
+									</table>
+								</div>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+    </div>              
 
 	<!-- End of Sidebar -->
-    <div class="container" style="width:100%;">
-        <div class="well">User Accounts</div>
-            <div class="col-lg-12">
-				<div class="panel with-nav-tabs pane-default" style="margin-left: -30px;">
-					<div class="panel panel-heading">
-						<a href="#addUser" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i><u>Add User</u></a>
-					</div>
-                    <div class="panel panel-body"> 
-                        <div style="clear:both"></div>
-                        <br>
-                        	<div class="table-responsive" style=" margin-top:-50px;">
-                                <table class="table table-bordered" style="background: #ffffff;">
-                                    <thead>
-                                    	<tr>
-											<th style="padding-bottom:15px;">ID Number</th>
-											<th style="padding-bottom:15px;">Name</th>
-											<th style="padding-bottom:15px;">Department</th>
-											<th style="padding-bottom:15px;">Position</th>
-											<th style="padding-bottom:15px;">Role</th>
-											<th style="padding-bottom:15px;">Status</th>
-											<th style="padding-bottom:15px;">Option</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-										<?php  displayUser(); ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                     </div>
-                </div>
-            </div>
-		</div>
-	</div>
-	<!-- End of User Table -->
 
 <!-- Add User Modal -->
 <form action="../php/connection/user_account_submit.php" method="POST">
