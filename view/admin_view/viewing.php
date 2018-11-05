@@ -23,6 +23,8 @@
     $compSql = mysqli_query($con,"SELECT * FROM tbl_computer_details WHERE compID = '$id'");
     if($row = mysqli_fetch_assoc($compSql)){
     ?>
+    <?php updateComp(); ?>
+    <form method="POST">
     <div class="container" style="width: 100%;">
         <div class="container-fluid">
             <div class="card">
@@ -33,8 +35,8 @@
                         </div>
                         <div class="col-md-3">
                             <h4><strong>Remarks</strong></h4>
-                            <select class="form-control" name="status" id="stats"  style="width:50%; margin-top: 15px; margin-bottom: 10px;">
-                                <option value="?php $row['remarks']; ?>"><?php echo $row['remarks']; ?></option>
+                            <select class="form-control" name="remarks" id="stats"  style="width:50%; margin-top: 15px; margin-bottom: 10px;">
+                                <option value="<?php $row['remarks']; ?>"><?php echo $row['remarks']; ?></option>
                                 <option value="Active">Active</option>
                                 <option value="Resigned">Resigned</option>
                                 <option value="Transferred">Transferred</option>
@@ -43,7 +45,7 @@
                         </div>
                         <div class="col-md-3">
                             <h4><strong>Agent Version:</strong></h4>
-                           <input type="text" class="form-control" style="width:50%; margin-top: 15px;">
+                           <input type="text" name="agent_version" value="<?php echo $row['agent_version']; ?>" class="form-control" style="width:50%; margin-top: 15px;">
                         </div>
                     </div>
                 </div>
@@ -88,8 +90,8 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-md-12">
-                            <a href="admin_viewing.php"><input type="button" value="Back" class="btn btn-default" style="float:right; width:130px;"></a>
-                            <a href=""><input type="button" value="Update" class="btn btn-success" style="float:right; width:130px; margin-right:15px;"></a>
+                            <a href="admin_viewing.php" class="btn btn-default" style="float:right; width:130px;">Back</a>
+                            <a href="admin_viewing.php"><input type="submit" value="Update" name="btnUpdate" class="btn btn-success" style="float:right; width:130px; margin-right:15px;"></a>
                         </div>
                     </div>
                 </div>
