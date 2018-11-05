@@ -35,8 +35,8 @@
                             <h3>ITOMAU033022</h3>
                         </div>
                         <div class="col-md-3">
-                            <select class="form-control" name="status" id="stats">
-                                <option value="?php $row['remarks']; ?>">?php echo $row['remarks']; ?></option>
+                            <select class="form-control" name="remarks" id="stats">
+                                <option value="?php $row['remarks']; ?>"><?php echo $row['remarks']; ?></option>
                                 <option value="Active">Active</option>
                                 <option value="Resigned">Resigned</option>
                                 <option value="Transferred">Transferred</option>
