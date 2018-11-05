@@ -27,7 +27,7 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <div class="row">
+                    <div class="row" style="display: inline-block;">
                         <div class="col-md-3">
                             <h3>Computer Details</h3>
                         </div>
@@ -35,8 +35,9 @@
                             <h3>ITOMAU033022</h3>
                         </div>
                         <div class="col-md-3">
-                            <select class="form-control" name="status" id="stats">
-                                <option value="?php $row['remarks']; ?>">?php echo $row['remarks']; ?></option>
+                            <h4><strong>Remarks</strong></h4>
+                            <select class="form-control" name="status" id="stats"  style="width:50%; margin-top: 15px; margin-bottom: 10px;">
+                                <option value="?php $row['remarks']; ?>"><?php echo $row['remarks']; ?></option>
                                 <option value="Active">Active</option>
                                 <option value="Resigned">Resigned</option>
                                 <option value="Transferred">Transferred</option>
@@ -44,7 +45,8 @@
                             </select>
                         </div>
                         <div class="col-md-3">
-                           <input type="text" class="form-control">
+                            <h4><strong>Agent Version:</strong></h4>
+                           <input type="text" class="form-control" style="width:50%; margin-top: 15px;">
                         </div>
                     </div>
                 </div>
