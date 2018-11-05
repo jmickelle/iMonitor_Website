@@ -26,7 +26,28 @@
     <div class="container" style="width: 100%;">
         <div class="container-fluid">
             <div class="card">
-                <div class="card-header">Computer Details <h3>ITOMAU033022</h3></div>
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h3>Computer Details</h3>
+                        </div>
+                        <div class="col-md-3">
+                            <h3>ITOMAU033022</h3>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-control" name="status" id="stats">
+                                <option value="?php $row['remarks']; ?>">?php echo $row['remarks']; ?></option>
+                                <option value="Active">Active</option>
+                                <option value="Resigned">Resigned</option>
+                                <option value="Transferred">Transferred</option>
+                                <option value="Old PC name">Old PC name</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                           <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
                 <div class="card-body">
                     <div class="table-responsive" style="overflow-x:auto; padding-right:5px;">
                         <table class="table table-bordered" style="background: #ffffff;" id="tbl_view">
