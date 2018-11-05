@@ -15,9 +15,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
-    <!-- <link rel="stylesheet" href="viewing.css"> -->
-    <link rel="stylesheet" href="style1.css">
-    <!-- <link rel="stylesheet" href="styleIndex.css"> -->
+    <link rel="stylesheet" href="../../public/css/style.css">
 </head>
 <body style="margin-top:30px;">
     <?php
