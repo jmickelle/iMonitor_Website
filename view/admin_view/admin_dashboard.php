@@ -25,13 +25,13 @@
 		<div class="navbar-header">
             <img class="nav-logo" src="../../public/images/icons/sky_luster.png">
             <label class="nav-label">iMonitoring</label>
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sidenav" aria-expanded="false">
+                <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
         </div>
-        <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
+        <div class="collapse navbar-collapse" id="sidenav"></div>
             <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
                 <li>
                     <p id="demo" hidden>
@@ -106,7 +106,7 @@
 
 	<!-- Sidebar -->
 	<div class="wrapper">
-		<nav id="sidebar">
+		<nav id="sidebar" id="sidenav">
 			<ul class="list-unstyled components">
 		        <p></p>
 		        <li class="active">
