@@ -278,7 +278,6 @@ a, a:hover, a:focus {
 {
   width:45px; 
   height: 50px; 
-  margin-top: -8px;
 }
 .nav-label
 {
@@ -341,7 +340,6 @@ a, a:hover, a:focus {
 }
 .well 
 {
-        margin-top: 70px;
         color: #023268;
         /* background-color: #aca5a5; */
         margin-left: -15px;
@@ -349,14 +347,14 @@ a, a:hover, a:focus {
         font-size: 18px;
         margin-bottom: 0px;
         /* width: 103%; */
-        margin: 70px 10px 30px 10px;
+        margin: 40px 10px 0px 10px;
 }
 
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
 #sidebar {
-    margin-top:30px;
+    margin-top:10px;
     min-width: 250px;
     max-width: 250px;
     background: #fffafa;
@@ -514,7 +512,6 @@ ul ul a {
 .row
 {
     margin-bottom: 10px;
-    margin-top: 25px;
 }
 .card
 {
@@ -536,9 +533,15 @@ ul ul a {
     background-color: rgba(0,0,0,.03);
     border-bottom: 1px solid rgba(0,0,0,.125);
 }
+.card-footer 
+{
+    padding: .75rem 1.25rem;
+    background-color: rgba(0,0,0,.03);
+    border-top: 1px solid rgba(0,0,0,.125);
+}
 .card-body
 {
-    padding: 30px;
+    padding: 20px;
 }
 #comp_list th
 {
