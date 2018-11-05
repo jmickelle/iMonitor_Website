@@ -144,7 +144,7 @@
                             <div class="col-md-6" style="padding-top:0px; margin-right: -260px;"></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="padding-bottom: 10px;">
                                 <input type="text" class="form-control" name="search" placeholder="Search ...">
                             </div>
                             <div class="col-md-6">
