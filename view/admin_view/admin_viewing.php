@@ -130,54 +130,71 @@
             <div class="well">Computer List</div>
             <div class="container-fluid">
                 <div class="card">
+                    <div class="card-header"></div>
                     <div class="card-body"> 
-                        <div class="row" >
-                            <div class="col-md-6" style="padding-top:0px; margin-right: -260px;">                                  
+                        <div class="table-responsive" style="overflow-x:auto;">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Computer Name</th>
+                                        <th>IP Address</th>
+                                        <th>Status</th>
+                                        <th>Remarks</th>
+                                        <th>Agent Version</th>
+                                        <th>Options</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <!-- <div class="row" >
+                            <div class="col-md-6">                                  
                                 <form method="POST">
                                     <select name="dept_viewing" id="dept_viewing" class="form-control" style ="width:50%;">
                                         <option value="All" selected>--All Department--</option>
-                                        <?php listDepartment(); ?>
+                                         listDepartment(); ?>
                                     </select> 
                                 </form>
                             </div>
                             <div class="col-md-6" style="padding-top:0px; margin-right: -260px;"></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6" style="padding-top:0px; margin-top:15px;">
+                            <div class="col-md-6">
                                  <input type="text" class="form-control" name="search" placeholder="Search ...">
                             </div>
                             <div class="col-md-6" style="padding-top:15px;">
                                 <input type="submit" id="search" name="bntSearch" value="Search" class="btn btn-primary">
                                 <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
-                                        <!-- <input type="button" name="btnExport" id="btnExport" value="Export as Excel" class="btn btn-success" onclick="fnExcelReport();">
+                                         <input type="button" name="btnExport" id="btnExport" value="Export as Excel" class="btn btn-success" onclick="fnExcelReport();">
                                         <input type="button" name="btn_print" id="btn_print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" /> -->
-                            </div>
+                            <!-- </div>
                         </div>
                         <div style="clear:both"></div>
                         <br>
                         <div class="table-responsive" style="overflow-x:auto; padding-right:5px;" id="tb_div">
-                                <table class="table table-bordered" style="background: #ffffff;" id="comp_logs">
-                                    <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Computer Name</th>
-                                                <th>IP Address</th>
-                                                <th>Status</th>
-                                                <th>Remarks</th>
-                                                <th>Agent Version</th>
-                                                <th>Options</th>
-                                            </tr>
-                                    </thead>
-                                    <tbody id = "load_data">
-                                        <?php displayDept(); ?>
-                                    </tbody>
-                                </table>
-                             </div>
-                        </div>
+                            <table class="table table-bordered" style="background: #ffffff;" id="comp_logs">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Computer Name</th>
+                                        <th>IP Address</th>
+                                        <th>Status</th>
+                                        <th>Remarks</th>
+                                        <th>Agent Version</th>
+                                        <th>Options</th>
+                                    </tr>
+                                </thead>
+                                <tbody id = "load_data">
+                                     displayDept(); ?>
+                                </tbody>
+                            </table>
+                        </div> -->
                     </div>
+                    <div class="card-footer"></div>
                 </div>
             </div>
         </div>
+    </div>
                                       
 	<!-- End of Sidebar -->
 
