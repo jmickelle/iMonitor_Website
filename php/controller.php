@@ -236,9 +236,20 @@
 
     function updateComp()
     {
+        require 'connection/db_connection.php';
         if(isset($_POST['btnUpdate']))
         {
-            
+            $remarks = mysqli_real_escape_string($con,$_POST['remarks']);
+            $Agent_version = mysqli_real_escape_string($con,$_POST['agent_version']);
+            $updateComp = mysqli_query($con,"UPDATE tbl_computer_details SET remarks = '$remarks', agent_version = '$Agent_version' WHERE compID = '$id' ");
+            if($updateComp)
+            {
+                echo '<script>window.alert("UPDATED")</script>';
+            }
+            else
+            {
+                echo '<script>window.alert("ERROR IN QUERY")</script>';
+            }
         }
     }
 ?>

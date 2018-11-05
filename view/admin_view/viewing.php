@@ -1,5 +1,6 @@
 <?php
     require '../../php/connection/db_connection.php';
+    include '../../php/controller.php';
     $id = $_GET['id'];
 ?>
 <!DOCTYPE html>
@@ -25,12 +26,14 @@
     ?>
     <div class="container1" style="width: 100%; padding-left: 25px; padding-right: 20px;">
         <div class="container2">
+        <?php updateComp(); ?>
+        <form method="POST">
             <table class="tbl-view">
                 <tr>
                     <td><h1 style="margin-bottom:30px; margin-right:1130px;"><?php echo $row['hostname']; ?></h1></td>
                     <td><h4 style="margin-right:20px;"><strong>Remarks:</strong></h4></td>
                     <td>
-                        <select name="status" id="stats">
+                        <select name="remarks" id="stats">
                         <option value="<?php $row['remarks']; ?>"><?php echo $row['remarks']; ?></option>
                             <option value="Active">Active</option>
                             <option value="Resigned">Resigned</option>
@@ -76,7 +79,9 @@
     </div>
     <div>
         <a href="admin_viewing.php"><button class="btn btn-default" style="float:right; width:130px;">Back</button></a>
-        <a href=""><button class="btn btn-success" style="float:right; width:130px; margin-right:15px;">Update</button></a>
+        <input type="submit" value="Update" name="btnUpdate" class="btn btn-success" style="float:right; width:130px; margin-right:15px;" />
+        <!-- <a href=""><button class="btn btn-success" style="float:right; width:130px; margin-right:15px;">Update</button></a> -->
     </div>
+    </form>
 </body>
 </html>
