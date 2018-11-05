@@ -159,12 +159,12 @@
                         <div class="table-responsive" style="overflow-x:auto; padding-right:5px;" id="tb_div">
                             <table class="table table-bordered" style="background: #ffffff;" id="comp_logs">
                                 <thead>
-                                    <tr>
+                                    <tr id="comp_list">
                                         <th>No</th>
                                         <th>Computer Name</th>
                                         <th>IP Address</th>
                                         <th>Status</th>
-                                        <th>Remarks</th>
+                                        <th>Remark</th>
                                         <th>Agent Version</th>
                                         <th>Options</th>
                                     </tr>

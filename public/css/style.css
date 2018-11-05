@@ -518,6 +518,15 @@ ul ul a {
 .card
 {
     margin:20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
 }
 .card-header
 {
@@ -529,6 +538,10 @@ ul ul a {
 .card-body
 {
     padding: 30px;
+}
+#comp_list th
+{
+    text-align: -webkit-center;
 }
 /* ---------------------------------------------------
     CONTENT STYLE
