@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
     <link rel="stylesheet" href="../../public/css/style.css">
-    <link rel="stylesheet" href="../../public/css/viewing.css">
+    <!-- <link rel="stylesheet" href="../../public/css/viewing.css"> -->
 
 </head>
 <body onchange="handleSelect2()">
@@ -128,9 +128,9 @@
         </nav>
         <div class="container" style="width:100%;">
             <div class="well">Computer List</div>
-            <div class="col-lg-12">
-                <div class="panel with-nav-tabs pane-default" style="margin-left: -30px; width: 105%;">
-                    <div class="panel panel-body"> 
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-body"> 
                         <div class="tab-pane fade in active" id="tab1default">
                             <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
                                 <div class="col-md-6" style="padding-top:0px; margin-right: -260px;">                                  
