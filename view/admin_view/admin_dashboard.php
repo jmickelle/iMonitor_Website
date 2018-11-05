@@ -135,7 +135,7 @@
               
         </div>
         <div class="footer">
-            <i class="glyphicon glyphicon-copyright-mark"><p style="padding:5px;">Copyrights 2018</p></i>
+            <p style="padding:5px;">Copyrights 2018</p>
         </div>
 	</div>               
     <!-- End of Sidebar -->
