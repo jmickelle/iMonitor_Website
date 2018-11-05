@@ -128,7 +128,7 @@
 	   		</ul>
 		</nav>
         <div class="container" style="width:100%;">
-            <div class="well" style="margin: 40px 10px 0px 10px;">Computer List</div>
+            <div class="well" style="margin: 30px 10px 0px 10px;">Computer List</div>
             <div class="container-fluid">
                 <div class="card">
                     <div class="card-header"></div>
@@ -157,7 +157,7 @@
                         </form>
                         <div style="clear:both"></div> 
                         <br>
-                        <div class="table-responsive" style="overflow-x:auto; padding-right:5px;" id="tb_div">
+                        <div class="table-responsive" style="overflow-x:auto; padding-right:5px; height: -webkit-fill-available;" id="tb_div">
                             <table class="table table-bordered" style="background: #ffffff;" id="comp_logs">
                                 <thead>
                                     <tr id="comp_list">
@@ -170,7 +170,7 @@
                                         <th>Options</th>
                                     </tr>
                                 </thead>
-                                <tbody id = "load_data">
+                                <tbody id = "load_data" style="text-align: -webkit-center;">
                                     <?php 
                                         displayDept(); 
                                     ?>
