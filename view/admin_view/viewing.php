@@ -91,8 +91,8 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-md-12">
-                            <a href="admin_viewing.php"><input type="button" class="btn btn-default" style="float:right; width:130px;">Back</button></a>
-                            <a href=""><input type="button" class="btn btn-success" style="float:right; width:130px; margin-right:15px;">Update</button></a>
+                            <a href="admin_viewing.php"><input type="button" value="Back" class="btn btn-default" style="float:right; width:130px;">Back</button></a>
+                            <a href=""><input type="button" value="Update" class="btn btn-success" style="float:right; width:130px; margin-right:15px;">Update</button></a>
                         </div>
                     </div>
                 </div>
