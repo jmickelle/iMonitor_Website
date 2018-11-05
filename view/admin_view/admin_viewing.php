@@ -19,6 +19,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
     
     <link rel="stylesheet" href="../../public/css/style.css">
     <!-- <link rel="stylesheet" href="../../public/css/viewing.css"> -->
@@ -175,6 +181,17 @@
                                         displayDept(); 
                                     ?>
                                 </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Computer Name</th>
+                                        <th>IP Address</th>
+                                        <th>Status</th>
+                                        <th>Remark</th>
+                                        <th>Agent Version</th>
+                                        <th>Options</th>
+                                    </tr>
+                                </tfoot>
                             </table>
                         </div>
                     </div>
@@ -275,6 +292,9 @@
 	</script>
 
  <script>
+     $(document).ready(function() {
+    $('#comp_logs').DataTable();
+} );
 
 $(document).ready(function(){
     $(".dropdown").hover(            
