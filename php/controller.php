@@ -94,6 +94,8 @@
         require 'connection/db_connection.php';
         $notifSql = mysqli_query($con,"SELECT user,hostname,iMonitor_Status,connection_status FROM tbl_log WHERE 
         (iMonitor_Status = 'End Task' OR connection_status = 'UNESTABLISHED') AND user != 'Administrator' LIMIT 5");
+        $notifSql2 = mysqli_query($con,"SELECT hostname,agent_version,branch FROM tbl_computer_details 
+        WHERE agent_version != '9.614' OR agent_version != '9.617' LIMIT 5");
         while($notifRow = mysqli_fetch_array($notifSql))
         {
             echo '
@@ -101,6 +103,17 @@
                     <a href="#"><strong>'.$notifRow['hostname'].'</strong><br>
                     <small><em>'.$notifRow['iMonitor_Status'].'</em></small></a>
                     <small><em>'.$notifRow['connection_status'].'</em></small></a>
+                </li>
+                <li class="divider"></li>
+                ';
+        }
+        while($notifRow2 = mysqli_fetch_array($notifSql2))
+        {
+            echo '
+                <li>
+                    <a href="#"><strong>'.$notifRow2['hostname'].'</strong><br>
+                    <small><em>'.$notifRow2['agent_version'].'</em></small></a>
+                    <small><em>'.$notifRow2['branch'].'</em></small></a>
                 </li>
                 <li class="divider"></li>
                 ';
@@ -180,9 +193,9 @@
         require 'connection/db_connection.php';
         if(isset($_POST['bntSearch']))
         {
-            $selectDepartment = $_POST['dept_viewing'];
+            $selectDepartment = mysqli_real_escape_string($con,$_POST['dept_viewing']);
             // $selectSubDepartment = $_POST['dub_dept'];
-            $getSearch = $_POST['search'];
+            $getSearch = mysqli_real_escape_string($con,$_POST['search']);
             if($selectDepartment == "All")
             {
                 $deptSql = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details");
@@ -194,6 +207,7 @@
             }
             while($row = mysqli_fetch_array($deptSql))
             {
+                $ids = $row['compID'];
                 echo '
                     <tr>
                     <td> '.$row['compID'].'</td>
@@ -202,29 +216,33 @@
                     <td>'.$row['status'].'</td>
                     <td>'.$row['remarks'].'</td>
                     <td>'.$row['agent_Version'].'</td>
-                    <td><a href="#myModalEdit" data-toggle="modal"><input type="button" value="View" class="btn btn-primary"></a></td>
+                    <td><a href="viewing.php?id='.$ids.'" data-toggle="modal"><input type="button" value="View" class="btn btn-primary"></a></td>  
                     </tr>
                     ';
-                $_SESSION['compID'] = $row['compID'];
-            }
+            }   
+            
         }
     }
 
     function displayComp()
     {
         require 'connection/db_connection.php';
+        $id = $_GET['id'];
+        $compSql = mysqli_query($con,"SELECT * FROM tbl_computer_details WHERE compID = '{$id}'");
+        if($row = mysqli_fetch_assoc($compSql)){
+            echo '
+            <td style="padding-top:15px;">'.$row['compID'].'</td>
+            <td style="padding-top:15px;">'.$row['hostname'].'</td>
+            <td style="padding-top:15px;">'.$row['processor'].'</td>
+            <td style="padding-top:15px;">'.$row['hdd_Serial'].'</td>
+            <td style="padding-top:15px;">'.$row['mac_Address'].'</td>
+            <td style="padding-top:15px;">'.$row['mb_manufacturer'].'</td>
+            <td style="padding-top:15px;">'.$row['mb_product'].'</td>
+            ';
+        }
         if(isset($_POST['btnUpdate']))
         {
-            $compSql = mysqli_query($con,"SELECT * FROM tbl_computer_details WHERE compID = '{$_SESSION['compID']}'");
-            if($row = mysqli_fetch_assoc($compSql)){
-                echo '
-                <td style="padding-top:15px;">'.$row['processor'].'</td>
-                <td style="padding-top:15px;">'.$row['hdd_serial'].'</td>
-                <td style="padding-top:15px;">'.$row['mac_Address'].'</td>
-                <td style="padding-top:15px;">'.$row['mb_manufacturer'].'</td>
-                <td style="padding-top:15px;">'.$row['mb_product'].'</td>
-                ';
-            }
+            
         }
     }
 ?>

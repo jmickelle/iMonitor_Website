@@ -1,3 +1,7 @@
+<?php
+    require '../../php/connection/db_connection.php';
+    $id = $_GET['id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,6 +45,8 @@
             <table class="table table-bordered" style="margin-left:90px;">
                 <thead>
                     <tr style="padding:50px;">
+                        <th style="padding-bottom:15px;">Comp ID</th>
+                        <th style="padding-bottom:15px;">Hostname</th>
                         <th style="padding-bottom:15px;">Processor</th>
                         <th style="padding-bottom:15px;">HDD Serial</th>
                         <th style="padding-bottom:15px;">MAC Address</th>
@@ -49,13 +55,21 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                    require '../../php/connection/db_connection.php';
+                    $compSql = mysqli_query($con,"SELECT * FROM tbl_computer_details WHERE compID = '$id'");
+                    if($row = mysqli_fetch_assoc($compSql)){
+                    ?>
                     <tr>
-                        <td style="padding:15px;">Intel(R) Core(TM) i5-6400</td>
-                        <td style="padding:15px;"></td>
-                        <td style="padding:15px;">2C-FD-A1-74-0E-9C</td>
-                        <td style="padding:15px;"></td>
-                        <td style="padding:15px;"></td>
+                        <td style="padding:15px;"><?php echo $row['compID']; ?></td>
+                        <td style="padding:15px;"><?php echo $row['hostname']; ?></td>
+                        <td style="padding:15px;"><?php echo $row['processor'] ?></td>
+                        <td style="padding:15px;"><?php echo $row['hdd_Serial']; ?></td>
+                        <td style="padding:15px;"><?php echo $row['mac_Address']; ?></td>
+                        <td style="padding:15px;"><?php echo $row['mb_manufacturer']; ?></td>
+                        <td style="padding:15px;"><?php echo $row['mb_product']; ?></td>
                     </tr>
+                    <?php }?>
                 </tbody>
             </table>
         </div>

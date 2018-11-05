@@ -139,7 +139,6 @@
                                             <option value="All" selected>--All Department--</option>
                                             <?php listDepartment(); ?>
                                         </select> 
-                                        </form>
                                 </div>
                                 <div class="col-md-6" style="padding-top:0px; margin-right: -260px;"></div>
                                 <div class="col-md-6" style="padding-top:0px; margin-top:15px;">
@@ -151,6 +150,7 @@
                                     <!-- <input type="button" name="btnExport" id="btnExport" value="Export as Excel" class="btn btn-success" onclick="fnExcelReport();">
                                     <input type="button" name="btn_print" id="btn_print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" /> -->
                                 </div>
+                                </form>
                                 <div class="col-md-4" style="padding-top:0px; margin-top:15px;"> </div>
                                 <div style="clear:both"></div>
                                 <br>
