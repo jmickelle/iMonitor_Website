@@ -1,42 +1,13 @@
-<script type="text/javascript">
-var IDLE_TIMEOUT = 600; //seconds
-var _idleSecondsCounter = 0;
-document.onclick = function() {
-_idleSecondsCounter = 0;
-};
-document.onmousemove = function() {
-_idleSecondsCounter = 0;
-};
-document.onkeypress = function() {
-_idleSecondsCounter = 0;
-};
-window.setInterval(CheckIdleTime, 1000);
-function CheckIdleTime() {
-_idleSecondsCounter++;
-var oPanel = document.getElementById("SecondsUntilExpire");
-if (oPanel)
-oPanel.innerHTML = (IDLE_TIMEOUT - _idleSecondsCounter) + "";
-if (_idleSecondsCounter >= IDLE_TIMEOUT) {
-//alert("Time expired!");
-document.location.href = "../php/connection/logout.php";
-}
-}
-</script>
-
-<?php 
-error_reporting(0);
-
-session_start();
-require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
-
-	if(!isset($_SESSION["userid"])) {
-    	header("Location: index.php");
-  	exit();
-  	}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+<?php
+    include '../../php/controller.php';
+    Login();
+    if(!isset($_SESSION["user"])) {
+        header("Location: ../../index.php");
+    }
+    Logout();
+?>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,14 +20,14 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
-    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="../../public/css/style.css">
     <link rel="stylesheet" href="reports.css">
 
 </head>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
 		<div class="navbar-header">
-			<img class="nav-logo" src="icons/sky_luster.png">
+			<img class="nav-logo" src="../../public/images/icons/sky_luster.png">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
@@ -84,33 +55,11 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
                         <span class="glyphicon glyphicon-bell"></span>
                         <span class="label label-pill label-warning count" style="border-radius: 10px;">
-                        <?php
-                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
-                            $query->execute();
-                            $query->setFetchMode(PDO::FETCH_ASSOC);
-                            $countdown = 0;
-                            while ($row = $query->fetch()) {
-                                $countdown++;
-                            }
-                            echo  $countdown;
-                        ?>
+                        <?php notifCount(); ?>
                         </span>
                     </a>
                     <ul class="dropdown-menu">
-                        <?php 
-                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' LIMIT 5 ");
-                            $query->execute();
-                            $query->setFetchMode(PDO::FETCH_ASSOC);
-                            while ($row = $query->fetch()) {
-                                echo '
-                                <li>
-                                    <a href="#"><strong>'.$row['hostname'].'</strong><br>
-                                    <small><em>'.$row['iMonitor_Status'].'</em></small></a>
-                                </li>
-                                <li class="divider"></li>
-                                ';
-                            }
-                        ?>
+                        <?php notifDisplay(); ?>
                         <li>
                             <a href="admin_notification.php"><small>Show all notifications</small></a>
                         </li>
@@ -122,16 +71,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 	            <li class="dropdown" style="padding-left: 5px;">
 	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="padding-right: 30px;"><i class="glyphicon glyphicon-user"></i>
                     
-                    <?php
-                        $query = $db->prepare("SELECT name FROM tbl_user WHERE userid=:userid");
-                        $query->bindValue(':userid', $_SESSION['userid'], PDO::PARAM_STR);
-                        $query->execute();
-                        $query->setFetchMode(PDO::FETCH_ASSOC);
-         
-                        while ($row = $query->fetch()) {
-                        echo 'Welcome: ' . $row['name'];
-                        }
-                    ?>
+                    <?php displayName();  ?>
 	                </a>
 	            	<ul class="dropdown-menu" role="menu">
 	            		<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
@@ -179,20 +119,6 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
 		        </li>
 		        <li>
 		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
-		            <ul class="collapse list-unstyled" id="homeSubmenu">
-		                <li>
-                            <?php     
-              				    $sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
-              				    $stmt = $db->prepare($sql);
-              				    $stmt->execute();
-
-							    while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-							        {
-                					echo '<li><a href="admin_viewing.php">'.$row['branch_name'].'</a></li>';
-              				        }
-            				?>
-                        </li>
-		            </ul>
 		        </li>
 		        <li>
 		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
@@ -217,32 +143,14 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             <div class="tab-pane fade in active" id="tab0default">
                                 <div class="col-md-6" style="padding-top:15px;">
                                     <select name="department" id="department" class="form-control">
-                                        <option value="" selected>--All department--</option>
-                                            <?php     
-              								    $sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
-              								    $stmt = $db->prepare($sql);
-              								    $stmt->execute();
-
-											        while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-											        {
-                								        echo '<option>'.$row['branch_name'].'</option>'; 
-              								        }
-            							    ?>
+                                        <option value="All" selected>--All department--</option>
+                                            <?php listDepartment(); ?>
                                     </select> 
                                 </div>
                                 <div class="col-md-6" style="padding-top:15px;">
                                     <select name="dub_dept" id="sub_dept" class="form-control" disabled>
                                         <option value="" selected>--All sub department</option>
-                                            <?php     
-              								    $sql = "select sub_department from tbl_department ORDER BY sub_department ASC";
-              								    $stmt = $db->prepare($sql);
-              								    $stmt->execute();
-
-											    while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-											        {
-                								    echo '<option>'.$row['sub_department'].'</option>'; 
-              								        }
-            							    ?>
+                                            <?php listDepartment();?>
                                     </select>
                                 </div>
                                 <div class="col-md-6"><br>
@@ -311,7 +219,7 @@ require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
                             <div class="tab-pane fade" id="tab2default">
                                 <div class="col-md-6" style="padding-top:15px;">
                                     <select name="department" id="department" class="form-control">
-                                        <option value="" selected>--All department--</option>
+                                        <option value="All" selected>--All department--</option>
                                         <?php     
               								    $sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
               								    $stmt = $db->prepare($sql);
