@@ -11,7 +11,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="300">
+    <!-- <meta http-equiv="refresh" content="300"> -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
@@ -21,20 +21,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
     <link rel="stylesheet" href="../../public/css/style.css">
-    <link rel="stylesheet" href="reports.css">
+    <!-- <link rel="stylesheet" href="reports.css"> -->
 
 </head>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
-		<div class="navbar-header">
-			<img class="nav-logo" src="../../public/images/icons/sky_luster.png">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
+        <div class="navbar-header">
+            <img class="nav-logo" src="../../public/images/icons/sky_luster.png">
+            <label class="nav-label">iMonitoring</label>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sidenav" aria-expanded="false">
+                <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
         </div>
-        <label class="nav-label">iMonitoring</label>
 
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
             <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
@@ -44,11 +44,11 @@
                     </p>
                 </li>
 
-				<li class="dropdown">
+				<!-- <li class="dropdown">
                     <a href="#" style="padding-right: 30px; margin-top: 5px;">
                         <span class="glyphicon glyphicon-envelope"></span>
                     </a>
-                </li> 
+                </li>  -->
 
                 <!-- Notification Dropdwon -->
 				<li class="dropdown">
@@ -118,7 +118,7 @@
 		            <a href="admin_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
 		        <li>
-		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
+		            <a href="admin_viewing.php"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
 		        </li>
 		        <li>
 		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
@@ -130,6 +130,19 @@
         </nav>
         <div class="container" style="width:100%;">
             <div class="well" style="padding: 10px;">Reports</div>
+            <div class="container-fluid">
+                <div class="panel with-nav-tabs panel-default" style="width: 103.5%; position: relative;  margin-left: -30px;">
+                    <div class="panel-heading">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab0default" data-toggle="tab" style="padding-right:35px;">Computer Logs</a></li>
+                            <li><a href="#tab2default" data-toggle="tab" style="padding-right:35px;">Computer List</a></li>
+                        </ul>
+                    </div>
+                    <div class="panel-body">
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="tab0default">
+
+            </div>
             <div class="col-lg-12">
                 <div class="panel with-nav-tabs panel-default" style="width: 103.5%; position: relative;  margin-left: -30px;">
                     <div class="panel-heading">
