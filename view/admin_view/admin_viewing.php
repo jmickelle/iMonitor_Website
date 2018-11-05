@@ -144,14 +144,16 @@
                                     </select> 
                                 </form>
                             </div>
-                            <div class="col-md-6" style="padding-top:0px; margin-right: -260px;"></div>
+                            <div class="col-md-6"></div>
                         </div>
                         <div class="row">
                             <div class="col-md-6" style="padding-bottom: 10px;">
                                 <input type="text" class="form-control" name="search" placeholder="Search ...">
+                                <input type="submit" id="search" name="bntSearch" value="Search" class="btn btn-primary" style="width: 70%;">
+                                <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                             </div>
                             <div class="col-md-6">
-                                <input type="submit" id="search" name="bntSearch" value="Search" class="btn btn-primary">
+                                <input type="submit" id="search" name="bntSearch" value="Search" class="btn btn-primary" style="width: 70%;">
                                 <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                                      <!-- <input type="button" name="btnExport" id="btnExport" value="Export as Excel" class="btn btn-success" onclick="fnExcelReport();">
                                     <input type="button" name="btn_print" id="btn_print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" /> -->
