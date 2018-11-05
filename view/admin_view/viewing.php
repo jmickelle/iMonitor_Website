@@ -1,6 +1,8 @@
 <?php
     require '../../php/connection/db_connection.php';
+    include '../../php/controller.php';
     $id = $_GET['id'];
+    $_SESSION['compID'] = $id;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +25,7 @@
     $compSql = mysqli_query($con,"SELECT * FROM tbl_computer_details WHERE compID = '$id'");
     if($row = mysqli_fetch_assoc($compSql)){
     ?>
+<<<<<<< HEAD
     <div class="container" style="width: 100%;">
         <div class="container-fluid">
             <div class="card">
@@ -73,11 +76,48 @@
                         </div>
                     </div>
                 </div>
+=======
+    <div class="container1" style="width: 100%; padding-left: 25px; padding-right: 20px;">
+        <div class="container2">
+        <?php updateComp(); ?>
+        <form method="POST">
+            <table class="tbl-view">
+                <tr>
+                    <td><h1 style="margin-bottom:30px; margin-right:1130px;"><?php echo $row['hostname']; ?></h1></td>
+                    <td><h4 style="margin-right:20px;"><strong>Remarks:</strong></h4></td>
+                    <td>
+                        <select name="remarks" id="stats">
+                        <option value="<?php $row['remarks']; ?>"><?php echo $row['remarks']; ?></option>
+                            <option value="Active">Active</option>
+                            <option value="Resigned">Resigned</option>
+                            <option value="Transferred">Transferred</option>
+                            <option value="Old PC name">Old PC name</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>                                      
+    </div>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 style="font-size:20px;">Computer Details</h4>
+>>>>>>> f555bb51fe76cc9bf7282d65b3fed50f0d3f73a4
             </div>
         </div>                                      
     </div>
     <div class="footer">
+<<<<<<< HEAD
             <!-- <i class="glyphicon glyphicon-copyright-mark"><p style="padding:5px;">Copyrights 2018</p></i> -->
+=======
+            <i class="glyphicon glyphicon-copyright-mark"><p style="padding:5px;">Copyrights 2018</p></i>
     </div>
+    <div>
+        <a href="admin_viewing.php" class="btn btn-default" style="float:right; width:130px;" >Back</a>
+        <input type="submit" value="Update" name="btnUpdate" class="btn btn-success" style="float:right; width:130px; margin-right:15px;" />
+        <!-- <a href=""><button class="btn btn-success" style="float:right; width:130px; margin-right:15px;">Update</button></a> -->
+>>>>>>> f555bb51fe76cc9bf7282d65b3fed50f0d3f73a4
+    </div>
+    </form>
 </body>
 </html>

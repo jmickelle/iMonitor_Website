@@ -182,10 +182,10 @@
     function listDepartment()
     {
         require 'connection/db_connection.php';
-        $listDept = mysqli_query($con,"SELECT DISTINCT branch_name FROM tbl_department ORDER BY branch_name ASC");
+        $listDept = mysqli_query($con,"SELECT DISTINCT building FROM tbl_vlan ORDER BY building ASC");
         while($row = mysqli_fetch_assoc($listDept))
 		{
-            echo '<option value="'.$row['branch_name'].'">'.$row['branch_name'].'</option>'; 
+            echo '<option value="'.$row['building'].'">'.$row['building'].'</option>'; 
         }
     }
 
@@ -236,9 +236,20 @@
 
     function updateComp()
     {
+        require 'connection/db_connection.php';
         if(isset($_POST['btnUpdate']))
         {
-            
+            $remarks = mysqli_real_escape_string($con,$_POST['remarks']);
+            //$Agent_version = mysqli_real_escape_string($con,$_POST['agent_version']);
+            $updateComp = mysqli_query($con,"UPDATE tbl_computer_details SET remarks = '$remarks', agent_version = '6.7' WHERE compID = '{$_SESSION['compID']}' ");
+            if($updateComp)
+            {
+                echo '<script>window.alert("UPDATED")</script>';
+            }
+            else
+            {
+                echo '<script>window.alert("ERROR IN QUERY")</script>';
+            }
         }
     }
 ?>
