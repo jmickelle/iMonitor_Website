@@ -182,10 +182,10 @@
     function listDepartment()
     {
         require 'connection/db_connection.php';
-        $listDept = mysqli_query($con,"SELECT DISTINCT branch_name FROM tbl_department ORDER BY branch_name ASC");
+        $listDept = mysqli_query($con,"SELECT DISTINCT building FROM tbl_vlan ORDER BY building ASC");
         while($row = mysqli_fetch_assoc($listDept))
 		{
-            echo '<option value="'.$row['branch_name'].'">'.$row['branch_name'].'</option>'; 
+            echo '<option value="'.$row['building'].'">'.$row['building'].'</option>'; 
         }
     }
 
