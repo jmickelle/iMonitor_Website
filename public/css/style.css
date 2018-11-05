@@ -398,7 +398,7 @@ a, a:hover, a:focus {
 }
 #sidebar ul li a:hover {
     color: black;
-    background: #b0afac;
+    background: #cacacaf2;
 }
 
 .sidebar ul li.active > a, a[aria-expanded="true"] 

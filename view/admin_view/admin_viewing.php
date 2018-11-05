@@ -123,6 +123,9 @@
 		        </li>
 		        <li>
 		            <a href="admin_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
+                </li>	
+                <li class="nav-item">
+		            <a class="text-center" href="#"><i class="glyphicon glyphicon-info-sign"></i>About</a>
 		        </li>	  
 	   		</ul>
         </nav>
@@ -205,6 +208,9 @@
                     <div class="card-footer"></div>
                 </div>
             </div>
+        </div>
+        <div class="footer">
+            <i class="glyphicon glyphicon-copyright-mark"><p style="padding:5px;">Copyrights 2018</p></i>
         </div>
     </div>
                                       

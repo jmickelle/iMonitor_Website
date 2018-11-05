@@ -132,10 +132,11 @@
 		        </li>	  
 	   		</ul>
 		</nav>
-        <div class="container" id=content>
-            <div class="col-lg-12">
-                <div class="progress-bar bg-success"></div>
-            </div>    
+        <div class="container" >
+              
+        </div>
+        <div class="footer">
+            <i class="glyphicon glyphicon-copyright-mark"><p style="padding:5px;">Copyrights 2018</p></i>
         </div>
 	</div>               
     <!-- End of Sidebar -->
