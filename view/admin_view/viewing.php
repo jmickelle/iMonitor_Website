@@ -28,11 +28,8 @@
             <div class="card">
                 <div class="card-header">
                     <div class="row" >
-                        <div class="col-md-3">
-                            <h3>Computer Details</h3>
-                        </div>
-                        <div class="col-md-3">
-                            <h3>ITOMAU033022</h3>
+                        <div class="col-md-6">
+                            <h3>Computer Details | ITOMAU033022</h3>
                         </div>
                         <div class="col-md-3">
                             <h4><strong>Remarks</strong></h4>
