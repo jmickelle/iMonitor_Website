@@ -227,21 +227,8 @@
         }
     }
 
-    function displayComp()
+    function updateComp()
     {
-        require 'connection/db_connection.php';
-        $compSql = mysqli_query($con,"SELECT * FROM tbl_computer_details WHERE compID = '{$id}'");
-        if($row = mysqli_fetch_assoc($compSql)){
-            echo '
-            <td style="padding-top:15px;">'.$row['compID'].'</td>
-            <td style="padding-top:15px;">'.$row['hostname'].'</td>
-            <td style="padding-top:15px;">'.$row['processor'].'</td>
-            <td style="padding-top:15px;">'.$row['hdd_Serial'].'</td>
-            <td style="padding-top:15px;">'.$row['mac_Address'].'</td>
-            <td style="padding-top:15px;">'.$row['mb_manufacturer'].'</td>
-            <td style="padding-top:15px;">'.$row['mb_product'].'</td>
-            ';
-        }
         if(isset($_POST['btnUpdate']))
         {
             
