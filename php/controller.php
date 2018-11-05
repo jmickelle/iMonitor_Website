@@ -240,8 +240,8 @@
         if(isset($_POST['btnUpdate']))
         {
             $remarks = mysqli_real_escape_string($con,$_POST['remarks']);
-            $Agent_version = mysqli_real_escape_string($con,$_POST['agent_version']);
-            $updateComp = mysqli_query($con,"UPDATE tbl_computer_details SET remarks = '$remarks', agent_version = '$Agent_version' WHERE compID = '$id' ");
+            //$Agent_version = mysqli_real_escape_string($con,$_POST['agent_version']);
+            $updateComp = mysqli_query($con,"UPDATE tbl_computer_details SET remarks = '$remarks', agent_version = '6.7' WHERE compID = '{$_SESSION['compID']}' ");
             if($updateComp)
             {
                 echo '<script>window.alert("UPDATED")</script>';

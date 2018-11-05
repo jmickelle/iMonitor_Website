@@ -2,6 +2,7 @@
     require '../../php/connection/db_connection.php';
     include '../../php/controller.php';
     $id = $_GET['id'];
+    $_SESSION['compID'] = $id;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,7 +79,7 @@
             <i class="glyphicon glyphicon-copyright-mark"><p style="padding:5px;">Copyrights 2018</p></i>
     </div>
     <div>
-        <a href="admin_viewing.php"><button class="btn btn-default" style="float:right; width:130px;">Back</button></a>
+        <a href="admin_viewing.php" class="btn btn-default" style="float:right; width:130px;" >Back</a>
         <input type="submit" value="Update" name="btnUpdate" class="btn btn-success" style="float:right; width:130px; margin-right:15px;" />
         <!-- <a href=""><button class="btn btn-success" style="float:right; width:130px; margin-right:15px;">Update</button></a> -->
     </div>
