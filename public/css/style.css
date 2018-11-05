@@ -339,11 +339,17 @@ a, a:hover, a:focus {
     padding-right: 10px; 
     font-size: 25px;
 }
-.well
+.well 
 {
-    padding: 10px;
-    background-color: #000000;
-    color: white;
+        margin-top: 70px;
+        color: #1480d2;
+        /* background-color: #aca5a5; */
+        margin-left: -15px;
+        padding: 10px;
+        font-size: 18px;
+        margin-bottom: 0px;
+        /* width: 103%; */
+        margin: 70px 10px 30px 10px;
 }
 
 /* ---------------------------------------------------
@@ -392,7 +398,7 @@ a, a:hover, a:focus {
 }
 #sidebar ul li a:hover {
     color: black;
-    background: #64c13dad;
+    background: #b0afac;
 }
 
 .sidebar ul li.active > a, a[aria-expanded="true"] 
@@ -504,6 +510,10 @@ ul ul a {
     line-height: 1.42857143;
     vertical-align: middle;
     border-top: 1px solid #ada4a4;
+}
+.row
+{
+    margin-bottom: 10px;
 }
 /* ---------------------------------------------------
     CONTENT STYLE

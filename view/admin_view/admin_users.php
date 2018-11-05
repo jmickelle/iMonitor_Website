@@ -10,120 +10,29 @@
 ?>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="refresh" content="300">
-	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-	<meta http-equiv="Pragma" content="no-cache" />
-	<meta http-equiv="Expires" content="0" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="300">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- Our Custom CSS -->
-	<link rel="stylesheet" href="../../public/css/style.css">
-    <link rel="stylesheet" href="users.css">
-
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="../../public/css/style.css">
 </head>
-<body class="sticky-footer fixed-nav bg-light" id="page-top" onload="mirrorFunction();">
-	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top col-lg-12 col-md-12 col-sm-12">
-		<img class="nav-logo" src="../../public/images/icons/sky_luster.png">
-		<a class="navbar-label" style ="font-size: 1.5em;">Monitoring</a>
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      		<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarResponsive">
-      		<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-				<!-- Dashboard -->
-			  	<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-					<a class="nav-link" href="../../view/admin_view/admin_dashboard.php" id="a-home">
-						<i class="glyphicon glyphicon-th-large"></i>
-						<span class="nav-link-text">Dashboard</span>
-					</a>
-				</li>
-				<!-- Branch Settings -->
-				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Branch Settings">
-					<a class="nav-link" href="../../view/admin_view/admin_dashboard.php" id="a-branch">
-						<i class="glyphicon glyphicon-home"></i>
-						<span class="nav-link-text">Branch Settings</span>
-					</a>
-				</li>
-
-				 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Computer List ">
-				 	<a class="nav-link" href="../../view/admin_view/admin_viewing.php" id="a-list">
-						<i class="glyphicon glyphicon-home"></i>
-						<span class="nav-link-text">Computer List</span>
-					</a>
-				</li>
-
-				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="User Accounts ">
-				 	<a class="nav-link" href="../../view/admin_view/admin_viewing.php" id="a-user">
-						<i class="glyphicon glyphicon-edit"></i>
-						<span class="nav-link-text">User Accounts</span>
-					</a>
-				</li>
-
-				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reports ">
-				 	<a class="nav-link" href="../../view/admin_view/admin_viewing.php" id="a-reports">
-						<i class="glyphicon glyphicon-duplicate"></i>
-						<span class="nav-link-text">Reports</span>
-					</a>
-				</li>
-
-				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Links ">
-				 	<a class="nav-link" href="../../view/admin_view/admin_viewing.php" id="a-link">
-						<i class="glyphicon glyphicon-link"></i>
-						<span class="nav-link-text">Links</span>
-					</a>
-				</li>
-			</ul>
-			<ul class="navbar-nav sidenav-toggler">
-				<li class="nav-item">
-					<a class="nav-link text-center" href="" id="sidenavToggler">
-						<i class="glyphicon glyphicon-info-sign"></i>
-						<span class="nav-link-text">About</span>
-					</a>
-				</li>
-			</ul>
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<i class="glyphicon glyphicon-bell"></i>
-						<span class="d-lg-none">Messages
-							<span class="badge badge-pill badge-warning"><?php notifCount(); ?></span>
-						</span>
-						<span class="indicator text-primary d-none d-lg-block">
-							<span class="badge badge-pill badge-primary"><?php notifCount(); ?></span>
-						</span>
-					</a>
-					<div class="dropdown-menu" id="notifDropdown" aria-labelledby="alertsDropdown">
-						<h6 class="dropdown-header">New Alerts:</h6>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">
-							<span class="text-success">
-								<strong><i class="fa fa-long-arrow-up fa-fw"></i>Sample</strong>
-							</span>
-							<span class="small float-right text-muted">11:21 AM</span>
-							<div class="dropdown-message small">This is an automated server response message. All systems are online.</div>
-						</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item small" href="#">View all alerts</a>
-          			</div>
-					  
-
-					<!-- <ul class="dropdown-menu">
-						 notifDisplay();
-						<li>
-							<a href="admin_notification.php"><small>Show all notifications</small></a>
-						</li>
-					</ul> -->
-				</li>
-			</ul>
-
+<body>
+    <!-- Top Navigation -->
+	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
+		<div class="navbar-header">
+			<img class="nav-logo" src="../../public/images/icons/sky_luster.png">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
+        <label class="nav-label">iMonitoring</label>
 
-        <!-- <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
+        <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
             <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
                 <li>
                     <p id="demo" hidden>
@@ -131,44 +40,44 @@
                     </p>
                 </li>
 
-				<li class="dropdown">
+                <!-- Message Dropdown -->
+				<!-- <li class="dropdown">
                     <a href="#" style="padding-right: 30px; margin-top: 5px;">
                         <span class="glyphicon glyphicon-envelope"></span>
                     </a>
-                </li> 
+                </li>  -->
 
-                Notification Dropdwon
+                <!-- Notification Dropdwon -->
 				<li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
                         <span class="glyphicon glyphicon-bell"></span>
                         <span class="label label-pill label-warning count" style="border-radius: 10px;">
-                       
+                        <?php notifCount(); ?>
                         </span>
                     </a>
                     <ul class="dropdown-menu">
-					
+                        <?php notifDisplay(); ?>
                         <li>
                             <a href="admin_notification.php"><small>Show all notifications</small></a>
                         </li>
                     </ul>
                 </li>
-                End of Notification Dropdown
+                <!-- End of Notification Dropdown -->
 
-                User Dropdown
-	            <li class="dropdown" style="padding-left: 5px;"> 
+                <!-- User Dropdown -->
+	            <li class="dropdown" style="padding-left: 5px;">
 	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="padding-right: 30px;"><i class="glyphicon glyphicon-user"></i>
-                    
+                    <?php displayName(); ?>
 	                </a>
 	            	<ul class="dropdown-menu" role="menu">
 	            		<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
-	            		<li class="sub-header"><a href="#">Account Settings</a></li>
+	            		<li class="sub-header"><a href="admin_settings.php">Account Settings</a></li>
 	            		<li class="divider"></li>
 	            		<li style="font-size:18px; font-weight:200px;"><a href="#logout" data-toggle="modal"><i class="glyphicon glyphicon-off"></i> Sign out</a></li>
 	            	</ul>
                 </li>
-                End of User Dropdown
-			 </ul>
-		</div> -->
+                <!-- End of User Dropdown -->
+            </ul>
 	</nav>
 	<!-- End of Top Navigation-->
 
@@ -176,17 +85,20 @@
 	<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="myModallabel" arial-hidden="true" style="margin-top:150px;">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
-				<div class="modal-header" style="padding:10px;">
+				<div class="modal-header" style="background-color: #ffffff7a;">
 					<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				</div>
-				<div class="modal-body2">
+				<div class="modal-body">
 					<form>
 						<p class="logout-modal">Are you sure you want to logout?</p>
 					</form>
 				</div>
-				<div class="modal-footer2">
-					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:12px;">Cancel</button>
-					<a class="btn btn-warning2" href="../php/connection/logout.php" style="font-size:12px; color: #fff; background-color: #f0ad4e; border-color: #eea236;">Logout</i></a>
+				<div class="modal-footer">
+                    <form method="POST">
+					<button type="button" class="btn btn-default" data-dismiss="modal" style="font-size: 12px;;">Cancel</button>
+                    <input type="submit" class="btn btn-warning" name="btnLogout" style="font-size: 12px;" value="Logout">
+					<!-- <a class="btn btn-warning" href="../php/connection/logout.php" style="font-size:12px;"> Logout</i></a> -->
+                    </form>
 				</div>
 			</div>
 		</div>
@@ -195,34 +107,41 @@
 
 	<!-- Sidebar -->
 	<div class="wrapper">
-		<!-- <nav id="sidebar">
+		<nav id="sidebar">
 			<ul class="list-unstyled components">
 		        <p></p>
-		        <li>
-		            <a href="admin_dashboard.php"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
+		        <li class="active">
+		            <a href="#"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
 		        </li>
 		        <li>
 		            <a href="admin_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
-		        <li>
+		        <li >
 		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
-		            <ul class="collapse list-unstyled" id="homeSubmenu">
-		                <li>
-							
-						</li>
-		            </ul>
+		            <!-- <ul class="collapse list-unstyled" id="homeSubmenu">
+		                <li id="branch">
+                            
+                        </li>
+		            </ul> -->
 		        </li>
-		        <li  class="active">
+		        <li>
 		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
-					<a href="test_query.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
 		        </li>
 		        <li>
 		            <a href="admin_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
 		        </li>	  
 	   		</ul>
-        </nav> -->
-        <div class="container" style="width:100%;">
-            <div class="well" style="padding: 10px;">User Accounts</div>
+		</nav>
+        <div class="container" id=content>
+            <div class="col-lg-12">
+                <div class="progress-bar bg-success"></div>
+            </div>    
+        </div>
+	</div>               
+
+	<!-- End of Sidebar -->
+    <div class="container" style="width:100%;">
+        <div class="well">User Accounts</div>
             <div class="col-lg-12">
 				<div class="panel with-nav-tabs pane-default" style="margin-left: -30px;">
 					<div class="panel panel-heading">
@@ -285,27 +204,6 @@
 						</div>
 						<br>
 						<div class="form-group">
-							<label class="col-sm-12 control-label" for="Name">Name</label>
-							<div class="col-sm-12">
-								<input type="text" class="form-control" id="name" name="name" required placeholder="Name" onkeypress="return LettersrOnly(this, event)" maxlength="30"/>
-							</div>		
-								<script type="text/javascript">
-									function LettersrOnly(txt, e) 
-									{
-            							var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
-            							var code;
-            							if (window.event)
-										code = e.keyCode;
-										else
-                						code = e.which;
-            							var char = keychar = String.fromCharCode(code);
-            							if (arr.indexOf(char) == -1)
-                							return false;
-        							}
-    							</script>
-						</div>
-						<br>
-						<div class="form-group">
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="department" name="department" required>
@@ -321,23 +219,6 @@
               								}
             							?>
 								</select>
-							</div>
-						</div>
-						<br>
-						<div class="form-group">
-							<label class="col-sm-12 control-label" for="position">Position</label>
-							<div class="col-sm-12">
-								<select class="form-control" id="position" name="position" required>
-								<option value="">--Select Position--</option>
-								</select>
-								
-								<!-- FOR SUB DEPARTMENT -->
-								<script type="text/javascript">
-									$("#department").change(function() {
-  									$("#position").load("get_sub_department.php?branch_name=" + $("#department").val());
-									});
-								</script>
-								<!-- END -->
 							</div>
 						</div>
 						<br>
