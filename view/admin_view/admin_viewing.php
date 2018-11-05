@@ -111,7 +111,7 @@
 		        <li>
 		            <a href="admin_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
-		        <li >
+		        <li class="active">
 		            <a href="admin_viewing.php"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
 		            <!-- <ul class="collapse list-unstyled" id="homeSubmenu">  data-toggle="collapse" aria-expanded="false"
 		                <li id="branch">
@@ -119,7 +119,7 @@
                         </li>
 		            </ul> -->
 		        </li>
-		        <li class="active">
+		        <li>
 		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
 		        </li>
 		        <li>
@@ -128,7 +128,7 @@
 	   		</ul>
 		</nav>
         <div class="container" style="width:100%;">
-            <div class="well">Computer List</div>
+            <div class="well" style="margin: 40px 10px 0px 10px;">Computer List</div>
             <div class="container-fluid">
                 <div class="card">
                     <div class="card-header"></div>
@@ -148,7 +148,7 @@
                                 <input type="text" class="form-control" name="search" placeholder="Search ...">
                             </div>
                             <div class="col-md-6">
-                                <input type="submit" id="search" name="bntSearch" value="Search" class="btn btn-primary" style="width: 70%;">
+                                <input type="submit" id="search" name="bntSearch" value="Search" class="btn btn-primary">
                                 <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                                      <!-- <input type="button" name="btnExport" id="btnExport" value="Export as Excel" class="btn btn-success" onclick="fnExcelReport();">
                                     <input type="button" name="btn_print" id="btn_print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" /> -->
@@ -210,7 +210,7 @@
             </div>
         </div>
         <div class="footer">
-            <i class="glyphicon glyphicon-copyright-mark"><p style="padding:5px;">Copyrights 2018</p></i>
+            <p style="padding:5px;">Copyrights 2018</p>
         </div>
     </div>
                                       
