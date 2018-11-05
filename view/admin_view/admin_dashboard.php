@@ -117,8 +117,8 @@
 		            <a href="admin_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
 		        <li >
-		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
-		            <!-- <ul class="collapse list-unstyled" id="homeSubmenu">
+		            <a href="admin_viewing.php"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
+		            <!-- <ul class="collapse list-unstyled" id="homeSubmenu"> data-toggle="collapse" aria-expanded="false"
 		                <li id="branch">
                             
                         </li>
