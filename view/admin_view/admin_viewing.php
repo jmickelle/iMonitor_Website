@@ -124,10 +124,7 @@
 		        </li>
 		        <li>
 		            <a href="admin_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
-                </li>	
-                <li class="nav-item">
-		            <a class="text-center" href="#"><i class="glyphicon glyphicon-info-sign"></i>About</a>
-		        </li>	  
+                </li>	  
 	   		</ul>
         </nav>
         <div class="container" style="width:100%;">
@@ -148,13 +145,13 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6" style="padding-bottom: 10px;">
-                                <input type="text" class="form-control" name="search" placeholder="Search ...">
-                                <input type="submit" id="search" name="bntSearch" value="Search" class="btn btn-primary" style="width: 70%;">
+                                <input type="text" class="form-control" name="search" placeholder="Search ..." style="width: 70%;">
+                                <input type="submit" id="search" name="bntSearch" value="Search" class="btn btn-primary" >
                                 <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                             </div>
                             <div class="col-md-6">
-                                <input type="submit" id="search" name="bntSearch" value="Search" class="btn btn-primary" style="width: 70%;">
-                                <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
+                                <!-- <input type="submit" id="search" name="bntSearch" value="Search" class="btn btn-primary" style="width: 70%;">
+                                <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default"> -->
                                      <!-- <input type="button" name="btnExport" id="btnExport" value="Export as Excel" class="btn btn-success" onclick="fnExcelReport();">
                                     <input type="button" name="btn_print" id="btn_print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" /> -->
                             </div>
