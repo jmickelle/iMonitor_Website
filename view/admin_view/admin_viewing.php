@@ -131,32 +131,33 @@
             <div class="container-fluid">
                 <div class="card">
                     <div class="card-body"> 
-                        <div class="tab-pane fade in active" id="tab1default">
-                            <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
-                                <div class="col-md-6" style="padding-top:0px; margin-right: -260px;">                                  
-                                    <form method="POST">
-                                        <select name="dept_viewing" id="dept_viewing" class="form-control" style ="width:50%;">
-                                            <option value="All" selected>--All Department--</option>
-                                            <?php listDepartment(); ?>
-                                        </select> 
-                                        </form>
-                                </div>
-                                <div class="col-md-6" style="padding-top:0px; margin-right: -260px;"></div>
-                                <div class="col-md-6" style="padding-top:0px; margin-top:15px;">
-                                   <input type="text" class="form-control" name="search" placeholder="Search ...">
-                                </div>
-                                <div class="col-md-6" style="padding-top:15px;">
-                                    <input type="submit" id="search" name="bntSearch" value="Search" class="btn btn-primary">
-                                    <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
-                                    <!-- <input type="button" name="btnExport" id="btnExport" value="Export as Excel" class="btn btn-success" onclick="fnExcelReport();">
-                                    <input type="button" name="btn_print" id="btn_print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" /> -->
-                                </div>
-                                <div class="col-md-4" style="padding-top:0px; margin-top:15px;"> </div>
-                                <div style="clear:both"></div>
-                                <br>
-                                <div class="table-responsive" style="overflow-x:auto; padding-right:5px;" id="tb_div">
-                                    <table class="table table-bordered" style="background: #ffffff;" id="comp_logs">
-                                        <thead>
+                        <div class="row" >
+                            <div class="col-md-6" style="padding-top:0px; margin-right: -260px;">                                  
+                                <form method="POST">
+                                    <select name="dept_viewing" id="dept_viewing" class="form-control" style ="width:50%;">
+                                        <option value="All" selected>--All Department--</option>
+                                        <?php listDepartment(); ?>
+                                    </select> 
+                                </form>
+                            </div>
+                            <div class="col-md-6" style="padding-top:0px; margin-right: -260px;"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6" style="padding-top:0px; margin-top:15px;">
+                                 <input type="text" class="form-control" name="search" placeholder="Search ...">
+                            </div>
+                            <div class="col-md-6" style="padding-top:15px;">
+                                <input type="submit" id="search" name="bntSearch" value="Search" class="btn btn-primary">
+                                <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
+                                        <!-- <input type="button" name="btnExport" id="btnExport" value="Export as Excel" class="btn btn-success" onclick="fnExcelReport();">
+                                        <input type="button" name="btn_print" id="btn_print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" /> -->
+                            </div>
+                        </div>
+                        <div style="clear:both"></div>
+                        <br>
+                        <div class="table-responsive" style="overflow-x:auto; padding-right:5px;" id="tb_div">
+                                <table class="table table-bordered" style="background: #ffffff;" id="comp_logs">
+                                    <thead>
                                             <tr>
                                                 <th>No</th>
                                                 <th>Computer Name</th>
@@ -166,13 +167,12 @@
                                                 <th>Agent Version</th>
                                                 <th>Options</th>
                                             </tr>
-                                        </thead>
-                                        <tbody id = "load_data">
+                                    </thead>
+                                    <tbody id = "load_data">
                                         <?php displayDept(); ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                                    </tbody>
+                                </table>
+                             </div>
                         </div>
                     </div>
                 </div>
