@@ -110,7 +110,7 @@
 		<nav id="sidebar">
 			<ul class="list-unstyled components">
 		        <p></p>
-		        <li class="active">
+		        <li>
 		            <a href="#"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
 		        </li>
 		        <li>
@@ -124,7 +124,7 @@
                         </li>
 		            </ul> -->
 		        </li>
-		        <li>
+		        <li class="active">
 		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
 		        </li>
 		        <li>
