@@ -111,22 +111,22 @@
 		        <li>
 		            <a href="admin_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
-		        <li class="active">
-		            <a href="#" ><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
-		            <!-- <ul class="collapse list-unstyled" id="homeSubmenu"> data-toggle="collapse" aria-expanded="false"
-		                <li>
-                           
-                       </li> 
+		        <li >
+		            <a href="admin_viewing.php"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
+		            <!-- <ul class="collapse list-unstyled" id="homeSubmenu">  data-toggle="collapse" aria-expanded="false"
+		                <li id="branch">
+                            
+                        </li>
 		            </ul> -->
 		        </li>
-		        <li>
+		        <li class="active">
 		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
 		        </li>
 		        <li>
 		            <a href="admin_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
-                </li>	  
+		        </li>	  
 	   		</ul>
-        </nav>
+		</nav>
         <div class="container" style="width:100%;">
             <div class="well">Computer List</div>
             <div class="container-fluid">
@@ -145,13 +145,11 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6" style="padding-bottom: 10px;">
-                                <input type="text" class="form-control" name="search" placeholder="Search ..." style="width: 70%;">
-                                <input type="submit" id="search" name="bntSearch" value="Search" class="btn btn-primary" >
-                                <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
+                                <input type="text" class="form-control" name="search" placeholder="Search ...">
                             </div>
                             <div class="col-md-6">
-                                <!-- <input type="submit" id="search" name="bntSearch" value="Search" class="btn btn-primary" style="width: 70%;">
-                                <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default"> -->
+                                <input type="submit" id="search" name="bntSearch" value="Search" class="btn btn-primary" style="width: 70%;">
+                                <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                                      <!-- <input type="button" name="btnExport" id="btnExport" value="Export as Excel" class="btn btn-success" onclick="fnExcelReport();">
                                     <input type="button" name="btn_print" id="btn_print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" /> -->
                             </div>
