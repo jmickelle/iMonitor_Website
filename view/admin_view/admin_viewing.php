@@ -218,11 +218,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td style="padding-top:15px;">1</td>
-                                            <td style="padding-top:15px;">ITOMAU033022</td>
-                                            <td style="padding-top:15px;">172.16.33.22</td>
-                                            <td style="padding-top:15px;">Windows PC</td>
-                                            <td style="padding-top:15px;">Online</td>
+                                            <?php displayComp(); ?>
                                             <!-- <td style="padding-top:15px;">
                                                 <input type="text" class="form-control" style="display: -webkit-inline-box;"> 
                                             </td>
