@@ -511,6 +511,10 @@ ul ul a {
     vertical-align: middle;
     border-top: 1px solid #ada4a4;
 }
+.row
+{
+    margin-bottom: 10px;
+}
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */

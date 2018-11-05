@@ -133,21 +133,21 @@
                     <div class="panel panel-body"> 
                         <div class="tab-pane fade in active" id="tab1default">
                             <div class="pane pane--1" style="margin-right: 0px; margin-left: 0px; width: 100%;">
-                                <div class="col-md-6" style="padding-top:0px; margin-right: -260px;">
-                                    
+                                <div class="col-md-6" style="padding-top:0px; margin-right: -260px;">                                  
                                     <form method="POST">
-                                    <select name="dept_viewing" id="dept_viewing" class="form-control" style ="width:50%;">
-                                        <option value="All" selected>--All Department--</option>
-                                         <?php listDepartment(); ?>
-                                    </select> 
+                                        <select name="dept_viewing" id="dept_viewing" class="form-control" style ="width:50%;">
+                                            <option value="All" selected>--All Department--</option>
+                                            <?php listDepartment(); ?>
+                                        </select> 
+                                        </form>
                                 </div>
-                                <div class="col-md-4" style="padding-top:0px; margin-top:15px;">
+                                <div class="col-md-6" style="padding-top:0px; margin-right: -260px;"></div>
+                                <div class="col-md-6" style="padding-top:0px; margin-top:15px;">
                                    <input type="text" class="form-control" name="search" placeholder="Search ...">
                                 </div>
-                                <div class="col-md-4" style="padding-top:15px;">
+                                <div class="col-md-6" style="padding-top:15px;">
                                     <input type="submit" id="search" name="bntSearch" value="Search" class="btn btn-primary">
                                     <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
-                                    </form>
                                     <!-- <input type="button" name="btnExport" id="btnExport" value="Export as Excel" class="btn btn-success" onclick="fnExcelReport();">
                                     <input type="button" name="btn_print" id="btn_print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" /> -->
                                 </div>
@@ -240,13 +240,13 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="panel-footer"></div>
+                        <div class="panel-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <input type="submit" name="btnUpdate" class="btn btn-success" data-dismiss="modal" value="Update">
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <!-- <button type="button" class="btn btn-success" data-dismiss="modal">Update</button> -->
-                        <input type="submit" name="btnUpdate" class="btn btn-success" data-dismiss="modal" value="Update">
                 </div>
             </form>
             </div>   
