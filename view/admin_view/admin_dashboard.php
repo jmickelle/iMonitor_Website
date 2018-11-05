@@ -21,17 +21,16 @@
 </head>
 <body>
     <!-- Top Navigation -->
-	<nav class="navbar navbar-default navbar-fixed-top" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #fffafa;">
+	<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #fffafa;">
 		<div class="navbar-header">
-			<img class="nav-logo" src="../../public/images/icons/sky_luster.png">
+            <img class="nav-logo" src="../../public/images/icons/sky_luster.png">
+            <label class="nav-label">iMonitoring</label>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
         </div>
-        <label class="nav-label">iMonitoring</label>
-
         <div class="collapse bs-example-navbar-collapse" id="bs-example-navbar-collapse-1"></div>
             <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
                 <li>

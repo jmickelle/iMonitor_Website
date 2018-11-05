@@ -278,13 +278,13 @@ a, a:hover, a:focus {
 {
   width:45px; 
   height: 50px; 
+  margin-top: -8px;
 }
 .nav-label
 {
     font-family: Times New Roman; 
-    font-size: 28px; 
+    font-size: 25px; 
     padding-left:8px; 
-    padding-top:8px;
 }
 .line {
     width: 100%;
@@ -342,7 +342,7 @@ a, a:hover, a:focus {
 .well 
 {
         margin-top: 70px;
-        color: #1480d2;
+        color: #023268;
         /* background-color: #aca5a5; */
         margin-left: -15px;
         padding: 10px;
