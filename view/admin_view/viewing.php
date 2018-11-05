@@ -91,8 +91,13 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-md-12">
+<<<<<<< HEAD
                             <a href="admin_viewing.php" class="btn btn-default" style="float:right; width:130px;">Back</a>
                             <a href="viewing.php"><input type="submit" name="btnUpdate" Value="Update" class="btn btn-success" style="float:right; width:130px; margin-right:15px;"></a>
+=======
+                            <a href="admin_viewing.php"><input type="button" value="Back" class="btn btn-default" style="float:right; width:130px;">Back</button></a>
+                            <a href=""><input type="button" value="Update" class="btn btn-success" style="float:right; width:130px; margin-right:15px;">Update</button></a>
+>>>>>>> 3e9fc8c33f91d11fc0914cf29efb6f2711007ff0
                         </div>
                     </div>
                 </div>
