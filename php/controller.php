@@ -1,5 +1,4 @@
 <?php
-    Global $id;
     function Login()
     {
         session_start();
@@ -216,7 +215,8 @@
                     <td>'.$row['status'].'</td>
                     <td>'.$row['remarks'].'</td>
                     <td>'.$row['agent_Version'].'</td>
-                    <td><a href="viewing.php?id='.$ids.'" data-toggle="modal"><input type="button" value="View" class="btn btn-primary"></a></td>  
+                    <input type="hidden" value="?id='.$ids.'" />
+                    <td><a href="#myModalEdit" data-toggle="modal"><input type="button" value="View" class="btn btn-primary"></a></td>  
                     </tr>
                     ';
             }   

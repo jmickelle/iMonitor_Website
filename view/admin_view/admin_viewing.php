@@ -139,7 +139,6 @@
                                         <option value="All" selected>--All Department--</option>
                                             <?php listDepartment(); ?>
                                     </select> 
-                                </form>
                             </div>
                             <div class="col-md-6" style="padding-top:0px; margin-right: -260px;"></div>
                         </div>
@@ -154,6 +153,7 @@
                                     <input type="button" name="btn_print" id="btn_print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" /> -->
                             </div>
                         </div>
+                        </form>
                         <div style="clear:both"></div> 
                         <br>
                         <div class="table-responsive" style="overflow-x:auto; padding-right:5px;" id="tb_div">
@@ -170,7 +170,9 @@
                                     </tr>
                                 </thead>
                                 <tbody id = "load_data">
-                                    <?php displayDept(); ?>
+                                    <?php 
+                                    displayDept(); 
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
