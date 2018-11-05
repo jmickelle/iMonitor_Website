@@ -76,7 +76,7 @@
         $notifSql = mysqli_query($con,"SELECT user,hostname,iMonitor_Status,connection_status FROM tbl_log WHERE 
         (iMonitor_Status = 'End Task' OR connection_status = 'UNESTABLISHED') AND user != 'Administrator' ");
         $notifSql2 = mysqli_query($con,"SELECT hostname,agent_version FROM tbl_computer_details 
-        WHERE agent_version != '9.614' OR agent_version != '9.617'");
+        WHERE agent_version != '9.614' AND agent_version != '9.617'");
         $notifCount = 0;
         $notifCount2 = 0;
         while($notifRow = mysqli_fetch_array($notifSql))
@@ -96,7 +96,7 @@
         $notifSql = mysqli_query($con,"SELECT user,hostname,iMonitor_Status,connection_status FROM tbl_log WHERE 
         (iMonitor_Status = 'End Task' OR connection_status = 'UNESTABLISHED') AND user != 'Administrator' LIMIT 5");
         $notifSql2 = mysqli_query($con,"SELECT hostname,agent_version,branch FROM tbl_computer_details 
-        WHERE agent_version != '9.614' OR agent_version != '9.617' LIMIT 5");
+        WHERE agent_version != '9.614' AND agent_version != '9.617' LIMIT 5");
         while($notifRow = mysqli_fetch_array($notifSql))
         {
             echo '
@@ -192,6 +192,7 @@
     function displayDept()
     {
         require 'connection/db_connection.php';
+         
         if(isset($_POST['bntSearch']))
         {
             $selectDepartment = mysqli_real_escape_string($con,$_POST['dept_viewing']);
@@ -240,11 +241,12 @@
         if(isset($_POST['btnUpdate']))
         {
             $remarks = mysqli_real_escape_string($con,$_POST['remarks']);
-            //$Agent_version = mysqli_real_escape_string($con,$_POST['agent_version']);
-            $updateComp = mysqli_query($con,"UPDATE tbl_computer_details SET remarks = '$remarks', agent_version = '6.7' WHERE compID = '{$_SESSION['compID']}' ");
+            $Agent_version = mysqli_real_escape_string($con,$_POST['agent_version']);
+            $updateComp = mysqli_query($con,"UPDATE tbl_computer_details SET remarks = '$remarks', agent_version = '$Agent_version' WHERE compID = '{$_SESSION['compID']}' ");
             if($updateComp)
             {
                 echo '<script>window.alert("UPDATED")</script>';
+                header("Refresh:0; URL=admin_viewing.php");
             }
             else
             {
