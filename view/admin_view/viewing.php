@@ -36,7 +36,7 @@
                         </div>
                         <div class="col-md-3">
                             <select class="form-control" name="remarks" id="stats">
-                                <option value="?php $row['remarks']; ?>"><?php echo $row['remarks']; ?></option>
+                                <option value="<?php $row['remarks']; ?>"><?php echo $row['remarks']; ?></option>
                                 <option value="Active">Active</option>
                                 <option value="Resigned">Resigned</option>
                                 <option value="Transferred">Transferred</option>
@@ -44,7 +44,7 @@
                             </select>
                         </div>
                         <div class="col-md-3">
-                           <input type="text" class="form-control">
+                           <input type="text" name="agent_version" class="form-control" value="<?php echo $row['agent_version']; ?>"/>
                         </div>
                     </div>
                 </div>
@@ -89,8 +89,9 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-md-12">
-                        <a href="admin_viewing.php"><button class="btn btn-default" style="float:right; width:130px;">Back</button></a>
-                        <a href=""><button class="btn btn-success" style="float:right; width:130px; margin-right:15px;">Update</button></a>
+                        <a href="admin_viewing.php" class="btn btn-default" style="float:right; width:130px;">Back</a>
+                        <!-- <a href=""><button class="btn btn-success" style="float:right; width:130px; margin-right:15px;">Update</button></a> -->
+                        <input type="submit" value="Update" name="btnUpdate" class="btn btn-success" style="float:right; width:130px; margin-right:15px;">
                         </div>
                     </div>
                 </div>
