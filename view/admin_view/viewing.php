@@ -18,11 +18,16 @@
     <!-- <link rel="stylesheet" href="styleIndex.css"> -->
 </head>
 <body style="margin-top:30px;">
+    <?php
+    require '../../php/connection/db_connection.php';
+    $compSql = mysqli_query($con,"SELECT * FROM tbl_computer_details WHERE compID = '$id'");
+    if($row = mysqli_fetch_assoc($compSql)){
+    ?>
     <div class="container1" style="width: 100%; padding-left: 25px; padding-right: 20px;">
         <div class="container2">
             <table class="tbl-view">
                 <tr>
-                    <td><h1 style="margin-bottom:30px; margin-right:1130px;">ITOMAU033022 | Camille</h1></td>
+                    <td><h1 style="margin-bottom:30px; margin-right:1130px;"><?php echo $row['hostname']; ?></h1></td>
                     <td><h4 style="margin-right:20px;"><strong>Remarks:</strong></h4></td>
                     <td>
                         <select name="status" id="stats">
@@ -55,11 +60,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                    require '../../php/connection/db_connection.php';
-                    $compSql = mysqli_query($con,"SELECT * FROM tbl_computer_details WHERE compID = '$id'");
-                    if($row = mysqli_fetch_assoc($compSql)){
-                    ?>
                     <tr>
                         <td style="padding:15px;"><?php echo $row['compID']; ?></td>
                         <td style="padding:15px;"><?php echo $row['hostname']; ?></td>

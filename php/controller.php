@@ -1,4 +1,6 @@
 <?php
+    global $id;
+    global $ids;
     function Login()
     {
         session_start();
@@ -216,9 +218,10 @@
                     <td>'.$row['remarks'].'</td>
                     <td>'.$row['agent_Version'].'</td>
                     <input type="hidden" value="?id='.$ids.'" />
-                    <td><a href="#myModalEdit" data-toggle="modal"><input type="button" value="View" class="btn btn-primary"></a></td>  
-                    </tr>
+                    <td><a href="viewing.php?id='.$ids.'" data-toggle="modal"><input type="button" value="View" class="btn btn-primary"></a></td> 
                     ';
+                    //include('admin_viewing_modal.php');
+                echo '</tr>';
             }   
             
         }
@@ -227,7 +230,6 @@
     function displayComp()
     {
         require 'connection/db_connection.php';
-        $id = $_GET['id'];
         $compSql = mysqli_query($con,"SELECT * FROM tbl_computer_details WHERE compID = '{$id}'");
         if($row = mysqli_fetch_assoc($compSql)){
             echo '
