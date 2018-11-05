@@ -27,7 +27,7 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <div class="row" style="display: inline-block;">
+                    <div class="row" >
                         <div class="col-md-3">
                             <h3>Computer Details</h3>
                         </div>
@@ -91,8 +91,8 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-md-12">
-                            <a href="admin_viewing.php"><input type="button" value="Back" class="btn btn-default" style="float:right; width:130px;">Back</button></a>
-                            <a href=""><input type="button" value="Update" class="btn btn-success" style="float:right; width:130px; margin-right:15px;">Update</button></a>
+                            <a href="admin_viewing.php"><input type="button" value="Back" class="btn btn-default" style="float:right; width:130px;"></a>
+                            <a href=""><input type="button" value="Update" class="btn btn-success" style="float:right; width:130px; margin-right:15px;"></a>
                         </div>
                     </div>
                 </div>
