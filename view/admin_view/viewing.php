@@ -31,6 +31,7 @@
                     <td><h4 style="margin-right:20px;"><strong>Remarks:</strong></h4></td>
                     <td>
                         <select name="status" id="stats">
+                        <option value="<?php $row['remarks']; ?>"><?php echo $row['remarks']; ?></option>
                             <option value="Active">Active</option>
                             <option value="Resigned">Resigned</option>
                             <option value="Transferred">Transferred</option>
@@ -50,8 +51,6 @@
             <table class="table table-bordered" style="margin-left:90px;">
                 <thead>
                     <tr style="padding:50px;">
-                        <th style="padding-bottom:15px;">Comp ID</th>
-                        <th style="padding-bottom:15px;">Hostname</th>
                         <th style="padding-bottom:15px;">Processor</th>
                         <th style="padding-bottom:15px;">HDD Serial</th>
                         <th style="padding-bottom:15px;">MAC Address</th>
@@ -61,8 +60,6 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="padding:15px;"><?php echo $row['compID']; ?></td>
-                        <td style="padding:15px;"><?php echo $row['hostname']; ?></td>
                         <td style="padding:15px;"><?php echo $row['processor'] ?></td>
                         <td style="padding:15px;"><?php echo $row['hdd_Serial']; ?></td>
                         <td style="padding:15px;"><?php echo $row['mac_Address']; ?></td>
