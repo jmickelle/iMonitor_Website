@@ -159,6 +159,7 @@
                                     </div>
                                     <div class="col-md-6">
                                     <br>
+                                    <input type="sbumit" id="search" name="btnSearch" value="Search" class="btn btn-primary">
                                         <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                                         <input type="button" id="btnExport" name="btnExport" value="Export to Excel" class="btn btn-success" onclick="fnExcelReport();">
                                             <!--<input type="button" name="btnExport_PDF" id="btnExport_PDF" value="PDF" class="btn btn-danger" onclick="">-->
@@ -221,33 +222,7 @@
                                             </tr>
                                         </thead>
                                         <tbody id = "load_data">
-                                            <?php
-                                                $sql = "select user, domain_name, hostname, ip_address, ip_date_modified,
-                                                iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log 
-                                                WHERE user != 'Administrator' ";
-                                                $stmt = $db->prepare($sql);
-                                                $stmt->execute();
-                                                $count = 1;
-                                                foreach($stmt as $row) 
-                                                {
-                                                    //while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
-                                            ?>
-                                            <tr> 
-                                                <td><?php echo $count++ ?></td>
-                                                <td><?php echo $row['user']; ?></td>
-                                                <td><?php echo $row['hostname']; ?></td>
-                                                <td><?php echo $row['domain_name']; ?></td>
-                                                <td><?php echo $row['ip_address']; ?></td>
-                                                <td><?php echo $row['ip_date_modified']; ?></td>
-                                                <td><?php echo $row['iMonitor_Status']; ?></td>
-                                                <td><?php echo $row['services']; ?></td>
-                                                <td><?php echo $row['sysSetting_File']; ?></td>
-                                                <td><?php echo $row['serverIP']; ?></td>
-                                                <td><?php echo $row['connection_status']?></td>
-                                                <td><?php echo $row['branch']; ?></td>
-                                                <td><?php echo date("M-d-Y h:m", strtotime($row['scan_time']))?></td>
-                                            </tr>
-                                            <?php } ?>
+                                            <?php displayLogReport(); ?>
                                         </tbody>
                                     </table>
                                 </div>

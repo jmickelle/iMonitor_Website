@@ -315,6 +315,31 @@
     function displayLogReport()
     {
         require 'connection/db_connection.php';
+        $sqlLogReport = mysqli_query($con,"SELECT user, domain_name, hostname, ip_address, ip_date_modified,
+        iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time FROM tbl_log 
+        WHERE user != 'Administrator'");
+        $count = 1;
+        foreach($sqlLogReport as $row)
+        {
+            echo '
+            <tr> 
+            <td>'.$count++.'</td>
+            <td>'.$row['user'].'</td>
+            <td>'.$row['hostname'].'</td>
+            <td>'.$row['domain_name'].'</td>
+            <td>'.$row['ip_address'].'</td>
+            <td>'.$row['ip_date_modified'].'</td>
+            <td>'.$row['iMonitor_Status'].'</td>
+            <td>'.$row['services'].'</td>
+            <td>'.$row['sysSetting_File'].'</td>
+            <td>'.$row['serverIP'].'</td>
+            <td>'.$row['connection_status'].'</td>
+            <td>'.$row['branch'].'</td>
+            <td>'.$row['scan_time'].'</td>
+            </tr>
+            ';
+        }
+        
     }
 
 ?>
