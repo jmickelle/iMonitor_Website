@@ -237,17 +237,17 @@
 								<input class="form-control" type="text" id="password" name="password" value="Aa123456" disabled>
 							</div>
 						</div>
-						<br>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<div class="col-sm-12">
 								<input type="submit" class="btn btn-success" value="Register" name="btnRegister" style="margin: auto; margin-top: 15;">
 							</div>
-						</div>
+						</div> -->
 					</form>
 				</div>
-				<!-- <div class="modal-footer">
+				<div class="modal-footer">
+					<input type="submit" class="btn btn-success" value="Register" name="btnRegister" style="margin: auto; margin-top: 15;">
 					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>	
-
+				
 					<script type="text/javascript">
 						function mirrorFunction()
 							{
@@ -267,7 +267,7 @@
 							document.getElementById("password2").value = "";
     					}
 					</script>
-				</div> -->
+				</div>
 			</div>
 		</div>
 	</div>
