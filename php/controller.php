@@ -155,6 +155,7 @@
         $userDisplay = mysqli_query($con,"SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role <> 'SUPER ADMIN'");
         foreach($userDisplay as $row)
         {
+            $userids = $row['id'];
             echo '
             <tr>
             <td>'.$row['userid'].'</td>
@@ -163,7 +164,7 @@
             <td>'.$row['position'].'</td>
             <td>'.$row['role'].'</td>
             <td>'.$row['status'].'</td>
-            
+            <input type="hidden" value="?id='.$userids.'" />
             <td><a href="" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
             </tr>';
             // <td><input type="submit" name="btnEditRecord" class="btn btn-primary" value="'.$_SESSION['userid'].'"></td>
