@@ -179,9 +179,7 @@
 					<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h4 class="modal-title" id="myModalLabel">User Registration</h4>
 				</div>
-
 				<div class="modal-body">
-					<?php  addUser(); ?>
 					<form class="form-horizontal" role="form" method="POST">
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
