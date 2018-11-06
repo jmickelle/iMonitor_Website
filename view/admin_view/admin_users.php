@@ -17,7 +17,25 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="../../public/css/style.css">
+	<link rel="stylesheet" href="../../public/css/style.css">
+	<style>
+		.modal-body .form-horizontal .col-sm-4
+		{
+			width: 100%;
+		}
+		.modal-body .form-horizontal .col-sm-8 
+		{
+			width: 100%;
+		}
+		.modal-body .form-horizontal .control-label 
+		{
+			text-align: left;
+		}
+		.modal-body .form-horizontal .col-sm-offset-2
+		{
+			margin-left: 15px;
+		}
+	</style>
 </head>
 <body>
     <!-- Top Navigation -->
@@ -157,20 +175,6 @@
 									<tbody>
 
 									</tbody>
-									<tfoot>
-										<thead>
-												<tr>
-													<th style="padding-bottom:15px;">ID Number</th>
-													<th style="padding-bottom:15px;">Name</th>
-													<th style="padding-bottom:15px;">Department</th>
-													<th style="padding-bottom:15px;">Position</th>
-													<th style="padding-bottom:15px;">Role</th>
-													<th style="padding-bottom:15px;">Status</th>
-													<th style="padding-bottom:15px;">Option</th>
-												</tr>
-										</thead>	
-									</tfoot>
-								</div>
 							</div>
 
 						</div>
@@ -269,8 +273,8 @@
 				</div>
 
 				<div class="modal-footer">
-				<input type="hidden" id="password2" name="password2"></td>
 					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>	
+
 					<script type="text/javascript">
 						function mirrorFunction()
 							{
