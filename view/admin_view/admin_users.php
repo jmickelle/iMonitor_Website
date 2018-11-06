@@ -136,7 +136,7 @@
 			<div class="well">User Accounts</div>
 				<div class="container-fluid">
 						<div class="card">
-							<div class="header">
+							<div class="card-header">
 								<a href="#addUser" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i><u>Add User</u></a>
 							</div>
 							<div class="card-body">
@@ -158,15 +158,17 @@
 
 									</tbody>
 									<tfoot>
-										<tr>
-											<th style="padding-bottom:15px;">ID Number</th>
-											<th style="padding-bottom:15px;">Name</th>
-											<th style="padding-bottom:15px;">Department</th>
-											<th style="padding-bottom:15px;">Position</th>
-											<th style="padding-bottom:15px;">Role</th>
-											<th style="padding-bottom:15px;">Status</th>
-											<th style="padding-bottom:15px;">Option</th>
-										</tr>		
+										<thead>
+												<tr>
+													<th style="padding-bottom:15px;">ID Number</th>
+													<th style="padding-bottom:15px;">Name</th>
+													<th style="padding-bottom:15px;">Department</th>
+													<th style="padding-bottom:15px;">Position</th>
+													<th style="padding-bottom:15px;">Role</th>
+													<th style="padding-bottom:15px;">Status</th>
+													<th style="padding-bottom:15px;">Option</th>
+												</tr>
+										</thead>	
 									</tfoot>
 								</div>
 							</div>
