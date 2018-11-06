@@ -154,14 +154,16 @@
 											</tr>
 										</thead>
 									</table>
-									<tbody style="text-align:center;">
-										<td>1040359</td>
-										<td>Camille Kate</td>
-										<td>Marvin(IT)</td>
-										<td>ITOM-Audit</td>
-										<td>Staff</td>
-										<td>Active</td>
-										<td><input type="button" class="btn btn-primary" value="Edit"></td>
+									<tbody style="text-align: -webkit-center;">
+										<tr>
+											<td>1040359</td>
+											<td>Camille Kate</td>
+											<td>Marvin(IT)</td>
+											<td>ITOM-Audit</td>
+											<td>Staff</td>
+											<td>Active</td>
+											<td><input type="button" class="btn btn-primary" value="Edit"></td>
+										</tr>
 									</tbody>
 							</div>
 
