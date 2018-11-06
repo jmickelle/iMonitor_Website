@@ -135,15 +135,13 @@
 		<div class="container" style="width:100%;">
 			<div class="well">User Accounts</div>
 				<div class="container-fluid">
-					<!-- <div class="panel with-nav-tabs pane-default" style="margin-left: -30px;">
-						<div class="panel panel-heading">
-							<a href="#addUser" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i><u>Add User</u></a>
-						</div>
-						<div class="panel panel-body"> 
-							<div style="clear:both"></div>
-							<br>
-								<div class="table-responsive" style=" margin-top:-50px;">
-									<table class="table table-bordered" style="background: #ffffff;">
+						<div class="card">
+							<div class="header">
+								<a href="#addUser" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i><u>Add User</u></a>
+							</div>
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class="table table-bordered">
 										<thead>
 											<tr>
 												<th style="padding-bottom:15px;">ID Number</th>
@@ -155,13 +153,25 @@
 												<th style="padding-bottom:15px;">Option</th>
 											</tr>
 										</thead>
-										<tbody>
-											 displayUser(); ?>
-										</tbody>
 									</table>
+									<tbody>
+
+									</tbody>
+									<tfoot>
+										<tr>
+											<th style="padding-bottom:15px;">ID Number</th>
+											<th style="padding-bottom:15px;">Name</th>
+											<th style="padding-bottom:15px;">Department</th>
+											<th style="padding-bottom:15px;">Position</th>
+											<th style="padding-bottom:15px;">Role</th>
+											<th style="padding-bottom:15px;">Status</th>
+											<th style="padding-bottom:15px;">Option</th>
+										</tr>		
+									</tfoot>
 								</div>
+							</div>
+
 						</div>
-					</div> -->
 				</div>
 			</div>
 		</div>
