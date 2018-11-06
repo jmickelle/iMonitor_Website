@@ -312,5 +312,9 @@
     }
 
     //ADMIN REPORTS
+    function displayLogReport()
+    {
+        require 'connection/db_connection.php';
+    }
 
 ?>
