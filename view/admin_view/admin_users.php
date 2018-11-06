@@ -142,7 +142,7 @@
 							<div class="card-body">
 								<div class="table-responsive">
 									<table class="table table-bordered">
-										<thead>
+										<thead style="text-align: -webkit-center;">
 											<tr>
 												<th style="padding-bottom:15px;">ID Number</th>
 												<th style="padding-bottom:15px;">Name</th>
@@ -156,6 +156,17 @@
 										<tbody style="text-align: -webkit-center;">
 											<?php displayUser(); ?>
 										</tbody>
+										<tfoot style="text-align: -webkit-center;">
+											<tr>
+													<th style="padding-bottom:15px;">ID Number</th>
+													<th style="padding-bottom:15px;">Name</th>
+													<th style="padding-bottom:15px;">Department</th>
+													<th style="padding-bottom:15px;">Position</th>
+													<th style="padding-bottom:15px;">Role</th>
+													<th style="padding-bottom:15px;">Status</th>
+													<th style="padding-bottom:15px;">Option</th>
+											</tr>
+										</tfoot>
 									</table>
 								</div>
 							</div>
