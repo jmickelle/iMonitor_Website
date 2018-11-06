@@ -181,7 +181,8 @@
 				</div>
 
 				<div class="modal-body">
-					<form class="form-horizontal" role="form">
+					<?php  addUser(); ?>
+					<form class="form-horizontal" role="form" method="POST">
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
 							<div class="col-sm-12">
@@ -202,8 +203,10 @@
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="department" name="department" required>
-									<option value="">--Select Department--</option>
-										
+									<option value=" ">--Select Department--</option>
+									<?php
+										listDepartment();
+									?>
 								</select>
 							</div>
 						</div>
@@ -212,8 +215,8 @@
 							<label class="col-sm-12 control-label" for="role">Role</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="role" name="role" required>
-									<option value="">--Select Role--</option>
-									<option value="ADMINISTRATOR">ADMINISTRATOR</option>
+									<option value=" ">--Select Role--</option>
+									<option value="Administrator">ADMINISTRATOR</option>
 									<option value="STAFF">STAFF</option>
 								</select>
 							</div>
@@ -239,7 +242,7 @@
 						<br>
 						<div class="form-group">
 							<div class="col-sm-12">
-								<button type="submit" class="btn btn-success" style="margin: auto; margin-top: 15;">Register</button>
+								<input type="submit" class="btn btn-success" value="Register" name="btnRegister" style="margin: auto; margin-top: 15;">
 							</div>
 						</div>
 					</form>

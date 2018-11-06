@@ -178,6 +178,31 @@
         //echo '<script>window.alert('.$_SESSION['userid'].')</script>';
     }
 
+    function addUser()
+    {
+        require 'connection/db_connection.php';
+        if(isset($_POST['btnRegister']))
+        {
+            $userid = mysqli_real_escape_string($con,$_POST['userid']);
+            $department = mysqli_real_escape_string($con,$_POST['department']);
+            $role = mysqli_real_escape_string($con,$_POST['role']);
+            $status = mysqli_real_escape_string($con,$_POST['status']);
+            $password = mysqli_real_escape_string($con,$_POST['password']);
+            $enc = md5(sha1($password));
+
+            $sqlRegister = mysqli_query($con,"INSERT INTO tbl_users(userid,department,role,status,password) 
+            VALUES('$userid','$department','$role','$status','$enc') ");
+            if($sqlRegister)
+            {
+                echo '<script>window.alert("REGISTERED!")</script>';
+            }
+            else
+            {
+                echo '<script>window.alert("ERROR IN QUERY!")</script>';
+            }
+        }
+    }
+
     //ADMIN VIEWING
     function listDepartment()
     {
