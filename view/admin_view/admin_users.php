@@ -244,8 +244,7 @@
 						</div>
 					</form>
 				</div>
-
-				<div class="modal-footer">
+				<!-- <div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal" onclick="ClearFields();">Close</button>	
 
 					<script type="text/javascript">
@@ -267,7 +266,7 @@
 							document.getElementById("password2").value = "";
     					}
 					</script>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
