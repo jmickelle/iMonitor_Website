@@ -18,24 +18,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
 	<link rel="stylesheet" href="../../public/css/style.css">
-	<style>
-		.modal-body .form-horizontal .col-sm-4
-		{
-			width: 100%;
-		}
-		.modal-body .form-horizontal .col-sm-8 
-		{
-			width: 100%;
-		}
-		.modal-body .form-horizontal .control-label 
-		{
-			text-align: left;
-		}
-		.modal-body .form-horizontal .col-sm-offset-2
-		{
-			margin-left: 15px;
-		}
-	</style>
 </head>
 <body>
     <!-- Top Navigation -->
@@ -192,7 +174,7 @@
 <form action="../php/connection/user_account_submit.php" method="POST">
     <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top:50px;">
 		<div class="modal-dialog modal-md" role="document">
-			<div class="modal-content">
+			<div class="modal-content" style="height: -webkit-fill-available;">
 				<div class="modal-header">
 					<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h4 class="modal-title" id="myModalLabel">User Registration</h4>
@@ -221,16 +203,7 @@
 							<div class="col-sm-12">
 								<select class="form-control" id="department" name="department" required>
 									<option value="">--Select Department--</option>
-										<?php     
-              								$sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
-              								$stmt = $db->prepare($sql);
-              								$stmt->execute();
-
-											while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-											{
-                								echo '<option>'.$row['branch_name'].'</option>'; 
-              								}
-            							?>
+										
 								</select>
 							</div>
 						</div>
