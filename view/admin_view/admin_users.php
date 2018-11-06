@@ -174,7 +174,7 @@
 <form action="../php/connection/user_account_submit.php" method="POST">
     <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top:50px;">
 		<div class="modal-dialog modal-md" role="document">
-			<div class="modal-content" style="height: -webkit-fill-available;">
+			<div class="modal-content" >
 				<div class="modal-header">
 					<button type="button" class="close" class="btn btn-default" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 					<h4 class="modal-title" id="myModalLabel">User Registration</h4>
