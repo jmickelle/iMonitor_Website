@@ -122,6 +122,35 @@
         }
     }
 
+    function displayAllNotif()
+    {
+        require 'connection/db_connection.php';
+        $notifSql = mysqli_query($con,"SELECT user,hostname,iMonitor_Status,connection_status,scan_time,branch FROM tbl_log WHERE 
+        (iMonitor_Status = 'End Task' OR connection_status = 'UNESTABLISHED') AND user != 'Administrator' LIMIT 5");
+        $notifSql2 = mysqli_query($con,"SELECT hostname,agent_version,branch,scan_time FROM tbl_computer_details 
+        WHERE agent_version != '9.614' AND agent_version != '9.617' LIMIT 5");
+        while($row = mysqli_fetch_array($notifSql))
+        {
+            echo '
+                <tr>
+                    <td>iMonitor : '.$row['iMonitor_Status'].'<br/> Port Connection:'.$row['connection_status'].'<br/> Scan Time:'.$row['scan_time'].'</td>
+                    <td>Hostname: '.$row['hostname'].' <br> User: '.$row['user'].'<br/> Building : '.$row['branch'].'</td>
+                    <td>'.$row['scan_time'].'</td>
+                </tr>
+                ';
+        }
+        while($row2 = mysqli_fetch_array($notifSql2))
+        {
+            echo '
+                <tr>
+                    <td>Agent_version:  '.$row2['agent_version'].'</td>
+                    <td>Hostname: '.$row2['hostname'].'<br/> Building : '.$row2['branch'].'</td>
+                    <td>'.$row2['scan_time'].'</td>
+                </tr>
+            ';
+        }
+    }
+
     function sidebarComputerList()
     {
         require 'connection/db_connection.php';

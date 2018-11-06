@@ -107,12 +107,7 @@
 		            <a href="admin_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
 		        <li >
-		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
-		            <ul class="collapse list-unstyled" id="homeSubmenu">
-		                <li><a href="admin_viewing.php">Marvin 5th</a></li>
-		                <li><a href="admin_viewing.php">Marvin 10th</a></li>
-		                <li><a href="admin_viewing.php">COP</a></li>
-		            </ul>
+		            <a href="admin_viewing.php" ><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
 		        </li>
 		        <li>
 		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
@@ -144,20 +139,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-                                            // $query = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
-                                            // $query->execute();
-                                            // $query->setFetchMode(PDO::FETCH_ASSOC);
-                                            // while ($row = $query->fetch()) {
-                                            //     echo '
-                                            //         <tr>
-                                            //             <td>iMonitor : '.$row['iMonitor_Status'].'<br/> Port Connection:'.$row['connection_status'].'<br/> Scan Time:'.$row['scan_time'].'</td>
-                                            //             <td>Hostname: '.$row['hostname'].' <br> User: '.$row['user'].'<br/> Building : '.$row['branch'].'</td>
-                                            //             <td>'.$row['scan_time'].'</td>
-                                            //         </tr>
-                                            //     ';
-                                            // }
-                                        ?>
+                                        <?php displayAllNotif(); ?>
                                     </tbody>
                                 </table>
                             </div>
