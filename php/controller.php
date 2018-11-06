@@ -190,7 +190,7 @@
             $password = mysqli_real_escape_string($con,$_POST['password']);
             $enc = md5(sha1($password));
 
-            $sqlRegister = mysqli_query($con,"INSERT INTO tbl_users(userid,department,role,status,password) 
+            $sqlRegister = mysqli_query($con,"INSERT INTO tbl_user(userid,department,role,status,password) 
             VALUES('$userid','$department','$role','$status','$enc') ");
             if($sqlRegister)
             {
