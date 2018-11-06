@@ -191,9 +191,16 @@
             $password = mysqli_real_escape_string($con,$_POST['password']);
             $enc = md5(sha1($password));
 
-            $sqlRegister = mysqli_query($con,"INSERT INTO tbl_user(userid,department,role,status,password) 
-            VALUES('$userid','$department','$role','$status','$enc') ");
-            echo '<script>window.alert("REGISTERED!")</script>';
+            $selUsers = mysqli_query($con,"SELECT * FROM tbl_user WHERE userid = '$userid'");
+            $checkRow = mysqli_fetch_array($selUsers);
+            if($checkRow>0)
+            {
+                echo '<script type="text/javascript">window.alert("This User '.$userid.' Already Exist!")</script>';
+            }
+            else{
+                $sqlRegister = mysqli_query($con,"INSERT INTO tbl_user(userid,department,role,status,password) 
+                VALUES('$userid','$department','$role','$status','$enc') ");
+            }
             header("Refresh:0; URL =  admin_users.php");
         }
     }
