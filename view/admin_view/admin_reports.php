@@ -141,6 +141,52 @@
                     <div class="panel-body">
                         <div class="tab-content">
                             <div class="tab-pane fade in active" id="tab0default">
+                                <div class="row">
+                                    <div class="col-md-6" style="padding-top:15px;">
+                                        <select name="department" id="department" class="form-control">
+                                            <option value="All" selected>--All department--</option>
+                                                <?php listDepartment(); ?>
+                                        </select> 
+                                    </div>
+                                    <div class="col-md-6" style="padding-top:15px;">
+                                        <select name="dub_dept" id="sub_dept" class="form-control" disabled>
+                                            <option value="" selected>--All sub department</option>
+                                                <?php listDepartment();?>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6"><br>
+                                        <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
+                                    </div>
+                                    <div class="col-md-6">
+                                    <br>
+                                        <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
+                                        <input type="button" id="btnExport" name="btnExport" value="Export to Excel" class="btn btn-success" onclick="fnExcelReport();">
+                                            <!--<input type="button" name="btnExport_PDF" id="btnExport_PDF" value="PDF" class="btn btn-danger" onclick="">-->
+                                        <input type="button" id="print" name="print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" />
+                                    </div>
+                                    <iframe id="txtArea1" style="display:none"></iframe>
+                                    <div style="clear:both; padding:15px;"></div>
+                                    <div class="table-responsive"  style="overflow-x:auto; margin-left:15px;" id="tb_div">
+                                        <table class="table table-bordered" style="background: #ffffff;" id="comp_logs">
+                                            <thead>
+                                                <tr>
+                                                    <th>No.</th>
+                                                    <th>User</th>
+                                                    <th>Computer Name</th>
+                                                    <th>Domain</th>
+                                                    <th>IP Address</th>
+                                                    <th>Date Modified</th>
+                                                    <th>iMonitor Status</th>
+                                                    <th>Services Not Found</th>
+                                                    <th>SysSetting File</th>
+                                                    <th>Server IP</th>
+                                                    <th>Connection Status</th>
+                                                    <th>Branch</th>
+                                                    <th>Scan Time</th>
+                                                </tr>
+                                            </thead>
+                                    </div>
+                                </div>
 
             </div>
             <div class="col-lg-12">
@@ -154,31 +200,8 @@
                     <div class="panel-body">
                         <div class="tab-content">
                             <div class="tab-pane fade in active" id="tab0default">
-                                <div class="col-md-6" style="padding-top:15px;">
-                                    <select name="department" id="department" class="form-control">
-                                        <option value="All" selected>--All department--</option>
-                                            <?php listDepartment(); ?>
-                                    </select> 
-                                </div>
-                                <div class="col-md-6" style="padding-top:15px;">
-                                    <select name="dub_dept" id="sub_dept" class="form-control" disabled>
-                                        <option value="" selected>--All sub department</option>
-                                            <?php listDepartment();?>
-                                    </select>
-                                </div>
-                                <div class="col-md-6"><br>
-                                    <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
-                                </div>
-                                <div class="col-md-6">
-                                <br>
-                                    <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
-                                    <input type="button" id="btnExport" name="btnExport" value="Export to Excel" class="btn btn-success" onclick="fnExcelReport();">
-                                        <!--<input type="button" name="btnExport_PDF" id="btnExport_PDF" value="PDF" class="btn btn-danger" onclick="">-->
-                                    <input type="button" id="print" name="print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" />
-                                </div>
-                                <iframe id="txtArea1" style="display:none"></iframe>
-                                <div style="clear:both; padding:15px;"></div>
-                                <div class="table-responsive" style="overflow-x:auto; margin-left:15px;" id="tb_div">
+                                
+                                <div class="table-responsive">
                                     <table class="table table-bordered" style="background: #ffffff;" id="comp_logs">
                                         <thead>
                                             <tr>

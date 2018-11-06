@@ -23,15 +23,15 @@
     <!-- Top Navigation -->
 	<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #fffafa;">
 		<div class="navbar-header">
-            <img class="nav-logo" src="../../public/images/icons/sky_luster.png">
-            <label class="nav-label">iMonitoring</label>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sidenav" aria-expanded="false">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <img class="nav-logo" src="../../public/images/icons/sky_luster.png">
+            <label class="nav-label">iMonitoring</label>
         </div>
-        <div class="collapse bs-example-navbar-collapse" id="sidenav"></div>
+        <div class="collapse navbar-collapse" id="sidenav">
             <ul class="nav navbar-nav navbar-right" style="padding-left:-50px; padding-right:25px; padding-top:7px; margin-top: -5px;">
                 <li>
                     <p id="demo" hidden>
