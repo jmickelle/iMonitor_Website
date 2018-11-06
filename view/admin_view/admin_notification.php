@@ -1,13 +1,41 @@
+<script type="text/javascript">
+var IDLE_TIMEOUT = 600; //seconds
+var _idleSecondsCounter = 0;
+document.onclick = function() {
+_idleSecondsCounter = 0;
+};
+document.onmousemove = function() {
+_idleSecondsCounter = 0;
+};
+document.onkeypress = function() {
+_idleSecondsCounter = 0;
+};
+window.setInterval(CheckIdleTime, 1000);
+function CheckIdleTime() {
+_idleSecondsCounter++;
+var oPanel = document.getElementById("SecondsUntilExpire");
+if (oPanel)
+oPanel.innerHTML = (IDLE_TIMEOUT - _idleSecondsCounter) + "";
+if (_idleSecondsCounter >= IDLE_TIMEOUT) {
+//alert("Time expired!");
+document.location.href = "../php/connection/logout.php";
+}
+}
+</script>
+
+<?php
+session_start();
+
+require "{$_SERVER['DOCUMENT_ROOT']}/php/connection/db_connection.php";
+
+if(!isset($_SESSION["userid"])) {
+  header("Location: index.php");
+exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-<?php
-    include '../../php/controller.php';
-    Login();
-    if(!isset($_SESSION["user"])) {
-        header("Location: ../../index.php");
-    }
-    Logout();
-?>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,13 +73,35 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
                         <span class="glyphicon glyphicon-bell"></span>
                         <span class="label label-pill label-warning count" style="border-radius: 10px;">
-                        <?php notifCount(); ?>
+                        <?php
+                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
+                            $query->execute();
+                            $query->setFetchMode(PDO::FETCH_ASSOC);
+                            $countdown = 0;
+                            while ($row = $query->fetch()) {
+                                $countdown++;
+                            }
+                            echo  $countdown;
+                        ?>
                         </span>
                     </a>
                     <ul class="dropdown-menu">
-                    <?php notifDisplay(); ?>
+                        <?php 
+                            $query = $db->prepare("SELECT user,hostname,iMonitor_Status FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' LIMIT 5 ");
+                            $query->execute();
+                            $query->setFetchMode(PDO::FETCH_ASSOC);
+                            while ($row = $query->fetch()) {
+                                echo '
+                                <li>
+                                    <a href="#"><strong>'.$row['hostname'].'</strong><br>
+                                    <small><em>'.$row['iMonitor_Status'].'</em></small></a>
+                                </li>
+                                <li class="divider"></li>
+                                ';
+                            }
+                        ?>
                         <li>
-                            <a href="user_notification.php"><small>Show all notifications</small></a>
+                            <a href=""><small>Show all notifications</small></a>
                         </li>
                     </ul>
                 </li>
@@ -60,7 +110,17 @@
                 <!-- User Dropdown -->
 	            <li class="dropdown" style="padding-left: 5px;">
 	            	<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="padding-right: 30px;"><i class="glyphicon glyphicon-user"></i>
-                    <?php displayName(); ?>
+                    
+                    <?php
+                        $query = $db->prepare("SELECT name FROM tbl_user WHERE userid=:userid");
+                        $query->bindValue(':userid', $_SESSION['userid'], PDO::PARAM_STR);
+                        $query->execute();
+                        $query->setFetchMode(PDO::FETCH_ASSOC);
+         
+                        while ($row = $query->fetch()) {
+                        echo 'Welcome: ' . $row['name'];
+                        }
+                    ?>
 	                </a>
 	            	<ul class="dropdown-menu" role="menu">
 	            		<li class="dropdown-header"><i class="glyphicon glyphicon-cog"></i><b> Settings</b></li>
@@ -101,16 +161,24 @@
 			<ul class="list-unstyled components">
 		        <p></p>
 		        <li>
-		            <a href="user_dashboard.php"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
+		            <a href="admin_dashboard.php"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
 		        </li>
 		        <li>
-		            <a href="user_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
+		            <a href="admin_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
 		        <li >
-		            <a href="user_viewing.php" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
+		            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
+		            <ul class="collapse list-unstyled" id="homeSubmenu">
+		                <li><a href="admin_viewing.php">Marvin 5th</a></li>
+		                <li><a href="admin_viewing.php">Marvin 10th</a></li>
+		                <li><a href="admin_viewing.php">COP</a></li>
+		            </ul>
 		        </li>
 		        <li>
-		            <a href="user_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
+		            <a href="admin_users.php"><i class="glyphicon glyphicon-edit"></i>User Accounts</a>
+		        </li>
+		        <li>
+		            <a href="admin_reports.php"><i class="glyphicon glyphicon-duplicate"></i>Reports</a>
 		        </li>	  
 	   		</ul>
         </nav>
@@ -137,8 +205,6 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $d=strtotime("Now");		
-                                            $dateNow = date("M-d-Y", $d);
                                             $query = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE iMonitor_Status = 'End Task' AND user != 'Administrator' ");
                                             $query->execute();
                                             $query->setFetchMode(PDO::FETCH_ASSOC);
@@ -151,21 +217,6 @@
                                                     </tr>
                                                 ';
                                             }
-                                            $query2 = $db->prepare("SELECT user,hostname,iMonitor_Status,connection_status,branch,scan_time FROM tbl_log WHERE  user != 'Administrator' ");
-                                            $query2->execute();
-                                            $query2->setFetchMode(PDO::FETCH_ASSOC);
-                                            
-                                            while ($row2 = $query2->fetch()) {
-                                                if(date("M-d-Y", strtotime($row2['scan_time'])) != $dateNow){
-                                                    echo '
-                                                    <tr>
-                                                        <td>LogWindowsApp : Data Not Updated = '.$row2['scan_time'].'</td>
-                                                        <td>Hostname: '.$row2['hostname'].' <br> User: '.$row2['user'].'<br/> Building : '.$row2['branch'].'</td>
-                                                        <td>'.$row2['scan_time'].'</td>
-                                                    </tr>
-                                                    ';
-                                                } 
-                                            } 
                                         ?>
                                     </tbody>
                                 </table>
