@@ -194,7 +194,7 @@
             $sqlRegister = mysqli_query($con,"INSERT INTO tbl_user(userid,department,role,status,password) 
             VALUES('$userid','$department','$role','$status','$enc') ");
             echo '<script>window.alert("REGISTERED!")</script>';
-            header("REFRESH:1; URL=admin_users.php");
+            header("Refresh:0; URL =  admin_users.php");
         }
     }
 
