@@ -193,14 +193,8 @@
 
             $sqlRegister = mysqli_query($con,"INSERT INTO tbl_user(userid,department,role,status,password) 
             VALUES('$userid','$department','$role','$status','$enc') ");
-            if($sqlRegister)
-            {
-                echo '<script>window.alert("REGISTERED!")</script>';
-            }
-            else
-            {
-                echo '<script>window.alert("ERROR IN QUERY!")</script>';
-            }
+            echo '<script>window.alert("REGISTERED!")</script>';
+            header("REFRESH:1; URL=admin_users.php")
         }
     }
 
