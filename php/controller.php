@@ -1,6 +1,7 @@
 <?php
     global $id;
     global $ids;
+    //error_reporting(0);
     function Login()
     {
         session_start();
@@ -189,7 +190,7 @@
             $role = mysqli_real_escape_string($con,$_POST['role']);
             $status = mysqli_real_escape_string($con,$_POST['status']);
             $password = mysqli_real_escape_string($con,$_POST['password']);
-            $enc = md5(sha1($password));
+            $enc = password_hash($password,PASSWORD_DEFAULT);
 
             $selUsers = mysqli_query($con,"SELECT * FROM tbl_user WHERE userid = '$userid'");
             $checkRow = mysqli_fetch_array($selUsers);
@@ -201,7 +202,6 @@
                 $sqlRegister = mysqli_query($con,"INSERT INTO tbl_user(userid,department,role,status,password) 
                 VALUES('$userid','$department','$role','$status','$enc') ");
             }
-            header("Refresh:0; URL =  admin_users.php");
         }
     }
 

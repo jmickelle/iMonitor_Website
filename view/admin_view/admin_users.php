@@ -212,7 +212,7 @@
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="department" name="department" required>
-									<option value=" ">--Select Department--</option>
+									<option value="">--Select Department--</option>
 									<?php
 										listDepartment();
 									?>
@@ -224,7 +224,7 @@
 							<label class="col-sm-12 control-label" for="role">Role</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="role" name="role" required>
-									<option value=" ">--Select Role--</option>
+									<option value="">--Select Role--</option>
 									<option value="Administrator">ADMINISTRATOR</option>
 									<option value="STAFF">STAFF</option>
 								</select>
