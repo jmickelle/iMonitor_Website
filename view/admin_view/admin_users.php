@@ -171,7 +171,8 @@
 	<!-- End of Sidebar -->
 
 <!-- Add User Modal -->
-<form action="../php/connection/user_account_submit.php" method="POST">
+<?php addUser(); ?>
+<form method="POST">
     <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top:50px;">
 		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content" >
@@ -180,7 +181,7 @@
 					<h4 class="modal-title" id="myModalLabel">User Registration</h4>
 				</div>
 				<div class="modal-body">
-					<form class="form-horizontal" role="form" method="POST">
+					<form class="form-horizontal" role="form" >
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userID">ID Number</label>
 							<div class="col-sm-12">
