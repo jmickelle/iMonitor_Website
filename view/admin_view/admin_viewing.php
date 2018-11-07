@@ -143,11 +143,11 @@
                         <div class="row">
                             <div class="col-md-6" style="padding-top:0px; margin-right: -260px;">                                  
                                 <form method="POST">
-                                    <select name="dept_viewing" id="dept_viewing" class="form-control" style ="width:50%;">
+                                    <select name="dept_viewing" id="dept_viewing" class="form-control" onchange="dropChange()" style ="width:50%;">
                                         <option value="All" selected>--All Department--</option>
                                             <?php listDepartment(); ?>
                                     </select> 
-                                    <label id="selected"></label>
+                                    <input type="hidden" name="sel" id="selected">
                             </div>
                             <div class="col-md-6"></div>
                         </div>
