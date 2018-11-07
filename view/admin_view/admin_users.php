@@ -211,9 +211,10 @@
 						<div class="form-group">
 							<label class="col-sm-12 control-label" for="userID">Name</label>
 							<div class="col-sm-12">
-								<input type="text" class="form-control" id="name" name="name"  required placeholder="Name" onkeypress="return isNumberKey(event)"/>
+								<input type="text" class="form-control" id="name" name="name"  required placeholder="Name" />
 							</div>
-								<!-- <script type="text/javascript">
+								<!-- onkeypress="return isNumberKey(event)"
+									<script type="text/javascript">
 									function isNumberKey(evt)
 									{
 										var charCode = (evt.which) ? evt.which : evt.keyCode;
@@ -241,7 +242,7 @@
 							<div class="col-sm-12">
 								<select class="form-control" id="role" name="role" required>
 									<option value="">--Select Role--</option>
-									<option value="Administrator">ADMINISTRATOR</option>
+									<option value="ADMINISTRATOR">ADMINISTRATOR</option>
 									<option value="STAFF">STAFF</option>
 								</select>
 							</div>
