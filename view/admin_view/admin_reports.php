@@ -457,7 +457,16 @@ $(document).ready(function(){
                             }
     </script>
     
-
+    <script>
+        $(document).ready(function()
+        {
+            $("#report").change(function()
+            {
+                alert("Selected value is : " + document.getElementById("report").value);
+            });
+        });
+    
+    </script>
 
 
 </body>
