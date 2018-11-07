@@ -179,6 +179,26 @@
                                 </thead>
                                 <tbody id = "load_data" style="text-align: -webkit-center;">
                                     <?php 
+                                        require '../../php/connection/db_connection.php';
+                                        $deptSqls = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details");
+                                        while($row = mysqli_fetch_array($deptSqls))
+                                        {
+                                            $ids = $row['compID'];
+                                        
+                                        echo '
+                                                    <tr>
+                                                    <td> '.$row['compID'].'</td>
+                                                    <td> '.$row['hostname'].'</td>
+                                                    <td>'.$row['ip'].'</td>
+                                                    <td>'.$row['status'].'</td>
+                                                    <td>'.$row['remarks'].'</td>
+                                                    <td>'.$row['agent_Version'].'</td>
+                                                    <input type="hidden" value="?id='.$ids.'" />
+                                                    <td><a href="viewing.php?id='.$ids.'" data-toggle="modal"><input type="button" value="View" class="btn btn-primary"></a></td> 
+                                                    ';
+                                                    //include('admin_viewing_modal.php');
+                                        echo '</tr>';
+                                        }
                                         displayDept(); 
                                     ?>
                                 </tbody>
