@@ -62,7 +62,7 @@
 		position: relative;
 	}
 	.form-group {
-		margin-bottom: 15px;
+		margin-bottom: 20px;
 	}.has-feedback .form-control {
 		padding-right: 42.5px;
 	}.login-box-body .form-control-feedback, .register-box-body .form-control-feedback {
@@ -140,7 +140,7 @@
 					<input type="submit" name="submit" value="Update" id="submit" class="btn btn-primary btn-block btn-flat">            
 				</div>
 				<div class="col-xs-6">
-					<a type="button" href="admin_users.php" value="Back" id="back" class="btn btn-default btn-block btn-flat"></a>          
+					<a type="button" href="admin_users.php" id="back" class="btn btn-default btn-block btn-flat">Back</a>          
 				</div>
             </div>
         </form> 
