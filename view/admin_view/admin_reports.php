@@ -233,14 +233,17 @@
                                                 <?php listDepartment(); ?>
                                         </select> 
                                     </div>
-                                    <div class="col-md-4" style="padding-top:15px;">
-                                       <b>Start Date:</b>  <input  id="stratDate" class="form-control">
+                                    <div class="input-group date col-md-4" id="startDate" style="padding-top:15px;">
+                                       <b>Start Date:</b>  <input type="text"  class="form-control">
+                                       <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                       </span>
                                     </div>
-                                    <div class="col-md-4" style="padding-top:15px;">
-                                        <b>End Date:</b>  <input id="endDate" class="form-control">
-                                        <script>
-                                            $('#datepicker').datepicker({uiLibrary: 'bootstrap4'});
-                                        </script>
+                                    <div class="input-group date col-md-4" id="endDate" style="padding-top:15px;">
+                                        <b>End Date:</b>  <input type="text"  class="form-control">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                       </span>
                                     </div>
                                 </div>
 
@@ -572,24 +575,20 @@ $(document).ready(function(){
     </script>
     
 
-    <script>
-        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-        $('#startDate').datepicker({
-            uiLibrary: 'bootstrap4',
-            iconsLibrary: 'fontawesome',
-            minDate: today,
-            maxDate: function () {
-                return $('#endDate').val();
-            }
+   <script type="text/javascript">
+    $(function () {
+        $('#startDate').datetimepicker();
+        $('#endDate').datetimepicker({
+            useCurrent: false //Important! See issue #1075
         });
-        $('#endDate').datepicker({
-            uiLibrary: 'bootstrap4',
-            iconsLibrary: 'fontawesome',
-            minDate: function () {
-                return $('#startDate').val();
-            }
+        $("#startDate").on("dp.change", function (e) {
+            $('#endDate').data("DateTimePicker").minDate(e.date);
         });
-    </script>
+        $("#endDate").on("dp.change", function (e) {
+            $('#StartDate').data("DateTimePicker").maxDate(e.date);
+        });
+    });
+</script>
 
 
 </body>
