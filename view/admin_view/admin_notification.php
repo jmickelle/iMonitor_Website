@@ -118,36 +118,33 @@
 	   		</ul>
         </nav>
         <div class="container" style="width:2000px;">
-            <div class="panel" style="margin-top: 60px; background-color: #e3e5e3eb; margin-left:-15px;">
-                <div class="col-lg-12">
-                    <div class="panel with-nav-tabs pane-default" style="margin-left: -15px;  width: 102%;">
-                        <div class="panel-heading">
-                            <ul class="nav nav-tabs">
-                                <li class="active">
-                                    <a href="#tab1default" data-toggle="tab">Notifications</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="tab-pane fade in active" id="tab1default">
-                            <div class="pane pane--1" style="margin-left: 20px; width: 100%; padding-right: 40px;">
-                                <table class="table table-hover" style="background: #ffffff;">
-                                    <thead>
-                                        <tr>
-                                            <th>Subject</th>
-                                            <th>Details</th>
-                                            <th>Date</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php displayAllNotif(); ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+            <div class="panel with-nav-tabs pane-default" style="margin-left: -15px;  width: 102%;">
+                <div class="panel-heading">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#tab1default" data-toggle="tab">Notifications</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade in active" id="tab1default">
+                    <div class="pane pane--1" style="margin-left: 20px; width: 100%; padding-right: 40px;">
+                        <table class="table table-hover" style="background: #ffffff;">
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Details</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php displayAllNotif(); ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
+            </div>
 	</div>               
     <!-- End of Sidebar -->
 
