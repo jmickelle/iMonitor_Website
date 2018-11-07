@@ -152,18 +152,21 @@
                                         <input type="hidden" class="form-control">
                                     </div>
                                 </div>
+                                <?php //pdfs(); ?>
+                                <form method="POST">
                                 <div class="row">
                                     <div class="col-md-6"><br>
                                         <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="sbumit" id="search" name="btnSearch" value="Search" class="btn btn-primary">
+                                        <input type="submit" id="search" name="btnSearch" value="Search" class="btn btn-primary">
                                         <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                                         <input type="button" id="btnExport" name="btnExport" value="Export to Excel" class="btn btn-success" onclick="fnExcelReport();">
                                             <!--<input type="button" name="btnExport_PDF" id="btnExport_PDF" value="PDF" class="btn btn-danger" onclick="">-->
-                                       <input type="button" id="print" name="print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" />
+                                       <input type="submit" id="print" name="btnPrint" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" />
                                     </div>
                                 </div>
+                                </form>
                                 <iframe id="txtArea1" style="display:none"></iframe>
                                 <div style="clear:both; padding:15px;"></div>
                                 <div class="table-responsive"  style="overflow-x:auto; margin-left:15px;" id="tb_div">
@@ -186,7 +189,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-
+                                            <?php displayLogReport(); ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>
