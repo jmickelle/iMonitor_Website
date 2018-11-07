@@ -41,7 +41,7 @@
                         <span class="glyphicon glyphicon-envelope"></span>
                     </a>
                 </li>  -->
-                
+
                 <!-- Notification Dropdwon -->
 				<li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-right: 28px;">
@@ -119,8 +119,9 @@
 		        </li>	  
 	   		</ul>
         </nav>
-        <div class="container" style="width:2000px;">
-            <div class="panel with-nav-tabs pane-default" style="margin-left: -15px;  width: 102%;">
+        <div class="container" >
+            <div class="row"></div>
+            <div class="panel with-nav-tabs pane-default">
                 <div class="panel-heading">
                     <ul class="nav nav-tabs">
                         <li class="active">
