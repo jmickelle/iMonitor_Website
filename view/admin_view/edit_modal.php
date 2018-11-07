@@ -97,9 +97,9 @@
 </head>
 <body>
 	<div class="login-logo">
-        <img src="sky_luster.png" alt="My Ad Cubes" style=" width:45px; height: 50px; "></a>
+        <img src="../../public/images/icons/sky_luster.png" style=" width:45px; height: 50px; "></a>
 	</div>
-	<div class="login-box-body">
+	<div class="login-box-body" style="margin: 20px 600px;">
         <p class="login-box-msg">Edit User Information</p>
         <form  method="post" accept-charset="utf-8">        
 			<div class="form-group has-feedback">
