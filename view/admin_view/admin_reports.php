@@ -158,7 +158,7 @@
                                     <div class="col-md-6"><br>
                                         <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6"><br>
                                         <input type="submit" id="search" name="btnSearch" value="Search" class="btn btn-primary">
                                         <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                                         <input type="button" id="btnExport" name="btnExport" value="Export to Excel" class="btn btn-success" onclick="fnExcelReport();">
@@ -169,7 +169,7 @@
                                 </form>
                                 <iframe id="txtArea1" style="display:none"></iframe>
                                 <div style="clear:both; padding:15px;"></div>
-                                <div class="table-responsive"  style="overflow-x:auto; margin-left:15px;" id="tb_div">
+                                <div class="table-responsive"  style="overflow-x:auto;" id="tb_div">
                                     <table class="table table-bordered" style="background: #ffffff;" id="comp_logs">
                                         <thead>
                                             <tr>
