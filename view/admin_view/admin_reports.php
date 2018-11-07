@@ -224,8 +224,7 @@
                                             <!-- ?php listDepartment(); ?> -->
                                         </select> 
                                         <div class="input-group-btn">
-                                            <button class="btn btn-default" type="submit" value="Load">
-                                            </button> 
+                                            <button class="btn btn-default" type="submit">Load</button> 
                                         </div>                                     
                                     </div>
                                     <div class="col-md-6" style="padding-top:15px;">
@@ -319,7 +318,11 @@
                 </div>
             </div>   
         </div>       
+<<<<<<< HEAD
     </div>                
+=======
+    </div> 
+>>>>>>> 49b558c5f081c47a4ca322b96e187c4c3324cd77
                                        
 <script>
 

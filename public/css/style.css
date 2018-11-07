@@ -574,6 +574,12 @@ tfoot tr th
 {
     text-align: -webkit-center;
 }
+.input-group[class*=col-] 
+{
+    float: none;
+    padding-right: 0;
+    padding-left: 10px;
+}
 /* .modal-body .form-horizontal .col-sm-4
 {
     width: 100%;
