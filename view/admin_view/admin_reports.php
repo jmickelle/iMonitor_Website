@@ -139,6 +139,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="tab-content">
+                            <!-- Tab Content for Computer Logs -->
                             <div class="tab-pane fade in active" id="tab0default">
                                 <div class="row">
                                     <div class="col-md-6" style="padding-top:15px;">
@@ -152,6 +153,7 @@
                                     </div>
                                 </div>
                                 <?php //pdfs(); ?>
+
                                 <form method="POST">
                                 <div class="row">
                                     <div class="col-md-6" style="padding-top: 20px;"> 
@@ -209,6 +211,9 @@
                                     </table>
                                 </div>
                             </div>
+                            <!-- End of Tab Content -->
+
+                            <!-- Tab Content for History -->
                             <div class="tab-pane fade in" id="tab1default">
                                 <div class="row">
                                     <div class="input-group col-md-6" style="padding-top:15px;">
@@ -308,138 +313,14 @@
                                     </table>
                                 </div>
                             </div>
-
-                        </div>
-                    </div>
-                    <div class="panel-footer">
-                        
-                    </div>
-            <!-- <div class="col-lg-12">
-                <div class="panel with-nav-tabs panel-default" style="width: 103.5%; position: relative;  margin-left: -30px;">
-                    <div class="panel-heading">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#tab0default" data-toggle="tab" style="padding-right:35px;">Computer Logs</a></li>
-                            <li><a href="#tab2default" data-toggle="tab" style="padding-right:35px;">Computer List</a></li>
-                        </ul>
-                    </div>
-                    <div class="panel-body">
-                        <div class="tab-content">
-                            <div class="tab-pane fade in active" id="tab0default">
-                                
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" style="background: #ffffff;" id="comp_logs">
-                                        <thead>
-                                            <tr>
-                                                <th>No.</th>
-                                                <th>User</th>
-                                                <th>Computer Name</th>
-                                                <th>Domain</th>
-                                                <th>IP Address</th>
-                                                <th>Date Modified</th>
-                                                <th>iMonitor Status</th>
-                                                <th>Services Not Found</th>
-                                                <th>SysSetting File</th>
-                                                <th>Server IP</th>
-                                                <th>Connection Status</th>
-                                                <th>Branch</th>
-                                                <th>Scan Time</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id = "load_data">
-                                            <?php displayLogReport(); ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="tab2default">
-                                <div class="col-md-6" style="padding-top:15px;">
-                                    <select name="department" id="department" class="form-control">
-                                        <option value="All" selected>--All department--</option>
-                                        ?php     
-              								    $sql = "select DISTINCT branch_name from tbl_department ORDER BY branch_name ASC";
-              								    $stmt = $db->prepare($sql);
-              								    $stmt->execute();
-
-											        while($row=$stmt->fetch(PDO::FETCH_ASSOC))
-											        {
-                								        echo '<option>'.$row['branch_name'].'</option>'; 
-              								        }
-            							?>
-                                    </select> 
-                                </div>
-                                <div class="col-md-6" style="padding-top:15px;">
-                                    <select name="dub_dept" id="sub_dept" class="form-control">
-                                        <option value="" selected>--All sub department</option>
-                                        <option value="OM">IT-OM</option>
-                                        <option value="AUD">IT-AUD</option>
-                                        <option value="WEB">IT-WEB</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4"><br>
-                                    <input type="text" id="userl" name="userl" class="form-control" placeholder="Search for user... ">
-                                </div>
-                                <div class="col-md-4"><br>
-                                    <select name="sub_status" id="sub_status" class="form-control">
-                                        <option value="" selected>--Status--</option>
-                                        <option value="OM">Active</option>
-                                        <option value="AUD">Inactive</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                <br>
-                                    <input type="button" id="resetl" name="clear" value="Clear" class="btn btn-default">
-                                    <input type="button" id="btnExport2" name="btnExport2" value="Export to Exel" class="btn btn-success" onclick="fnExcelReport2();">
-                                        <input type="button" name="btn_search" id=btn_search value="PDF" class="btn btn-danger" onclick="">-->
-                                    <!-- <input type="button" id="print2" name="print2" value="Print" class="btn btn-danger" onclick="javascript:printDiv2('printable')" />
-                                </div>
-                                <iframe id="txtArea1" style="display:none"></iframe>
-                                <div style="clear:both; padding:15px;"></div>
-                                <div class="table-responsive" style="overflow-x:auto; margin-left:15px;" id="tb_div2">
-                                    <table class="table table-bordered" style="background: #ffffff;" id="comp_logs2">
-                                        <thead>
-                                            <tr>
-                                                <th>No.</th>
-                                                <th>Computer Name</th>
-                                                <th>IP Address</th>
-                                                <th>Status</th>
-                                                <th>Port Connection</th>
-                                                <th>Remarks</th>
-                                            </tr>
-                                        <thead>
-                                        <tbody id = "load_datal">
-                                            ?php
-                                                $sql = "select user,hostname, ip_address,iMonitor_Status,connection_status from tbl_log WHERE user != 'Administrator' ";
-                                                $stmt = $db->prepare($sql);
-                                                $stmt->execute();
-                                                $count = 1;
-                                                foreach($stmt as $row) {
-                                                //while($row=$stmt->fetch(PDO::FETCH_ASSOC)) {
-                                            ?>
-                                            <tr>
-                                                <td>?php echo $count++ ?></td>
-                                                <td>?php echo $row['hostname']; ?></td>
-                                                <td>?php echo $row['ip_address']; ?></td>
-                                                <td>?php echo $row['iMonitor_Status']; ?></td>
-                                                <td>?php echo $row['connection_status']; ?></td>
-                                                <td>?php
-                                                    if($row['iMonitor_Status'] == 'Running' AND $row['connection_status'] == 'ESTABLISHED')
-                                                        echo 'Active';
-                                                    else
-                                                        echo "Inactive";
-                                                ?></td>
-                                            </tr>
-                                            ?php } ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                            <!-- End of Tab Content -->
                         </div>
                     </div>
                 </div>
-                                                </div> -->
-        <!-- </div>
-    </div> -->
-
+            </div>   
+        </div>       
+    </div>                <?php displayLogReport(); ?>
+                                       
 <script>
 
 $(document).ready(function(){
