@@ -155,7 +155,7 @@
                                 <form method="POST">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
+                                        <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... " style="padding-top: 20px;">
                                     </div>
                                     <div class="col-md-6"><br>
                                         <input type="submit" id="search" name="btnSearch" value="Search" class="btn btn-primary">
