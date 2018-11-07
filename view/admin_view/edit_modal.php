@@ -97,29 +97,29 @@
 </head>
 <body>
 	<div class="login-logo">
-        <img src="../../public/images/icons/sky_luster.png" style=" width:45px; height: 50px; "></a>
+        <img src="../../public/images/icons/sky_luster.png" style=" width:90px; height: 100px; "></a>
 	</div>
 	<div class="login-box-body" style="margin: 20px 600px;">
-        <p class="login-box-msg">Edit User Information</p>
+        <h3 class="login-box-msg">Edit User Information</h3>
         <form  method="post" accept-charset="utf-8">        
 			<div class="form-group has-feedback">
             	<input type="text" name="idnum" value="" placeholder="ID Number" class="form-control" id="idnum" maxlength="7" size="30" disabled> 
             	<span></span>
 			</div>
 			<div class="form-group has-feedback">
-            	<select name="dept" id="dept">
+            	<select name="dept" id="dept" class="form-control">
 					<option value="">--Select Department--</option>
 				</select>
             	<span></span>
 			</div>
 			<div class="form-group has-feedback">
-            	<select name="role" id="role">
+            	<select name="role" id="role" class="form-control">
 					<option value="">--Select Role--</option>
 				</select>
             	<span></span>
 			</div>
 			<div class="form-group has-feedback">
-            	<select name="role" id="role">
+            	<select name="stats" id="stats" class="form-control">
 					<option value="">--Select Status--</option>
 				</select>
             	<span></span>
