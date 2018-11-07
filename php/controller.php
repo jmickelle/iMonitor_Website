@@ -11,9 +11,9 @@
             $userid = mysqli_real_escape_string($con,$_POST['userid']);
             $password = mysqli_real_escape_string($con,$_POST['password']);
             $encPassword = md5(sha1($password));
-            $loginQuery = mysqli_query($con,"SELECT * FROM tbl_user WHERE userid = '{$userid}' ");
-            $loginRow = mysqli_fetch_assoc($loginQuery);
-            if(password_verify($password, $loginRow['password']))
+            $loginQuery = mysqli_query($con,"SELECT * FROM tbl_user WHERE userid = '{$userid}' AND password = '{$encPassword}' ");
+            // $loginRow = mysqli_fetch_assoc($loginQuery);
+            if($loginRow = mysqli_fetch_assoc($loginQuery))
             {
                 $id = $loginRow['id'];
                 if($loginRow['status'] == "Active")
@@ -215,11 +215,12 @@
         if(isset($_POST['btnRegister']))
         {
             $userid = mysqli_real_escape_string($con,$_POST['userid']);
+            $name = mysqli_real_escape_string($con,$_POST['name']);
             $department = mysqli_real_escape_string($con,$_POST['department']);
             $role = mysqli_real_escape_string($con,$_POST['role']);
             $status = mysqli_real_escape_string($con,$_POST['status']);
-            $password = mysqli_real_escape_string($con,$_POST['password']);
-            $enc = password_hash($password,PASSWORD_DEFAULT);
+            $password = "Aa123456";
+            $enc = md5(sha1($password));
 
             $selUsers = mysqli_query($con,"SELECT * FROM tbl_user WHERE userid = '$userid'");
             $checkRow = mysqli_fetch_array($selUsers);
@@ -228,9 +229,10 @@
                 echo '<script type="text/javascript">window.alert("This User '.$userid.' Already Exist!")</script>';
             }
             else{
-                $sqlRegister = mysqli_query($con,"INSERT INTO tbl_user(userid,department,role,status,password) 
-                VALUES('$userid','$department','$role','$status','$enc') ");
+                $sqlRegister = mysqli_query($con,"INSERT INTO tbl_user(userid,name,department,role,status,password) 
+                VALUES('$userid','$name','$department','$role','$status','$enc') ");
             }
+            header("Refresh:0; URL = admin_users.php");
         }
     }
 
