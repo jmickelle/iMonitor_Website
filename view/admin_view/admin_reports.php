@@ -155,7 +155,7 @@
                                 <form method="POST">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
+                                        <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... " style="padding-top: 20px;">
                                     </div>
                                     <div class="col-md-6"><br>
                                         <input type="submit" id="search" name="btnSearch" value="Search" class="btn btn-primary">
@@ -233,18 +233,18 @@
                                                 <?php listDepartment(); ?>
                                         </select> 
                                     </div>
-                                    <div class="col-md-4 input-group date" id="startDate" style="padding-top:15px;">
+                                    <div class="col-md-4" style="padding-top:15px;">
                                        <!-- <b>Start Date:</b>   -->
-                                       <input type="text"  class="form-control" placeholder="Start date" style="width: 100%;">
+                                       <input type="date"  class="form-control" id="startDate" placeholder="Start date" >
                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
+                                            <i class="glyphicon glyphicon-calendar"></i>
                                        </span>
                                     </div>
-                                    <div class="col-md-4 input-group date" id="endDate" style="padding-top:15px;">
+                                    <div class="col-md-4" style="padding-top:15px;">
                                         <!-- <b>End Date:</b>   -->
-                                        <input type="text"  class="form-control" placeholder="End date" style="width: 100%;">
+                                        <input type="date"  class="form-control" id="endDate" placeholder="End date" >
                                         <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
+                                            <i class="glyphicon glyphicon-calendar"></i>
                                        </span>
                                     </div>
                                 </div>
@@ -577,20 +577,6 @@ $(document).ready(function(){
     </script>
     
 
-   <script type="text/javascript">
-    $(function () {
-        $('#startDate').datetimepicker();
-        $('#endDate').datetimepicker({
-            useCurrent: false //Important! See issue #1075
-        });
-        $("#startDate").on("dp.change", function (e) {
-            $('#endDate').data("DateTimePicker").minDate(e.date);
-        });
-        $("#endDate").on("dp.change", function (e) {
-            $('#StartDate').data("DateTimePicker").maxDate(e.date);
-        });
-    });
-</script>
 
 
 </body>
