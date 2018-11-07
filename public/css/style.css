@@ -574,6 +574,10 @@ tfoot tr th
 {
     text-align: -webkit-center;
 }
+tbody tr td
+{
+    text-align: -webkit-center;
+}
 .input-group[class*=col-] 
 {
     float: none;
