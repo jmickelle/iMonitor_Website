@@ -252,7 +252,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-6" >
+                                    <div class="col-md-6" style="padding-top:15px;">
                                         <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
                                     </div>
                                     <div class="col-md-4" style="padding-top:15px;">
