@@ -313,11 +313,7 @@
                 </div>
             </div>   
         </div>       
-<<<<<<< HEAD
     </div>                
-=======
-    </div> 
->>>>>>> 49b558c5f081c47a4ca322b96e187c4c3324cd77
                                        
 <script>
 
@@ -457,7 +453,16 @@ $(document).ready(function(){
                             }
     </script>
     
-
+    <script>
+        $(document).ready(function()
+        {
+            $("#report").change(function()
+            {
+                alert("Selected value is : " + document.getElementById("report").value);
+            });
+        });
+    
+    </script>
 
 
 </body>

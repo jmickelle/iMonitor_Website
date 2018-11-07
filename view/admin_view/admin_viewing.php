@@ -109,7 +109,7 @@
 
 	<!-- Sidebar -->
 	<div class="wrapper">
-		<nav id="sidebar" style="margin-top: 20px;">
+		<nav id="sidebar" style="margin-top: 30px;">
 			<ul class="list-unstyled components">
 		        <p></p>
 		        <li>
@@ -135,7 +135,8 @@
 	   		</ul>
 		</nav>
         <div class="container" style="width:100%;">
-            <div class="well" style="margin: 30px 10px 0px 10px;">Computer List</div>
+            <div class="well">Computer List</div>
+            <!-- style="margin: 30px 10px 0px 10px;" -->
             <div class="container-fluid">
                 <div class="card">
                     <div class="card-header"></div>
@@ -143,7 +144,11 @@
                         <div class="row">
                             <div class="col-md-6" style="padding-top:0px; margin-right: -260px;">                                  
                                 <form method="POST">
+<<<<<<< HEAD
                                     <select name="dept_viewing" id="dept_viewing" class="form-control" onchange="dropChange()" style ="width:50%;">
+=======
+                                    <select name="dept_viewing" onChange="loadTable()" id="dept_viewing" class="form-control" style ="width:50%;">
+>>>>>>> 78f41575f481a3e0f7d8d24e66e12093a110f09d
                                         <option value="All" selected>--All Department--</option>
                                             <?php listDepartment(); ?>
                                     </select> 
