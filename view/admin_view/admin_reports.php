@@ -154,7 +154,7 @@
                                 <?php //pdfs(); ?>
                                 <form method="POST">
                                 <div class="row">
-                                    <div class="col-md-6"><br>
+                                    <div class="col-md-6">
                                         <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
                                     </div>
                                     <div class="col-md-6"><br>
