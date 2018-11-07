@@ -577,20 +577,6 @@ $(document).ready(function(){
     </script>
     
 
-   <script type="text/javascript">
-    $(function () {
-        $('#startDate').datetimepicker();
-        $('#endDate').datetimepicker({
-            useCurrent: false //Important! See issue #1075
-        });
-        $("#startDate").on("dp.change", function (e) {
-            $('#endDate').data("DateTimePicker").minDate(e.date);
-        });
-        $("#endDate").on("dp.change", function (e) {
-            $('#StartDate').data("DateTimePicker").maxDate(e.date);
-        });
-    });
-</script>
 
 
 </body>
