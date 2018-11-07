@@ -284,7 +284,7 @@
                 }else
                 {
                     $deptSql = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details
-                    WHERE branch = '$selectDepartment' AND hostname = '$getSearch' ");
+                    WHERE hostname = '$getSearch' ");
                 }
             }
             while($row = mysqli_fetch_array($deptSql))
