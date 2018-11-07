@@ -181,7 +181,7 @@
 	<!-- End of Sidebar -->
 
 <!-- Add User Modal -->
-<?php addUser(); ?>
+<?php addUser();?>
 <form method="POST">
     <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" arial-hidden="true" style="margin-top:50px;">
 		<div class="modal-dialog modal-md" role="document">

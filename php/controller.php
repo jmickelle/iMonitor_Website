@@ -231,8 +231,9 @@
             else{
                 $sqlRegister = mysqli_query($con,"INSERT INTO tbl_user(userid,name,department,role,status,password) 
                 VALUES('$userid','$name','$department','$role','$status','$enc') ");
+                header("Location:admin_users.php");
             }
-            header("Refresh:0; URL = admin_users.php");
+            
         }
     }
 
