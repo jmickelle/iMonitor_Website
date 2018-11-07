@@ -126,7 +126,7 @@
             	<span></span>
         	</div>
         	<div class="form-group has-feedback">
-            	<input type="password" name="password" value="" placeholder="Password" class="form-control" id="password" size="30">           
+            	<input type="password" name="password" value="Aa123456" placeholder="Password" class="form-control" id="myCheck" size="30">           
             	<span></span>
 			</div>
 			<div class="form-group has-feedback">
@@ -148,6 +148,20 @@
 </body>
 </html>
 
+<script>
+	function resetPass() 
+	{
+		var x = document.getElementById("myCheck");
+		if (x.type === "password")
+		{
+			x.type = "text";
+		} 
+		else 
+		{
+			x.type = "password";
+		}
+	}  
+</script>
 
 
 
@@ -343,32 +357,3 @@
 		</div>
 	</div>
 </form>
-
-<script type="text/javascript">
-	$("#").change(function() {
-  	$("#").load("get_sub_department2.php?branch_name=" + $("#d").val());
-	});
-</script>
-
-
-<script>
-	function resetPass() 
-		{
-			var x = document.getElementById("myCheck");
-			if (x.type === "password")
-				{
-					x.type = "text";
-				} 
-			else 
-				{
-					x.type = "password";
-				}
-			}  
-</script>
-
-<script type="text/javascript">
-	function ClearFields() 
-		{
-			document.getElementById("userid2").value = "";
-    	}
-</script>
