@@ -227,16 +227,16 @@
                                 <?php //pdfs(); ?>
                                 <form method="POST">
                                 <div class="row">
-                                    <div class="col-md-4" style="padding-top:15px;"><br>
+                                    <div class="col-md-4" style="padding-top:15px;">
                                         <select name="report" id="report" class="form-control">
                                             <option value="All" selected>--All Departments--</option>
                                                 <?php listDepartment(); ?>
                                         </select> 
                                     </div>
-                                    <div class="col-md-4"><br>
+                                    <div class="col-md-4">
                                         Start Date: <input  id="stratDate" class="form-control">
                                     </div>
-                                    <div class="col-md-4"><br>
+                                    <div class="col-md-4">
                                         End Date: <input id="endDate" class="form-control">
                                         <script>
                                             $('#datepicker').datepicker({uiLibrary: 'bootstrap4'});
@@ -245,10 +245,10 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-6"><br>
+                                    <div class="col-md-6">
                                             <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
                                         </div>
-                                        <div class="col-md-6"><br>
+                                        <div class="col-md-6">
                                             <input type="submit" id="search" name="btnSearch" value="Search" class="btn btn-primary">
                                             <input type="button" id="btnExport" name="btnExport" value="Export to Excel" class="btn btn-success" onclick="fnExcelReport();">
                                                 <!--<input type="button" name="btnExport_PDF" id="btnExport_PDF" value="PDF" class="btn btn-danger" onclick="">-->
