@@ -209,6 +209,22 @@
 						</div>
 						<br>
 						<div class="form-group">
+							<label class="col-sm-12 control-label" for="userID">Name</label>
+							<div class="col-sm-12">
+								<input type="text" class="form-control" id="name" name="name"  required placeholder="Name" onkeypress="return isNumberKey(event)"/>
+							</div>
+								<!-- <script type="text/javascript">
+									function isNumberKey(evt)
+									{
+										var charCode = (evt.which) ? evt.which : evt.keyCode;
+										if (charCode > 31 && (charCode < 48 || charCode > 57))
+											return false;
+											return true;
+									}
+								</script> -->
+						</div>
+						<br>
+						<div class="form-group">
 							<label class="col-sm-12 control-label" for="department">Department</label>
 							<div class="col-sm-12">
 								<select class="form-control" id="department" name="department" required>
