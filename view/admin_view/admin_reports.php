@@ -455,12 +455,29 @@ $(document).ready(function(){
     
     <script>
         $(document).ready(function()
-        {
-            $("#report").change(function()
-            {
-                alert("Selected value is : " + document.getElementById("report").value);
-            });
-        });
+{
+     $("#report").change(function()
+     {
+      if ($("#report").val() == "Logs_History")
+      {
+        alert("Selected value is : " + document.getElementById("report").value);
+        //    var brand_id = $(this).val();  
+        //    $.ajax(
+        //    {  
+        //         url:"admin_viewing.php",  
+        //         method:"POST",  
+        //         data:{brand_id:brand_id},  
+        //         success:function(data){  
+        //              $('#tb_div').html(data);  
+        //         }  
+        //    });   
+      }
+       else
+      {
+        alert("Selected value is : " + document.getElementById("report").value);
+      } 
+     });
+   }); 
     
     </script>
 
