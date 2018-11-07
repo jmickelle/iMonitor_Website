@@ -3,6 +3,7 @@
 <?php
     include '../../php/controller.php';
     Login();
+    error_reporting(0);
     $id = $_GET['id'];
     if(!isset($_SESSION["user"])) {
         header("Location: ../../index.php");
