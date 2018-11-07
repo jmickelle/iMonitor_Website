@@ -543,10 +543,6 @@ ul ul a {
 {
     padding: 20px;
 }
-#comp_list th
-{
-    text-align: -webkit-center;
-}
 .footer
 {
     position: fixed;
@@ -556,6 +552,19 @@ ul ul a {
     background-color: #97909082;
     color: white;
     text-align: center;
+}
+.panel
+{
+    margin: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
 }
 /* .modal-body .form-horizontal .col-sm-4
 {
