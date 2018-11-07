@@ -195,7 +195,11 @@
             <td>'.$row['role'].'</td>
             <td>'.$row['status'].'</td>
             <input type="hidden" value="?id='.$userids.'" />
+<<<<<<< HEAD
             <td><a href="#edit_?id='.$userids.'" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
+=======
+            <td><a type="button" href="#edit_<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-primary">Edit</button></a></td>
+>>>>>>> e977b83fe67b9d23d234b7f4d59662670aa2f55b
             </tr>';
             include('edit_modal.php');
             // <td><input type="submit" name="btnEditRecord" class="btn btn-primary" value="'.$_SESSION['userid'].'"></td>
