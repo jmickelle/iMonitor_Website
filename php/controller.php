@@ -250,12 +250,53 @@
 
     function displayDept()
     {   require 'connection/db_connection.php';
-        // $deptSqls = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details");
-        // while($row = mysqli_fetch_array($deptSqls))
+        if($_POST['dept_viewing'] == "All")
+        {
+            $deptSqls = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details");
+            while($row = mysqli_fetch_array($deptSqls))
+            {
+                $ids = $row['compID'];
+            
+            echo '
+                        <tr>
+                        <td> '.$row['compID'].'</td>
+                        <td> '.$row['hostname'].'</td>
+                        <td>'.$row['ip'].'</td>
+                        <td>'.$row['status'].'</td>
+                        <td>'.$row['remarks'].'</td>
+                        <td>'.$row['agent_Version'].'</td>
+                        <input type="hidden" value="?id='.$ids.'" />
+                        <td><a href="viewing.php?id='.$ids.'" data-toggle="modal"><input type="button" value="View" class="btn btn-primary"></a></td> 
+                        ';
+                        //include('admin_viewing_modal.php');
+            echo '</tr>';
+            }
+        }
+        // if(isset($_POST['bntSearch']))
         // {
-        //     $ids = $row['compID'];
-        
-        // echo '
+        //     $selectDepartment = mysqli_real_escape_string($con,$_POST['dept_viewing']);
+        //     // $selectSubDepartment = $_POST['dub_dept'];
+        //     $getSearch = mysqli_real_escape_string($con,$_POST['search']);
+        //     if($selectDepartment == "All")
+        //     {
+        //         $deptSql = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details");
+        //     }
+        //     else
+        //     {
+        //         if(empty($getSearch) || $getSearch == null || $getSearch == '')
+        //         {
+        //             $deptSql = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details
+        //             WHERE branch = '$selectDepartment' OR hostname = '$getSearch' ");
+        //         }else
+        //         {
+        //             $deptSql = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details
+        //             WHERE hostname = '$getSearch' ");
+        //         }
+        //     }
+        //     while($row = mysqli_fetch_array($deptSql))
+        //     {
+        //         $ids = $row['compID'];
+        //         echo '
         //             <tr>
         //             <td> '.$row['compID'].'</td>
         //             <td> '.$row['hostname'].'</td>
@@ -267,48 +308,10 @@
         //             <td><a href="viewing.php?id='.$ids.'" data-toggle="modal"><input type="button" value="View" class="btn btn-primary"></a></td> 
         //             ';
         //             //include('admin_viewing_modal.php');
-        // echo '</tr>';
-        // }
-        if(isset($_POST['bntSearch']))
-        {
-            $selectDepartment = mysqli_real_escape_string($con,$_POST['dept_viewing']);
-            // $selectSubDepartment = $_POST['dub_dept'];
-            $getSearch = mysqli_real_escape_string($con,$_POST['search']);
-            if($selectDepartment == "All")
-            {
-                $deptSql = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details");
-            }
-            else
-            {
-                if(empty($getSearch) || $getSearch == null || $getSearch == '')
-                {
-                    $deptSql = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details
-                    WHERE branch = '$selectDepartment' OR hostname = '$getSearch' ");
-                }else
-                {
-                    $deptSql = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details
-                    WHERE hostname = '$getSearch' ");
-                }
-            }
-            while($row = mysqli_fetch_array($deptSql))
-            {
-                $ids = $row['compID'];
-                echo '
-                    <tr>
-                    <td> '.$row['compID'].'</td>
-                    <td> '.$row['hostname'].'</td>
-                    <td>'.$row['ip'].'</td>
-                    <td>'.$row['status'].'</td>
-                    <td>'.$row['remarks'].'</td>
-                    <td>'.$row['agent_Version'].'</td>
-                    <input type="hidden" value="?id='.$ids.'" />
-                    <td><a href="viewing.php?id='.$ids.'" data-toggle="modal"><input type="button" value="View" class="btn btn-primary"></a></td> 
-                    ';
-                    //include('admin_viewing_modal.php');
-                echo '</tr>';
-            }   
+        //         echo '</tr>';
+        //     }   
             
-        }
+        // }
     }
 
     function updateComp()
