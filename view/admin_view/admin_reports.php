@@ -19,6 +19,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     
     <link rel="stylesheet" href="../../public/css/style.css">
     <!-- <link rel="stylesheet" href="reports.css"> -->
@@ -135,7 +141,7 @@
                     <div class="panel-heading">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab0default" data-toggle="tab" style="padding-right:35px;">Computer Logs</a></li>
-                            <li><a href="#tab2default" data-toggle="tab" style="padding-right:35px;">History</a></li>
+                            <li><a href="#tab1default" data-toggle="tab" style="padding-right:35px;">History</a></li>
                         </ul>
                     </div>
                     <div class="panel-body">
@@ -160,7 +166,6 @@
                                     </div>
                                     <div class="col-md-6"><br>
                                         <input type="submit" id="search" name="btnSearch" value="Search" class="btn btn-primary">
-                                        <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                                         <input type="button" id="btnExport" name="btnExport" value="Export to Excel" class="btn btn-success" onclick="fnExcelReport();">
                                             <!--<input type="button" name="btnExport_PDF" id="btnExport_PDF" value="PDF" class="btn btn-danger" onclick="">-->
                                        <input type="submit" id="print" name="btnPrint" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" />
@@ -188,7 +193,99 @@
                                                 <th>Scan Time</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody style="text-align: -webkit-center;">
+                                            <?php displayLogReport(); ?>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                    <th>No.</th>
+                                                    <th>User</th>
+                                                    <th>Computer Name</th>
+                                                    <th>Domain</th>
+                                                    <th>IP Address</th>
+                                                    <th>Date Modified</th>
+                                                    <th>iMonitor Status</th>
+                                                    <th>Services Not Found</th>
+                                                    <th>SysSetting File</th>
+                                                    <th>Server IP</th>
+                                                    <th>Connection Status</th>
+                                                    <th>Branch</th>
+                                                    <th>Scan Time</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade in" id="tab1default">
+                                <div class="row">
+                                    <div class="col-md-6" style="padding-top:15px;">
+                                        <select name="report" id="report" class="form-control">
+                                            <option value="Report" selected>--Select Report to Generate--</option>
+                                            <option value="Logs_History">Computer Logs History</option>
+                                            <option value="Edit_History">Edit History</option>
+                                            <!-- ?php listDepartment(); ?> -->
+                                        </select> 
+                                    </div>
+                                    <div class="col-md-6" style="padding-top:15px;">
+                                        <input type="hidden" class="form-control">
+                                    </div>
+                                </div>
+
+                                <?php //pdfs(); ?>
+                                <form method="POST">
+                                <div class="row">
+                                    <div class="col-md-4" style="padding-top:15px;"><br>
+                                        <select name="report" id="report" class="form-control">
+                                            <option value="All" selected>--All Departments--</option>
+                                                <?php listDepartment(); ?>
+                                        </select> 
+                                    </div>
+                                    <div class="col-md-4"><br>
+                                        Start Date: <input  id="stratDate" class="form-control">
+                                    </div>
+                                    <div class="col-md-4"><br>
+                                        End Date: <input id="endDate" class="form-control">
+                                        <script>
+                                            $('#datepicker').datepicker({uiLibrary: 'bootstrap4'});
+                                        </script>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6"><br>
+                                            <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
+                                        </div>
+                                        <div class="col-md-6"><br>
+                                            <input type="submit" id="search" name="btnSearch" value="Search" class="btn btn-primary">
+                                            <input type="button" id="btnExport" name="btnExport" value="Export to Excel" class="btn btn-success" onclick="fnExcelReport();">
+                                                <!--<input type="button" name="btnExport_PDF" id="btnExport_PDF" value="PDF" class="btn btn-danger" onclick="">-->
+                                        <input type="submit" id="print" name="btnPrint" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" />
+                                    </div>
+                                </div>
+                                </form>
+
+                                <iframe id="txtArea1" style="display:none"></iframe>
+                                <div style="clear:both; padding:15px;"></div>
+                                <div class="table-responsive"  style="overflow-x:auto;" id="tb_div">
+                                    <table class="table table-bordered" style="background: #ffffff;" id="comp_logs">
+                                        <thead>
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>User</th>
+                                                <th>Computer Name</th>
+                                                <th>Domain</th>
+                                                <th>IP Address</th>
+                                                <th>Date Modified</th>
+                                                <th>iMonitor Status</th>
+                                                <th>Services Not Found</th>
+                                                <th>SysSetting File</th>
+                                                <th>Server IP</th>
+                                                <th>Connection Status</th>
+                                                <th>Branch</th>
+                                                <th>Scan Time</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody style="text-align: -webkit-center;">
                                             <?php displayLogReport(); ?>
                                         </tbody>
                                         <tfoot>
@@ -343,7 +440,7 @@
         <!-- </div>
     </div> -->
 
-   <script>
+<script>
 
 $(document).ready(function(){
     $(".dropdown").hover(            
@@ -363,21 +460,6 @@ $(document).ready(function(){
                     $('#sidebar').toggleClass('active');
                 });
             });
-
-
-
-    function isNumber(input) {
-    var regex =/[^0-9]/gi;
-    input.value = input.value.replace(regex,"");
-        
-    }
-
-
-    function lettersOnly(input) {
-    var regex = /[^a-z]/gi;
-    input.value = input.value.replace(regex,"");   
-}  
-
 }
 
 </script>   
@@ -494,7 +576,28 @@ $(document).ready(function(){
 
                       return (sa);
                             }
-	</script>
+    </script>
+    
+
+    <script>
+        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+        $('#startDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: today,
+            maxDate: function () {
+                return $('#endDate').val();
+            }
+        });
+        $('#endDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: function () {
+                return $('#startDate').val();
+            }
+        });
+    </script>
+
 
 </body>
 </html>
