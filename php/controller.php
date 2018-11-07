@@ -195,13 +195,8 @@
             <td>'.$row['role'].'</td>
             <td>'.$row['status'].'</td>
             <input type="hidden" value="?id='.$userids.'" />
-<<<<<<< HEAD
-            <td><a href="#edit_?id='.$userids.'" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
-=======
-            <td><a type="button" href="#edit_<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-primary">Edit</button></a></td>
->>>>>>> e977b83fe67b9d23d234b7f4d59662670aa2f55b
+            <td><a type="button" href="#edit_'.$row['id'].'" data-toggle="modal" class="btn btn-primary">Edit</button></a></td>
             </tr>';
-            include('edit_modal.php');
             // <td><input type="submit" name="btnEditRecord" class="btn btn-primary" value="'.$_SESSION['userid'].'"></td>
             // <td><a href="'.$_SESSION['userid'] = $row['userid'].'"data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
             // userEdit();
@@ -364,4 +359,17 @@
 
     }
 
+
+    function pdfs()
+    {
+        require('../../public/libraries/fpdf181/fpdf.php');
+        $pdf = new FPDF('P','mm','A4');
+        $pdf->AddPage();
+        $pdf->SetFont('Arial','B',16);
+        
+       if(isset($_POST['btnPrint']))
+       {
+        $pdf->Cell(40,10,'Hello World !',1);
+       }
+    }    
 ?>
