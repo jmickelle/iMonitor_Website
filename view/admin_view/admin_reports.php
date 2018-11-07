@@ -265,7 +265,6 @@
                                 </form>
 
                                 <iframe id="txtArea1" style="display:none"></iframe>
-                                <div style="clear:both; padding:15px;"></div>
                                 <div class="table-responsive"  style="overflow-x:auto; padding: 15px;" id="tb_div">
                                     <table class="table table-bordered" style="background: #ffffff;" id="comp_logs">
                                         <thead>
