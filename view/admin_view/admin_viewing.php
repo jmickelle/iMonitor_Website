@@ -135,7 +135,7 @@
 	   		</ul>
 		</nav>
         <div class="container" style="width:100%;">
-            <div class="well" style="margin: 30px 10px 0px 10px;">Computer List</div>
+            <div class="well">Computer List</div>
             <div class="container-fluid">
                 <div class="card">
                     <div class="card-header"></div>
