@@ -120,34 +120,30 @@
 	   		</ul>
         </nav>
         <div class="container" >
-            <div class="row"></div>
-            <div class="panel with-nav-tabs pane-default">
-                <div class="panel-heading">
-                    <ul class="nav nav-tabs">
-                        <li class="active">
-                            <a href="#tab1default" data-toggle="tab">Notifications</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="tab-pane fade in active" id="tab1default">
-                    <div class="pane pane--1" style="margin-left: 20px; width: 100%; padding-right: 40px;">
-                        <table class="table table-hover" style="background: #ffffff;">
-                            <thead>
-                                <tr>
-                                    <th>Subject</th>
-                                    <th>Details</th>
-                                    <th>Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php displayAllNotif(); ?>
-                            </tbody>
-                        </table>
+            <div class="well">Notifications</div>
+				<div class="container-fluid">
+                    <div class="panel">
+                        <div class="panel-heading"></div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover" style="background: #ffffff;">
+                                        <thead>
+                                            <tr>
+                                                <th>Subject</th>
+                                                <th>Details</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php displayAllNotif(); ?>
+                                        </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-            </div>
 	</div>               
     <!-- End of Sidebar -->
 
