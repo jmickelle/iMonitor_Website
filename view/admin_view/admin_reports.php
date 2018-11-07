@@ -211,13 +211,17 @@
                             </div>
                             <div class="tab-pane fade in" id="tab1default">
                                 <div class="row">
-                                    <div class="col-md-6" style="padding-top:15px;">
+                                    <div class="input-group col-md-6" style="padding-top:15px;">
                                         <select name="report" id="report" class="form-control">
                                             <option value="Report" selected>--Select Report to Generate--</option>
                                             <option value="Logs_History">Computer Logs History</option>
                                             <option value="Edit_History">Edit History</option>
                                             <!-- ?php listDepartment(); ?> -->
                                         </select> 
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-default" type="submit" value="Load">
+                                            </button> 
+                                        </div>                                     
                                     </div>
                                     <div class="col-md-6" style="padding-top:15px;">
                                         <input type="hidden" class="form-control">
@@ -244,8 +248,12 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-6" style="padding-top:15px;">
+                                    <div class="input-group col-md-6" style="padding-top:15px;">
                                             <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-default" type="submit">
+                                                    <i class="glyphicon glyphicon-search"></i>
+                                                </button>
                                         </div>
                                         <div class="col-md-6" style="padding-top:15px;">
                                             <input type="submit" id="search" name="btnSearch" value="Search" class="btn btn-primary">
