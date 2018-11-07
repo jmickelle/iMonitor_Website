@@ -154,8 +154,8 @@
                                 <?php //pdfs(); ?>
                                 <form method="POST">
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... " style="padding-top: 20px;">
+                                    <div class="col-md-6" style="padding-top: 20px;"> 
+                                        <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
                                     </div>
                                     <div class="col-md-6"><br>
                                         <input type="submit" id="search" name="btnSearch" value="Search" class="btn btn-primary">
@@ -234,18 +234,12 @@
                                         </select> 
                                     </div>
                                     <div class="col-md-4" style="padding-top:15px;">
-                                       <!-- <b>Start Date:</b>   -->
+                                       <b>Start Date:</b>  
                                        <input type="date"  class="form-control" id="startDate" placeholder="Start date" >
-                                       <span class="input-group-addon">
-                                            <i class="glyphicon glyphicon-calendar"></i>
-                                       </span>
                                     </div>
                                     <div class="col-md-4" style="padding-top:15px;">
-                                        <!-- <b>End Date:</b>   -->
+                                        <b>End Date:</b>  
                                         <input type="date"  class="form-control" id="endDate" placeholder="End date" >
-                                        <span class="input-group-addon">
-                                            <i class="glyphicon glyphicon-calendar"></i>
-                                       </span>
                                     </div>
                                 </div>
 
