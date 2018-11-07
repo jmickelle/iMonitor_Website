@@ -237,14 +237,14 @@
                                        <!-- <b>Start Date:</b>   -->
                                        <input type="date"  class="form-control" id="startDate" placeholder="Start date" >
                                        <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
+                                            <i class="glyphicon glyphicon-calendar"></i>
                                        </span>
                                     </div>
                                     <div class="col-md-4" style="padding-top:15px;">
                                         <!-- <b>End Date:</b>   -->
                                         <input type="date"  class="form-control" id="endDate" placeholder="End date" >
                                         <span class="input-group-addon">
-                                            <span class="glyphicon glyphicon-calendar"></span>
+                                            <i class="glyphicon glyphicon-calendar"></i>
                                        </span>
                                     </div>
                                 </div>
