@@ -144,11 +144,15 @@
                         <div class="row">
                             <div class="col-md-6" style="padding-top:0px; margin-right: -260px;">                                  
                                 <form method="POST">
+<<<<<<< HEAD
+                                    <select name="dept_viewing" id="dept_viewing" class="form-control" onchange="dropChange()" style ="width:50%;">
+=======
                                     <select name="dept_viewing" onChange="loadTable()" id="dept_viewing" class="form-control" style ="width:50%;">
+>>>>>>> 78f41575f481a3e0f7d8d24e66e12093a110f09d
                                         <option value="All" selected>--All Department--</option>
                                             <?php listDepartment(); ?>
                                     </select> 
-                                    <label id="selected"></label>
+                                    <input type="hidden" name="sel" id="selected">
                             </div>
                             <div class="col-md-6"></div>
                         </div>
