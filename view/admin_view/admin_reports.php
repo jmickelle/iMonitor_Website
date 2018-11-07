@@ -233,16 +233,16 @@
                                                 <?php listDepartment(); ?>
                                         </select> 
                                     </div>
-                                    <div class="col-md-4 input-group date" id="startDate" style="padding-top:15px;">
+                                    <div class="col-md-4" style="padding-top:15px;">
                                        <!-- <b>Start Date:</b>   -->
-                                       <input type="text"  class="form-control" placeholder="Start date" style="width: 100%;">
+                                       <input type="date"  class="form-control" id="startDate" placeholder="Start date" >
                                        <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                        </span>
                                     </div>
-                                    <div class="col-md-4 input-group date" id="endDate" style="padding-top:15px;">
+                                    <div class="col-md-4" style="padding-top:15px;">
                                         <!-- <b>End Date:</b>   -->
-                                        <input type="text"  class="form-control" placeholder="End date" style="width: 100%;">
+                                        <input type="date"  class="form-control" id="endDate" placeholder="End date" >
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                        </span>
