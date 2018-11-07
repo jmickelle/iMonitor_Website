@@ -56,7 +56,8 @@
 		background: #ececec;
 		padding: 20px;
 		border-top: 0;
-		color: #666;
+		color: #000;
+		border-radius: 12px;
 	}.has-feedback {
 		position: relative;
 	}
@@ -135,8 +136,11 @@
             	<span></span>
         	</div>
             <div class="row">
-            	<div class="col-xs-12">
-					<input type="submit" name="submit" value="Sign In" id="submit" class="btn btn-primary btn-block btn-flat">            
+            	<div class="col-xs-6">
+					<input type="submit" name="submit" value="Update" id="submit" class="btn btn-primary btn-block btn-flat">            
+				</div>
+				<div class="col-xs-6">
+					<a type="button" href="admin_users.php" value="Back" id="back" class="btn btn-default btn-block btn-flat"></a>          
 				</div>
             </div>
         </form> 
