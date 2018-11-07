@@ -1,6 +1,7 @@
 <?php
     global $id;
     global $ids;
+    //error_reporting(0);
     function Login()
     {
         session_start();
@@ -121,6 +122,35 @@
         }
     }
 
+    function displayAllNotif()
+    {
+        require 'connection/db_connection.php';
+        $notifSql = mysqli_query($con,"SELECT user,hostname,iMonitor_Status,connection_status,scan_time,branch FROM tbl_log WHERE 
+        (iMonitor_Status = 'End Task' OR connection_status = 'UNESTABLISHED') AND user != 'Administrator' LIMIT 5");
+        $notifSql2 = mysqli_query($con,"SELECT hostname,agent_version,branch,scan_time FROM tbl_computer_details 
+        WHERE agent_version != '9.614' AND agent_version != '9.617' LIMIT 5");
+        while($row = mysqli_fetch_array($notifSql))
+        {
+            echo '
+                <tr>
+                    <td>iMonitor : '.$row['iMonitor_Status'].'<br/> Port Connection:'.$row['connection_status'].'<br/> Scan Time:'.$row['scan_time'].'</td>
+                    <td>Hostname: '.$row['hostname'].' <br> User: '.$row['user'].'<br/> Building : '.$row['branch'].'</td>
+                    <td>'.$row['scan_time'].'</td>
+                </tr>
+                ';
+        }
+        while($row2 = mysqli_fetch_array($notifSql2))
+        {
+            echo '
+                <tr>
+                    <td>Agent_version:  '.$row2['agent_version'].'</td>
+                    <td>Hostname: '.$row2['hostname'].'<br/> Building : '.$row2['branch'].'</td>
+                    <td>'.$row2['scan_time'].'</td>
+                </tr>
+            ';
+        }
+    }
+
     function sidebarComputerList()
     {
         require 'connection/db_connection.php';
@@ -155,7 +185,7 @@
         $userDisplay = mysqli_query($con,"SELECT id, userid, name, department, position, status, role FROM tbl_user WHERE role <> 'SUPER ADMIN'");
         foreach($userDisplay as $row)
         {
-            $_SESSION['userid'] = $row['userid'];
+            $userids = $row['id'];
             echo '
             <tr>
             <td>'.$row['userid'].'</td>
@@ -164,7 +194,8 @@
             <td>'.$row['position'].'</td>
             <td>'.$row['role'].'</td>
             <td>'.$row['status'].'</td>
-            <td><a href="'.$_SESSION['userid'] = $row['userid'].'"data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
+            <input type="hidden" value="?id='.$userids.'" />
+            <td><a href="" data-toggle="modal"><button class="btn btn-primary">Edit</button></a></td>
             </tr>';
             // <td><input type="submit" name="btnEditRecord" class="btn btn-primary" value="'.$_SESSION['userid'].'"></td>
             // <td><a href="'.$_SESSION['userid'] = $row['userid'].'"data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
@@ -188,17 +219,17 @@
             $role = mysqli_real_escape_string($con,$_POST['role']);
             $status = mysqli_real_escape_string($con,$_POST['status']);
             $password = mysqli_real_escape_string($con,$_POST['password']);
-            $enc = md5(sha1($password));
+            $enc = password_hash($password,PASSWORD_DEFAULT);
 
-            $sqlRegister = mysqli_query($con,"INSERT INTO tbl_user(userid,department,role,status,password) 
-            VALUES('$userid','$department','$role','$status','$enc') ");
-            if($sqlRegister)
+            $selUsers = mysqli_query($con,"SELECT * FROM tbl_user WHERE userid = '$userid'");
+            $checkRow = mysqli_fetch_array($selUsers);
+            if($checkRow>0)
             {
-                echo '<script>window.alert("REGISTERED!")</script>';
+                echo '<script type="text/javascript">window.alert("This User '.$userid.' Already Exist!")</script>';
             }
-            else
-            {
-                echo '<script>window.alert("ERROR IN QUERY!")</script>';
+            else{
+                $sqlRegister = mysqli_query($con,"INSERT INTO tbl_user(userid,department,role,status,password) 
+                VALUES('$userid','$department','$role','$status','$enc') ");
             }
         }
     }
@@ -281,5 +312,34 @@
     }
 
     //ADMIN REPORTS
+    function displayLogReport()
+    {
+        require 'connection/db_connection.php';
+        $sqlLogReport = mysqli_query($con,"SELECT user, domain_name, hostname, ip_address, ip_date_modified,
+        iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time FROM tbl_log 
+        WHERE user != 'Administrator'");
+        $count = 1;
+        foreach($sqlLogReport as $row)
+        {
+            echo '
+            <tr> 
+            <td>'.$count++.'</td>
+            <td>'.$row['user'].'</td>
+            <td>'.$row['hostname'].'</td>
+            <td>'.$row['domain_name'].'</td>
+            <td>'.$row['ip_address'].'</td>
+            <td>'.$row['ip_date_modified'].'</td>
+            <td>'.$row['iMonitor_Status'].'</td>
+            <td>'.$row['services'].'</td>
+            <td>'.$row['sysSetting_File'].'</td>
+            <td>'.$row['serverIP'].'</td>
+            <td>'.$row['connection_status'].'</td>
+            <td>'.$row['branch'].'</td>
+            <td>'.$row['scan_time'].'</td>
+            </tr>
+            ';
+        }
+        
+    }
 
 ?>

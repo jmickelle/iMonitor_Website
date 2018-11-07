@@ -157,11 +157,20 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
+<<<<<<< HEAD
                                         <br>
                                             <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
                                             <input type="button" id="btnExport" name="btnExport" value="Export to Excel" class="btn btn-success" onclick="fnExcelReport();">
                                                 <!--<input type="button" name="btnExport_PDF" id="btnExport_PDF" value="PDF" class="btn btn-danger" onclick="">-->
                                             <input type="button" id="print" name="print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" />
+=======
+                                    <br>
+                                    <input type="sbumit" id="search" name="btnSearch" value="Search" class="btn btn-primary">
+                                        <input type="button" id="reset" name="clear" value="Clear" class="btn btn-default">
+                                        <input type="button" id="btnExport" name="btnExport" value="Export to Excel" class="btn btn-success" onclick="fnExcelReport();">
+                                            <!--<input type="button" name="btnExport_PDF" id="btnExport_PDF" value="PDF" class="btn btn-danger" onclick="">-->
+                                        <input type="button" id="print" name="print" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" />
+>>>>>>> 723db4a88010791a81c81b3e149b3c6ab9268c2c
                                     </div>
                                 </div>
                                 <iframe id="txtArea1" style="display:none"></iframe>
@@ -246,6 +255,7 @@
                                             </tr>
                                         </thead>
                                         <tbody id = "load_data">
+<<<<<<< HEAD
                                             ?php
                                                 $sql = "select user, domain_name, hostname, ip_address, ip_date_modified,
                                                 iMonitor_Status, services, sysSetting_File, serverIP, connection_status, branch, scan_time from tbl_log 
@@ -273,6 +283,9 @@
                                                 <td>?php echo date("M-d-Y h:m", strtotime($row['scan_time']))?></td>
                                             </tr>
                                             ?php } ?>
+=======
+                                            <?php displayLogReport(); ?>
+>>>>>>> 723db4a88010791a81c81b3e149b3c6ab9268c2c
                                         </tbody>
                                     </table>
                                 </div>
