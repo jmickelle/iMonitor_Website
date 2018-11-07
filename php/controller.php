@@ -195,7 +195,7 @@
             <td>'.$row['role'].'</td>
             <td>'.$row['status'].'</td>
             <input type="hidden" value="?id='.$userids.'" />
-            <td><a type="button" href="#edit_<?php echo $row['id']; ?>" data-toggle="modal" class="btn btn-primary">Edit</button></a></td>
+            <td><a type="button" href="edit_modal.php" class="btn btn-primary">Edit</a></td>
             </tr>';
             // <td><input type="submit" name="btnEditRecord" class="btn btn-primary" value="'.$_SESSION['userid'].'"></td>
             // <td><a href="'.$_SESSION['userid'] = $row['userid'].'"data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
