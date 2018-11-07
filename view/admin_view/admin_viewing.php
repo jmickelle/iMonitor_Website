@@ -147,6 +147,7 @@
                                         <option value="All" selected>--All Department--</option>
                                             <?php listDepartment(); ?>
                                     </select> 
+                                    <label id="selected"></label>
                             </div>
                             <div class="col-md-6"></div>
                         </div>
@@ -240,6 +241,13 @@
 
     <!-- For Printing List-->
 
+    <script>
+        function dropChange()
+        {
+            var x = document.getElementById("dept_viewing").value;
+            document.getElementById("selected").value = x;
+        }
+    </script>
     <script type="text/javascript">
     	function printDiv() {
         var divElements = document.getElementById("tb_div").innerHTML;

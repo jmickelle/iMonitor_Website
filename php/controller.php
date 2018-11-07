@@ -250,8 +250,9 @@
 
     function displayDept()
     {   require 'connection/db_connection.php';
-        if($_POST['dept_viewing'] == "All")
+        if(isset($_REQUEST['dept_viewing']))
         {
+            echo '<script>window.alert("TEST")</script>';
             $deptSqls = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details");
             while($row = mysqli_fetch_array($deptSqls))
             {
