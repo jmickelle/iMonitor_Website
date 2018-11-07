@@ -566,6 +566,10 @@ ul ul a {
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
 }
+thead tr th
+{
+    text-align: -webkit-center;
+}
 /* .modal-body .form-horizontal .col-sm-4
 {
     width: 100%;
