@@ -46,7 +46,7 @@
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                 <input class="form-control" id="userid" placeholder="User ID" name="userid" type="text" autofocus="autofocus" style="width: 150%;"required>
                             </div>
-                            <div class="form-group input-group" style="margin-left: -90px; padding: 0px 30px;">
+                            <div class="form-group input-group" style="margin-left: -90px; padding: 0px 30px; width: 435px;">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                                 <input class="form-control" id="password" placeholder="Password" name="password" type="password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                             </div>

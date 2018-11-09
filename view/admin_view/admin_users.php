@@ -114,7 +114,7 @@
 		            <a href="admin_dashboard.php"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
 		        </li>
 		        <li>
-		            <a href="admin_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
+		            <a href="#"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
 		        <li >
 		            <a href="admin_viewing.php"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
