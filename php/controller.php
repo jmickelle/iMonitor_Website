@@ -282,6 +282,16 @@
             if($selectDepartment == "All")
             {
                 $deptSql = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details");
+                if(empty($getSearch) || $getSearch == null || $getSearch == '')
+                {
+                    $deptSql = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details
+                    WHERE branch = '$selectDepartment' OR hostname = '$getSearch' ");
+                }else
+                {
+                    $deptSql = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details
+                    WHERE hostname = '$getSearch' ");
+                }
+                
             }
             else
             {
