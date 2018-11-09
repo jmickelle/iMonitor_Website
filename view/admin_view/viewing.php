@@ -77,7 +77,7 @@
                             <tbody>
                                 <tr>
                                     <td style="padding:15px;"><?php echo $row['processor'] ?></td>
-                                    <td style="padding:15px;"><?php echo $row['HHD_Serial']; ?></td>
+                                    <td style="padding:15px;"><?php echo $row['HDD_Serial']; ?></td>
                                     <td style="padding:15px;"><?php echo $row['MAC_Address']; ?></td>
                                     <td style="padding:15px;"><?php echo $row['mb_manufacturer']; ?></td>
                                     <td style="padding:15px;"><?php echo $row['mb_product']; ?></td>
