@@ -157,7 +157,7 @@
                                 <form method="POST">
                                 <div class="row">
                                     <div class="col-md-6" style="padding-top: 20px;"> 
-                                        <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
+                                        <input type="text" id="user" name="search" class="form-control" placeholder="Search for user... ">
                                     </div>
                                     <div class="col-md-6"><br>
                                         <input type="submit" id="search" name="btnSearch" value="Search" class="btn btn-primary">
@@ -189,7 +189,8 @@
                                             </tr>
                                         </thead>
                                         <tbody style="text-align: -webkit-center;">
-                                            <?php displayLogReport(); ?>
+                                            <?php displayLogReport(); 
+                                            //displayReports(); ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>

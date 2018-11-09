@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+    require '../../php/connection/db_connection.php';
     include '../../php/controller.php';
-    Login();
-    if(!isset($_SESSION["user"])) {
-        header("Location: ../../index.php");
-    }
-    Logout();
+	$id = $_GET['id'];
 ?>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -97,6 +94,11 @@
 	</style>
 </head>
 <body>
+	<?php
+    require '../../php/connection/db_connection.php';
+    $users = mysqli_query($con,"SELECT * FROM tbl_user WHERE userid = '$id'");
+    if($row = mysqli_fetch_assoc($users)){
+    ?>
 	<div class="login-logo">
         <img src="../../public/images/icons/sky_luster.png" style=" width:90px; height: 100px; "></a>
 	</div>
@@ -104,9 +106,10 @@
         <h3 class="login-box-msg">Edit User Information</h3>
         <form  method="post" accept-charset="utf-8">        
 			<div class="form-group has-feedback">
-            	<input type="text" name="idnum" value="" placeholder="ID Number" class="form-control" id="idnum" maxlength="7" size="30" disabled> 
+            	<input type="text" name="idnum" value="<?php echo $row['userid'] ?>" placeholder="ID Number" class="form-control" id="idnum" maxlength="7" size="30" disabled> 
             	<span></span>
 			</div>
+	<?php } ?>
 			<div class="form-group has-feedback">
             	<input type="text" name="name" value="" placeholder="Name" class="form-control" id="name" maxlength="30" size="30"> 
             	<span></span>
@@ -129,6 +132,7 @@
 				</select>
             	<span></span>
         	</div>
+			
         	<div class="form-group has-feedback">
             	<input type="password" name="password" value="Aa123456" placeholder="Password" class="form-control" id="myCheck" size="30">           
             	<span></span>

@@ -196,7 +196,7 @@
             <td>'.$row['role'].'</td>
             <td>'.$row['status'].'</td>
             <input type="hidden" value="?id='.$userids.'" />
-            <td><a type="button" href="edit_modal.php" class="btn btn-primary">Edit</a></td>
+            <td><a type="button" href="edit_modal.php?id='.$userids.'" class="btn btn-primary">Edit</a></td>
             </tr>';
             // <td><input type="submit" name="btnEditRecord" class="btn btn-primary" value="'.$_SESSION['userid'].'"></td>
             // <td><a href="'.$_SESSION['userid'] = $row['userid'].'"data-toggle="modal"><button class="btn btn-primary">Edit Record</button></a></td>
@@ -208,6 +208,7 @@
     function userEdit()
     {
         //echo '<script>window.alert('.$_SESSION['userid'].')</script>';
+
     }
 
     function addUser()
@@ -381,19 +382,20 @@
     {   require 'connection/db_connection.php';    
         if(isset($_POST['bntSearch']))
         {
-            $selectDepartment = mysqli_real_escape_string($con,$_POST['dept_viewing']);
-            // $selectSubDepartment = $_POST['dub_dept'];
+            $count = 0;
+            $selectDepartment = mysqli_real_escape_string($con,$_POST['department']);
             $getSearch = mysqli_real_escape_string($con,$_POST['search']);
             if($selectDepartment == "All")
             {
-                $deptSql = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details");
+                $deptSql = mysqli_query($con,"SELECT *
+                FROM tbl_log");
                 if(empty($getSearch) || $getSearch == null || $getSearch == '')
                 {
-                    $deptSql = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details
+                    $deptSql = mysqli_query($con,"SELECT * FROM tbl_log
                     WHERE branch = '$selectDepartment' OR hostname = '$getSearch' ");
                 }else
                 {
-                    $deptSql = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details
+                    $deptSql = mysqli_query($con,"SELECT * FROM tbl_log
                     WHERE hostname = '$getSearch' ");
                 }
                 
@@ -402,11 +404,11 @@
             {
                 if(empty($getSearch) || $getSearch == null || $getSearch == '')
                 {
-                    $deptSql = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details
+                    $deptSql = mysqli_query($con,"SELECT * FROM tbl_log
                     WHERE branch = '$selectDepartment' OR hostname = '$getSearch' ");
                 }else
                 {
-                    $deptSql = mysqli_query($con,"SELECT compID, hostname, ip, status, remarks, agent_Version,branch FROM tbl_computer_details
+                    $deptSql = mysqli_query($con,"SELECT * FROM tbl_log
                     WHERE hostname = '$getSearch' ");
                 }
             }
@@ -414,18 +416,22 @@
             {
                 $ids = $row['compID'];
                 echo '
-                    <tr>
-                    <td> '.$row['compID'].'</td>
-                    <td> '.$row['hostname'].'</td>
-                    <td>'.$row['ip'].'</td>
-                    <td>'.$row['status'].'</td>
-                    <td>'.$row['remarks'].'</td>
-                    <td>'.$row['agent_Version'].'</td>
-                    <input type="hidden" value="?id='.$ids.'" />
-                    <td><a href="viewing.php?id='.$ids.'" data-toggle="modal"><input type="button" value="View" class="btn btn-primary"></a></td> 
-                    ';
-                    //include('admin_viewing_modal.php');
-                echo '</tr>';
+                <tr> 
+                <td>'.$count++.'</td>
+                <td>'.$row['user'].'</td>
+                <td>'.$row['hostname'].'</td>
+                <td>'.$row['domain_name'].'</td>
+                <td>'.$row['ip_address'].'</td>
+                <td>'.$row['ip_date_modified'].'</td>
+                <td>'.$row['iMonitor_Status'].'</td>
+                <td>'.$row['services'].'</td>
+                <td>'.$row['sysSetting_File'].'</td>
+                <td>'.$row['serverIP'].'</td>
+                <td>'.$row['connection_status'].'</td>
+                <td>'.$row['branch'].'</td>
+                <td>'.$row['scan_time'].'</td>
+                </tr>
+                ';
             }   
             
         }
