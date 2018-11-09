@@ -114,7 +114,7 @@
 		            <a href="admin_dashboard.php"><i class="glyphicon glyphicon-th-large" ></i> Dashboard</a>
 		        </li>
 		        <li>
-		            <a href="#"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
+		            <a href="admin_branch.php"><i class="glyphicon glyphicon-home"></i>Branch Settings</a>
 		        </li>
 		        <li>
 		            <a href="admin_viewing.php"><i class="glyphicon glyphicon-list-alt"></i>Computer List</a>
@@ -235,29 +235,33 @@
                                 <?php //pdfs(); ?>
                                 <form method="POST">
                                 <div class="row">
-                                    <div class="col-md-4"><b>Department</b> 
+                                    <div class="col-md-4" style="padding-top:15px;"><b>Department</b> 
                                         <select name="report" id="report" class="form-control">
                                             <option value="All" selected>--All Departments--</option>
                                                 <?php listDepartment(); ?>
                                         </select> 
                                     </div>
-                                    <div class="col-md-4" >
+                                    <div class="col-md-4" style="padding-top:15px;">
                                        <b>Start Date:</b>  
                                        <input type="date"  class="form-control" id="startDate" placeholder="Start date" >
                                     </div>
-                                    <div class="col-md-4" >
+                                    <div class="col-md-4" style="padding-top:15px;">
                                         <b>End Date:</b>  
                                         <input type="date"  class="form-control" id="endDate" placeholder="End date" >
                                     </div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-6" style="padding-top:15px;">
-                                        <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
-                                    </div>
-                                    <div class="col-md-4" style="padding-top:15px;">
-                                        <input type="submit" id="search" name="btnSearch" value="Search" class="btn btn-primary">
-                                        <input type="button" id="btnExport" name="btnExport" value="Export to Excel" class="btn btn-success" onclick="fnExcelReport();">
+                                    <div class="input-group col-md-6" style="padding-top:15px;">
+                                            <input type="text" id="user" name="user" class="form-control" placeholder="Search for user... ">
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-default" type="submit">
+                                                    <i class="glyphicon glyphicon-search"></i>
+                                                </button>
+                                        </div>
+                                        <div class="col-md-6" style="padding-top:15px;">
+                                            <input type="submit" id="search" name="btnSearch" value="Search" class="btn btn-primary">
+                                            <input type="button" id="btnExport" name="btnExport" value="Export to Excel" class="btn btn-success" onclick="fnExcelReport();">
                                                 <!--<input type="button" name="btnExport_PDF" id="btnExport_PDF" value="PDF" class="btn btn-danger" onclick="">-->
                                         <input type="submit" id="print" name="btnPrint" value="Print" class="btn btn-danger" onclick="javascript:printDiv('printablediv')" />
                                     </div>
@@ -265,7 +269,8 @@
                                 </form>
 
                                 <iframe id="txtArea1" style="display:none"></iframe>
-                                <div class="table-responsive"  style="overflow-x:auto; padding: 15px;" id="tb_div">
+                                <div style="clear:both; padding:15px;"></div>
+                                <div class="table-responsive"  style="overflow-x:auto;" id="tb_div">
                                     <table class="table table-bordered" style="background: #ffffff;" id="comp_logs">
                                         <thead>
                                             <tr>
@@ -313,7 +318,7 @@
                 </div>
             </div>   
         </div>       
-    </div>                
+    </div> 
                                        
 <script>
 
@@ -453,33 +458,7 @@ $(document).ready(function(){
                             }
     </script>
     
-    <script>
-        $(document).ready(function()
-{
-     $("#report").change(function()
-     {
-      if ($("#report").val() == "Logs_History")
-      {
-        alert("Selected value is : " + document.getElementById("report").value);
-        //    var brand_id = $(this).val();  
-        //    $.ajax(
-        //    {  
-        //         url:"admin_viewing.php",  
-        //         method:"POST",  
-        //         data:{brand_id:brand_id},  
-        //         success:function(data){  
-        //              $('#tb_div').html(data);  
-        //         }  
-        //    });   
-      }
-       else
-      {
-        alert("Selected value is : " + document.getElementById("report").value);
-      } 
-     });
-   }); 
-    
-    </script>
+
 
 
 </body>
