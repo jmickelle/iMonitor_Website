@@ -84,11 +84,12 @@
         {
             $notifCount++;
         }
-        while($notifRow2 = mysqli_fetch_array($notifSql2))
-        {
-            $notifCount2++;
-        }
-        echo $notifCount + $notifCount2 ;
+        // while($notifRow2 = mysqli_fetch_array($notifSql2))
+        // {
+        //     $notifCount2++;
+        // }
+        //echo $notifCount + $notifCount2 ;
+        echo $notifCount;
     }
 
     function notifDisplay()
@@ -109,17 +110,17 @@
                 <li class="divider"></li>
                 ';
         }
-        while($notifRow2 = mysqli_fetch_array($notifSql2))
-        {
-            echo '
-                <li>
-                    <a href="#"><strong>'.$notifRow2['hostname'].'</strong><br>
-                    <small><em>'.$notifRow2['agent_version'].'</em></small></a>
-                    <small><em>'.$notifRow2['branch'].'</em></small></a>
-                </li>
-                <li class="divider"></li>
-                ';
-        }
+        // while($notifRow2 = mysqli_fetch_array($notifSql2))
+        // {
+        //     echo '
+        //         <li>
+        //             <a href="#"><strong>'.$notifRow2['hostname'].'</strong><br>
+        //             <small><em>'.$notifRow2['agent_version'].'</em></small></a>
+        //             <small><em>'.$notifRow2['branch'].'</em></small></a>
+        //         </li>
+        //         <li class="divider"></li>
+        //         ';
+        // }
     }
 
     function displayAllNotif()
@@ -139,16 +140,16 @@
                 </tr>
                 ';
         }
-        while($row2 = mysqli_fetch_array($notifSql2))
-        {
-            echo '
-                <tr>
-                    <td>Agent_version:  '.$row2['agent_version'].'</td>
-                    <td>Hostname: '.$row2['hostname'].'<br/> Building : '.$row2['branch'].'</td>
-                    <td>'.$row2['scan_time'].'</td>
-                </tr>
-            ';
-        }
+        // while($row2 = mysqli_fetch_array($notifSql2))
+        // {
+        //     echo '
+        //         <tr>
+        //             <td>Agent_version:  '.$row2['agent_version'].'</td>
+        //             <td>Hostname: '.$row2['hostname'].'<br/> Building : '.$row2['branch'].'</td>
+        //             <td>'.$row2['scan_time'].'</td>
+        //         </tr>
+        //     ';
+        // }
     }
 
     function sidebarComputerList()
